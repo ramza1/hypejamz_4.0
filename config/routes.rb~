@@ -1,0 +1,221 @@
+Media::Application.routes.draw do
+
+  get "flags/new"
+
+  get "flags/create"
+
+  resources :albums  do
+    resources :comments
+    member do
+      get 'download'
+    end
+  end
+
+  resources :activities
+  resources :artists do
+   member do
+    get "up_vote"
+   end
+  end
+
+  resources :categories
+
+  resources :stories do
+    resources :comments
+    get 'trending', :on => :collection
+  end
+
+  resources :notes do
+    resources :comments
+  end
+
+  resources :messages
+
+  match "/about_us" => "info#about_us", as: :about_us
+  match "/learn_more" => "info#learn_more", as: :learn_more
+  match "/privacy_policy" => "info#privacy_policy", :as => :privacy_policy
+  match "/artistes" => "users#artistes", :as => :artistes
+
+  match "/terms_of_use" => "info#terms_of_use", :as => :terms_of_use
+  match "/contact_us" => "info#contact_us", :as => :contact_us
+  match "/developers" => "info#developers", :as => :developers
+  match "/mobile_featured" => "featured_users#mobile_featured", :as => :mobile_featured
+  match "/mobile_featured_song" => "featured_songs#mobile_featured", :as => :mobile_featured_songs
+  match "/download_mobile_app" => "info#download_mobile_app", :as => :download_mobile_app
+  match "/top_downloads" => "songs#downloads", :as => :top_downloads
+  match "/subscribe/:id" => "users#toggle_subscription", :as => :toggle_subscription
+  match "/mobile_subscribe/:id" => "users#mobile_subscription", :as => :mobile_subscription
+  match '/remove_yarn/:id' => "notes#destroy", :as => :remove_yarn
+  match '/back2back' => "artists#index", as: :back_to_back
+  match '/join_now' => "info#join_now", as: :join_now
+  match '/un_approved' => "songs#not_verified", as: :un_approved
+
+
+
+  resources :featured_users do
+    collection do
+      get 'featured'
+    end
+  end
+
+  resources :featured_songs
+
+  resources :videos do
+    member do
+      post :add_comment
+      post :rate
+    end
+    new do
+       post :upload
+       get  :save_video
+     end
+  end
+
+  resources :hype_managers do
+    resources :hypes
+  end
+
+  resources :songs do
+    member do
+      get 'download'
+      get 'countdown'
+      get 'favourite'
+      get 'approve'
+      post 'rate'
+      post 'report'
+    end
+    resources :pictures
+    resources :comments
+    resources :replies
+    resources :flags
+  end
+
+
+
+  match '/admin' => "admins#index", :as => :admin
+  resources :authentications
+
+
+ match '/search' => "users#search", :as => :search
+ match '/song_search' => "songs#search", :as => :song_search
+ match '/album_search' => "albums#search", :as => :album_search
+ match '/latest_songs' => "songs#latest_songs", :as => :latest_songs
+ match '/most_popular' => "songs#most_popular", :as => :most_popular
+ match '/downloads' => "songs#downloads", :as => :downloads
+ match '/older' => "songs#older", :as => :older
+ match '/genre' => "songs#genre", :as => :genre
+ match '/json_songs' => "songs#json_songs", :as => :json_songs
+ match '/json_users' => "users#json_users", :as => :json_users
+ match '/songs_featured' => "songs#featured", :as => :songs_featured
+ match '/trending_songs' => "songs#trending", :as => :trending_songs
+ match '/updates/:id' => "activities#index", :as => :updates
+ match '/fans' => "users#fans", as: :fans
+ match 'songs/:id/favorite' => 'songs#favorite', :as => :favorite_songs
+
+
+
+
+  match 'auth/:provider/callback' => "authentications#create"
+  devise_for :users
+
+
+  #A hack by uche as the default devise sign_out routs is not working correctly  hope this is improved in later future
+  devise_scope :user do
+    match '/users/sign_out' => "devise/sessions#destroy", :as => :destroy_user_session
+  end
+
+ resources :users do
+  resources :songs
+  resources :events
+   resources :pictures
+   resources :videos
+   resources :messages
+   resources :notes
+   resources :comments
+   resources :activities
+   resources :albums
+   member do
+     get 'fans'
+   end
+ end
+
+
+  resources :pictures
+
+  match '/calendar(/:year(/:month))' => 'calendar#index', :as => :calendar, :constraints => {:year => /\d{4}/, :month => /\d{1,2}/}
+
+
+
+  resources :comments  do
+    member do
+      get "remove"
+    end
+  end
+
+
+
+  resources :events do
+    resources :pictures
+    resources :comments
+  end
+
+  resources :sponsors
+
+  match "/:id" => "users#show", :as => :user_profile
+
+
+
+  # Sample of regular route:
+  #   match 'products/:id' => 'catalog#view'
+  # Keep in mind you can assign values other than :controller and :action
+
+  # Sample of named route:
+  #   match 'products/:id/purchase' => 'catalog#purchase', :as => :purchase
+  # This route can be invoked with purchase_url(:id => product.id)
+
+  # Sample resource route (maps HTTP verbs to controller actions automatically):
+  #   resources :products
+
+  # Sample resource route with options:
+  #   resources :products do
+  #     member do
+  #       get 'short'
+  #       post 'toggle'
+  #     end
+  #
+  #     collection do
+  #       get 'sold'
+  #     end
+  #   end
+
+  # Sample resource route with sub-resources:
+  #   resources :products do
+  #     resources :comments, :sales
+  #     resource :seller
+  #   end
+
+  # Sample resource route with more complex sub-resources
+  #   resources :products do
+  #     resources :comments
+  #     resources :sales do
+  #       get 'recent', :on => :collection
+  #     end
+  #   end
+
+  # Sample resource route within a namespace:
+  #   namespace :admin do
+  #     # Directs /admin/products/* to Admin::ProductsController
+  #     # (app/controllers/admin/products_controller.rb)
+  #     resources :products
+  #   end
+
+  # You can have the root of your site routed with "root"
+  # just remember to delete public/index.html.
+  root :to => 'welcome#index'
+
+  # See how all your routes lay out with "rake routes"
+
+  # This is a legacy wild controller route that's not recommended for RESTful applications.
+  # Note: This route will make all actions in every controller accessible via GET requests.
+  # match ':controller(/:action(/:id(.:format)))'
+end

@@ -1,0 +1,16 @@
+<div class="story-block">
+  <div class="story-show-block more-space">
+<div class="story-title">
+  <h3>
+    Hottest Gist's on HypeJamz
+  </h3>
+</div>
+<iframe id="player" type="text/html" width="100%" height="390"
+  src="http://www.youtube.com/embed/u1zgFlCw8Aw?enablejsapi=1&origin=http://example.com"
+  frameborder="0">
+    <div class="small-margin-top">
+     <%= render @stories %>
+    </div>
+  </div>
+<div class="clear"></div>
+</div>

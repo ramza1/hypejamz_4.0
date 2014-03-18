@@ -1,0 +1,37 @@
+<div class="block-a">
+  <div class="page-header">
+     <h2>Listing sponsors</h2>
+  </div>
+
+<table>
+  <tr>
+    <th>Name</th>
+    <th>Active</th>
+    <th>Site url</th>
+    <th>Image url</th>
+    <th>Force top</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @sponsors.each do |sponsor| %>
+  <tr>
+    <td><%= sponsor.name %></td>
+    <td><%= sponsor.active %></td>
+    <td><%= sponsor.site_url %></td>
+    <td><%= sponsor.image_url %></td>
+    <td><%= sponsor.force_top %></td>
+    <td><%= link_to 'Show', sponsor %></td>
+    <td><%= link_to 'Edit', edit_sponsor_path(sponsor) %></td>
+    <td><%= link_to 'Destroy', sponsor, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Sponsor', new_sponsor_path %>
+</div>
+
+

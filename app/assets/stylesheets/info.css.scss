@@ -1,0 +1,67 @@
+.about_us-info{
+    margin-top: 20px;
+  img{
+   float: left;
+  }
+}
+
+.about-details{
+  margin-left: 624px;
+  background: url(playerbg.png) repeat;
+  padding: 10px;
+  color: #fff;
+  h1{
+   border-bottom: 1px solid #000;
+   paddong-bottom: 2px;
+   margin-bottom: 3px;
+  }
+}
+
+.about-profile-info{
+  margin-top: 20px;
+}
+
+.about-details2{
+ margin-top: 10px;
+   margin-left: 624px;
+  background: url(playerbg.png) repeat;
+  padding: 10px;
+  color: #fff;
+  h1{
+   border-bottom: 1px solid #000;
+   paddong-bottom: 2px;
+   margin-bottom: 3px;
+  }
+}
+
+.artist-requirements{
+ margin-left: 20px;
+ li{
+   list-style: square;
+ }
+}
+
+.terms-of-use{
+  color: #fff;
+  background: #000;
+  margin-top: 10px;
+  h1{
+    border-bottom: 1px solid #CCCCCC;
+    color: #FFFFFF;
+    margin-bottom: 5px;
+    padding-bottom: 4px;
+    text-align: center;
+  }
+  p{
+   color: #fff;
+   padding: 5px;
+   }
+   ul{
+    margin-left: 113px;
+    padding: 10px;
+    width: 600px;
+    li{
+     list-style: square;
+    }
+   }
+}

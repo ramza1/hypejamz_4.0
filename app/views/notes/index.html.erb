@@ -1,0 +1,79 @@
+<div class="mp_wrapper">
+<% if params[:id] %>
+   <%= render "users/user_info", :user => @user %>
+<% else %>
+   <%= render "users_thumbs" %>
+<% end %>
+<% if params[:id]%>
+<div class="mp_content_wrapper">
+<div class="social-functions">
+  <%= render "social_functions", :user => @user %>
+  </div>
+  <div class="ajax-loader-box">
+    <div class="ajax-header">
+      <h3>Yarns</h3>
+    </div>
+    <% if me?%>
+     <span id="text-count">
+       300
+     </span>
+    <% end %>
+    <% if me? %>
+  <div id="Note-form">
+   <%= form_for Note.new, :remote => true do |f| %>
+    <div><%= f.text_area :body, :style => "width: 572px; height: 45px;", :placeholder => "Yarn with your fans dem..." %></div>
+    <div class="left-options">
+      <div class="allow">
+       <%= f.check_box :allow_comments %> <span>allow comments <%= image_tag("info.gif", :title => "To allow comments means that all your fans can leave a comment on this yarn. You can uncheck this box if you dont want comments", :class => "wes") %></span> &nbsp; <%= f.check_box :fans_only %> <span>fans only <%= image_tag("info.gif", :title => "This yarn would only be shared with your fans and not the public. to share it with both your fans and the public you can uncheck this box ", :class => "wes") %></span>
+      </div>
+    </div>
+    <div class="action-button">
+     <span class="loading-box" style="display: none;"><%= image_tag("loading.gif")%></span>  <%= f.submit "Yarn with your fans", :class => "btn", :id => "submit-button" %>
+    </div>
+   <% end %>
+  </div>
+   <% end %>
+  <div class="clear"></div>
+   <div id="notes">
+       <%= render @notes %>
+   </div>
+    <div class="clear"></div>
+ </div>
+</div>
+      <ul class="pagination group">
+        <%= render "pages_nav" %>
+      </ul>
+<% else %>
+   <%= render "all_notes" %>
+<% end %>
+
+</div>
+
+<script type="text/javascript">
+$(function() {
+  $('#note_body').keyup(function() {
+    var content_length = $(this).val().length;
+    var remaining = 300 - content_length
+    $('#text-count').html(remaining);
+    if (remaining < 21 && remaining > 9) {
+      $('#text-count').removeClass('red');
+      $('#text-count').addClass('dark_red');
+    } else if (remaining <= 9) {
+      $('#text-count').removeClass('dark_red');
+      $('#text-count').addClass('red');
+    } else {
+      $('#text-count').removeClass('dark_red').removeClass('red');
+    }
+    if ( remaining < 0) {
+        $('#submit-button').attr('disabled','disabled')
+        $('#submit-button').addClass("disable")
+    }else if (remaining >= 0) {
+        $('#submit-button').removeAttr('disabled')
+        $('#submit-button').removeClass("disable")
+        $('#submit-button').live('click', function(){
+        $('.loading-box').show();
+        })
+    }
+  })
+})
+</script>

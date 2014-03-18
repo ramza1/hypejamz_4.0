@@ -1,0 +1,28 @@
+
+<div class="padded">
+<%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
+  <div data-role="fieldcontain">
+  <%= f.label :email %>
+  <%= f.email_field :email %>
+  </div>
+
+  <div data-role="fieldcontain">
+  <%= f.label :password %>
+  <%= f.password_field :password %>
+  </div>
+
+  <% if devise_mapping.rememberable? -%>
+   <div data-role="fieldcontain">
+    <%= f.label :remember_me,"data-theme"=>"c" %> <%= f.check_box :remember_me,"data-theme"=>"c" %>
+   </div>
+  <% end -%>
+
+<div class="double-margin-top">
+     <%= f.submit "Log in", :class => "btn btn-primary" %>
+     <%= link_to "Not yet a member! Join Now", new_user_registration_path, :class => "btn btn-success" %>
+</div>
+
+<% end %>
+
+</div>
+

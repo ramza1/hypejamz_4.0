@@ -1,0 +1,83 @@
+<div class="ajax-header">
+  <h3>My Profile</h3>
+</div>
+
+ <% if user.artist? %>
+  <div class="page_description">
+    <h2>
+        My Songs
+    </h2>
+    <% if user.songs.any? %>
+    <%= render user.songs %>
+
+     <% else %>
+    <p class="empty">No songs at the moment</p>
+    <% end %>
+
+  </div>
+  <% else %>
+  <div class="page_description">
+    <h2>
+      My Favourite Songs
+    </h2>
+    <% if user.liked_songs.any? %>
+        <%= render user.liked_songs %>
+
+    <% else %>
+        <p class="empty"><%= t("no_favourite_song") %></p>
+    <% end %>
+
+  </div>
+  <% end %>
+  <div class="page_description">
+    <h2>
+        My Photos
+    </h2>
+     <% if user.pictures.empty? %>
+       <p class="empty">No photos at the moment</p>
+    <% else %>
+
+    <%= render user.pictures %>
+    <% end %>
+  </div>
+
+  <div class="page_description">
+    <h2>
+        My Videos
+    </h2>
+     <% if @videos.empty? %>
+       <p class="empty">No video at the moment</p>
+    <% else %>
+        <ul class="videos-list">
+<% @videos.each do |video| %>
+    <li>
+   <a href="<%= url_for video%>" data-remote="true" class="albumcontainer transition_border remote-event-link">
+     <img onload src="//i2.ytimg.com/vi/<%= video.yt_video_id %>/default.jpg" class ="album_art" width=100px height=100px; />
+     <span class="m_playall transition_opacity" href="#" style="display: inline;"></span>
+   </a>
+      <div class="song-description">
+
+        <p><%= link_to video.title, video, :class => "white" %></p>
+        <p class="small-name"><%= time_ago_in_words(video.created_at) %> ago</p>
+          <p class="small-name">By <%= link_to video.user.name, user_path(video.user) %></p>
+      </div>
+    </li>
+ <% end %>
+       </ul>
+    <% end %>
+  </div>
+
+
+  <div class="page_description">
+    <h2>
+        My Albums
+    </h2>
+    <% if user.albums.empty? %>
+       <p class="empty">No album at the moment</p>
+    <% else %>
+      <div class="event-block">
+       <%= render user.albums %>
+      </div>
+    <% end %>
+  </div>
+

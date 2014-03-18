@@ -1,0 +1,27 @@
+<h1>Listing featured_users</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th>Start</th>
+    <th>End</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @featured_users.each do |featured_user| %>
+  <tr>
+    <td><%= featured_user.user_id %></td>
+    <td><%= featured_user.start %></td>
+    <td><%= featured_user.end %></td>
+    <td><%= link_to 'Show', featured_user %></td>
+    <td><%= link_to 'Edit', edit_featured_user_path(featured_user) %></td>
+    <td><%= link_to 'Destroy', featured_user, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Featured user', new_featured_user_path %>

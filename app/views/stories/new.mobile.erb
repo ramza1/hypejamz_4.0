@@ -1,0 +1,67 @@
+<div data-role="page" data-back-btn="true" class="user-page" data-theme="b">
+        <header data-role="header" data-theme="a" class="heading">
+         <h1>Hot Gist's</h1>
+          <%= render "mobile_session" %>
+      <div data-role="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", :class => "", "data-icon" => "home"  %>
+                    </li>
+                  <li>
+                      <%= link_to "Gist's",  stories_path, "data-theme" => "a", :class => "ui-btn ui-btn-active ui-btn-up-a", "data-icon" => "grid"   %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for users_path %>" class=""   data-theme="a" data-icon="people" >
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-icon= "media" >
+                            Songs
+                        </a>
+                    </li>
+                </ul>
+      </div>
+        </header>
+        <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+
+          <%= form_for(@story) do |f| %>
+            <% if @story.errors.any? %>
+              <div id="error_explanation">
+                <h2><%= pluralize(@story.errors.count, "error") %> prohibited this story from being saved:</h2>
+
+                <ul>
+                <% @story.errors.full_messages.each do |msg| %>
+                  <li><%= msg %></li>
+                <% end %>
+                </ul>
+              </div>
+            <% end %>
+    <div data-role="fieldcontain">
+              <%= f.label :title %>
+              <%= f.text_field :title %>
+    </div>
+    <div data-role="fieldcontain">
+              <%= f.label :body %>
+              <%= f.cktext_area :body, "style" => "max-width => 100%; max-height: 100%;" %>
+    </div>
+
+    <div data-role="fieldcontain">
+               <%= f.label :category_id, "Category", "style" => "color: #fff;" %>
+               <%= f.collection_select(:category_id, @categories, :id, :name)%>
+    </div>
+    <div data-role="fieldcontain">
+               <%= f.label :clip, "Upload gist image", "style" => "color: #fff;" %>
+               <%= f.file_field :clip%>
+    </div>
+
+    <div data-role="fieldcontain">
+              <%= f.submit :class => "button" %>
+    </div>
+          <% end %>
+
+
+
+       </div>
+</div>

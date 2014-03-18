@@ -1,0 +1,14 @@
+<div class="owner">
+  <div class="owner-thumb">
+    <%= render "users/mobile_actions", :user => user%>
+  </div>
+  <div class="right-floater">
+    <div class="user-thumb">
+      <%= image_tag user.icon(:small) %>
+    </div>
+    <div class="user-name">
+      by: <%= link_to_unless_current user.name.humanize, user %>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

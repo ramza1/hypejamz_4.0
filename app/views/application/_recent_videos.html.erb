@@ -1,0 +1,12 @@
+<%= content_tag(:li) do %>
+    <a href="<%= url_for video %>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag "demo/art6.jpg" %>
+      <span class="m_video transition_opacity" href="#" style="display: inline;"></span>
+    </a>
+    <div class="details">
+      <h6><%= link_to video.title, video %></h6>
+      <div><%= t("by") %> <%= link_to video.user.name.humanize, video.user %> <br/>
+        <span class="songs-meta"><i class="icon-comment"></i> <%= pluralize(video.comments_count, "comment")%> | <i class="icon-time"></i> <%= t("about")%> <%= time_ago_in_words(video.created_at)%> <%= t("ago") %></span>
+      </div>
+    </div>
+<% end %>
+<div class="clear"></div>

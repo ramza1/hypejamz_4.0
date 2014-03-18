@@ -1,0 +1,12 @@
+<div class="flash-notice padded">
+  <% if flash.any? %>
+      <div class="notice">
+        <% flash.each do |name, msg| %>
+            <div class="alert alert-<%= name == :notice ? "info" : "error" %>">
+              <a class="close" data-dismiss="alert">×</a>
+              <%= msg %>
+            </div>
+        <% end %>
+      </div>
+  <% end %>
+</div>

@@ -1,0 +1,73 @@
+<% if  user_signed_in? %>
+    <ul class="nav pull-right">
+      <li class="dropdown">
+        <a href="#"
+           class="dropdown-toggle"
+           data-toggle="dropdown">
+          Hi! <%= truncate(current_user.name.humanize, :length => 15) %>
+          <b class="caret"></b>
+        </a>
+        <ul class="dropdown-menu">
+          <li><%= link_to user_path(current_user) do %>
+                <i class="icon-user"></i> <%= t("profile") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to edit_user_path(current_user) do %>
+                <i class="icon-edit"></i> <%= t("user.edit_basic") %>
+            <% end %>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to user_songs_path(current_user) do %>
+                <i class="icon-music"></i> <%= t("view_songs") %>
+            <% end %>
+          </li>
+          <li><%= link_to user_videos_path(current_user) do %>
+                <i class="icon-film"></i> <%= t("videos") %>
+            <% end %>
+          </li>
+          <li><%= link_to user_pictures_path(current_user) do %>
+                <i class="icon-camera"></i> <%= t("photos") %>
+            <% end %>
+          </li>
+          <li><%= link_to favorite_songs_path(:id => current_user.id) do %>
+                <i class="icon-star"></i> <%= t("playlist") %>
+            <% end %>
+          </li>
+          <li class="divider"></li>
+          <%= render "profile_actions" %>
+          <li class="divider"></li>
+          <li><%= link_to "#" do %>
+                <i class="icon-heart"></i>  you have <%= format_number(current_user.account_balance) %> hj credit
+            <% end %>
+          </li>
+          <li class="divider"></li>
+          <li><%= link_to destroy_user_session_path do %>
+                <i class="icon-lock"></i>  Sign out
+            <% end %>
+          </li>
+        </ul>
+      </li>
+      <li><%= link_to "#" do %>
+            <i class="icon-heart"></i> You have <%= format_number(current_user.account_balance) %> hj credit left
+        <% end %>
+      </li>
+    </ul>
+<% else %>
+    <ul class="nav pull-right">
+      <li><%= link_to "Sign Up", new_user_registration_path %></li>
+      <li class="divider-vertical"></li>
+      <li><%= link_to "Log In", new_user_session_path %></li>
+      <li class="divider-vertical"></li>
+      <li>
+        <%= link_to user_omniauth_authorize_path(:twitter) do %>
+          <i class="icon-twitter"></i>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_omniauth_authorize_path(:facebook) do %>
+            <i class="icon-facebook"></i>
+        <% end %>
+      </li>
+    </ul>
+<% end %>

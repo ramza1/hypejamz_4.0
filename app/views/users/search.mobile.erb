@@ -1,0 +1,39 @@
+<div data-role="page" class="home"  data-add-back-btn="true" data-theme="b" class="ui-seablue" data-add-back-btn="true">
+  <header data-role="header">
+    <h1>Search result</h1>
+    <%= render "mobile_session" %>
+    <nav data-role="navbar" align="CENTER" id="navbar" data-iconpos="bottom">
+      <ul >
+        <li>
+          <a href="<%= url_for users_path %>" data-theme="a" data-url="/users" class ="" data-icon = "user">
+            People
+          </a>
+        </li>
+        <li>
+          <a href="<%= url_for artistes_path %>" data-theme="a" data-url="/artists" class ="" data-icon = "media">
+            Artistes
+          </a>
+        </li>
+        <li>
+          <a href="<%= url_for fans_path %>" class="ui-btn ui-btn-active ui-btn-up-a"   data-theme="a" data-url="/fans" data-icon = "people">
+            Fans
+          </a>
+        </li>
+      </ul>
+    </nav>
+  </header><!-- /header -->
+  <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+    <%= render "users/mobile_content", :users => @users %>
+
+    <div data-role="controlgroup" data-type="horizontal">
+      <% if @users.previous_page %>
+          <%= link_to "Prev", params.merge(page: @users.previous_page), "data-role"=>"button" %>
+      <% end %>
+      <% if @users.next_page %>
+          <%= link_to "Next", params.merge(page: @users.next_page), "data-role"=>"button" %>
+      <% end %>
+    </div>
+  </div>
+
+  <%= render "mobile_footer" %>
+</div>

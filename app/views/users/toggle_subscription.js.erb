@@ -1,0 +1,6 @@
+   <% if current_user.is_friend? @user %>
+       $('.subscribe').text("Unsubscribe");
+    <% else %>
+       $('.subscribe').text("subscribe");
+    <% end %>
+    $('#fan-count').text("<%= @user.friends_of.count %>");

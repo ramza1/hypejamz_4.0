@@ -1,0 +1,19 @@
+<div id="content_wrapper">
+  <div id="active_admin_content">
+    <div id="form-box">
+      <h5>
+        Step 2: upload a new video.
+      </h5>
+      <%= form_tag @upload_info[:url], :multipart => true do %>
+          <%= hidden_field_tag :token, @upload_info[:token] %>
+          <fieldset class="inputs">
+            <ol>
+              <%= label_tag :file %>
+              <%= file_field_tag :file %>
+              <%= submit_tag "Upload video" %>
+            </ol>
+          </fieldset>
+      <% end %>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,42 @@
+<div class="page-header">
+  <h1>Account Verification</h1>
+</div>
+
+<div class="">
+  <p>
+    You are about to verify your account. please note that account verification will take up to several weeks depending on your location.
+
+  </p>
+    <% if current_user.payment_address.nil? %>
+      <p>Before you progress please ensure that you have provided your payment address as the payment address will be used to verify you in person. <br />
+        Click <%= link_to "here", new_payment_address_path %> to add your payment address.
+      </p>
+    <% end %>
+
+  <p>
+    By verifying your account you can set at what rate you want your songs to be downloaded at. The maximum rate is 200hjc <br/>
+    So also being verified means that you are the real owner of this account and anybody that uploads your song for profit on hypejamz to get the major share.
+  </p>
+  <p>To verify your account will cost only <b class="badge badge-info">5000hjc</b></p>
+</div>
+
+<% unless current_user.verified? %>
+
+    <% if Verification.count('*', :conditions => ['user_id = ?', current_user.id]) > 0 %>
+        <p class="alert alert-info">Your account is under verification</p>
+    <% else %>
+        <%= form_for @verification do |f| %>
+            <%= f.submit "Verify", class: "btn btn-success" %>
+        <% end %>
+
+    <% end %>
+<% else %>
+      <p class="alert alert-warning">
+        insufficient credit to verify your account <%= link_to "click here to buy hypejamz credit", plans_path %>
+      </p>
+ <% end %>
+
+
+<%= content_for :bottom do %>
+       <div style="display: none;"></div>
+<% end %>

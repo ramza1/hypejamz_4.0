@@ -1,0 +1,28 @@
+<%= provide :title, "#{@user.name.humanize}'s photos'"%>
+<%= provide(:right_nav) do %>
+        <%= render "thumbnail_medium", :user => @user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+        <i class="icon-picture"></i> <%= @user.name %>'s photo gallery
+         <%= render "send_message_link", :user => @user %>
+  </h4>
+</div>
+<% if @user %>
+    <%= render "profile_links", :user => @user %>
+<% end %>
+<div id="songs">
+  <% if @pictures.empty? %>
+      <p class="alert alert-warning"><%= t("picture.no_photo_uploaded_yet") %></p>
+  <% else %>
+      <%= render @pictures %>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+
+
+
+

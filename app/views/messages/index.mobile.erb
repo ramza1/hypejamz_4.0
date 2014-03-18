@@ -1,0 +1,32 @@
+<div data-role="page" data-add-back-btn="true" class="user-page" data-theme="b">
+        <header data-role="header" data-theme="a" class="heading">
+         <h1>Inbox</h1>
+          <%= render "mobile_session" %>
+      <div data-role="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", :class => "", "data-icon" => "home"  %>
+                    </li>
+                  <li>
+                      <%= link_to "Gist's",  stories_path, "data-theme" => "a", :class => "ui-btn ui-btn-active ui-btn-up-a", "data-icon" => "grid"   %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for users_path %>" class=""   data-theme="a" data-icon="people" >
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-icon= "media" >
+                            Songs
+                        </a>
+                    </li>
+                </ul>
+      </div>
+        </header>
+        <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+
+       <p style="color: #fff; text-shadow: none;">Visit the <%= link_to "main site", messages_path(:mobile => 0), :class => "story-link" %> to read your messages. Mobile support not yet ready. </p>
+
+       </div>
+</div>

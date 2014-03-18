@@ -1,0 +1,59 @@
+@import "twitter/bootstrap/bootstrap";
+body{
+    background: url("newspaper.jpg") #0091ce no-repeat center center fixed;
+}
+@import "twitter/bootstrap/responsive";
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings.png');
+@iconWhiteSpritePath: asset-path('twitter/bootstrap/glyphicons-halflings-white.png');
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/less.html for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;
+
+form.well {
+    padding: 14px;
+}
+
+.well{
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#0272A7), to(#013953));
+    background: #014464;
+    background: -moz-linear-gradient(top, #0272a7, #013953);
+    border: 0px;
+}
+
+.no-margin-bottom{
+    margin-bottom: 0;
+}
+
+.flex-large{
+    width: 245px;
+}
+
+.flex-small {
+    width: 179px;
+    margin-right: 4px;
+}
+
+
+ul,
+ol {
+    padding: 0;
+    margin: 0;
+}
+
+.popover-title{
+    color: #333;
+}
+
+h2{
+    line-height: 18px;
+}

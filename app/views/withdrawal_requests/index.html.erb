@@ -1,0 +1,23 @@
+<h1>Listing withdrawal_requests</h1>
+
+<table>
+  <tr>
+    <th>User</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @withdrawal_requests.each do |withdrawal_request| %>
+  <tr>
+    <td><%= withdrawal_request.user %></td>
+    <td><%= link_to 'Show', withdrawal_request %></td>
+    <td><%= link_to 'Edit', edit_withdrawal_request_path(withdrawal_request) %></td>
+    <td><%= link_to 'Destroy', withdrawal_request, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Withdrawal request', new_withdrawal_request_path %>

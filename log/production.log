@@ -1,0 +1,1013 @@
+Connecting to database specified by database.yml
+Compiled jquery.js  (81ms)  (pid 4302)
+Compiled jquery_ujs.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (72ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap.js  (153ms)  (pid 4302)
+Compiled bootstrap.js  (119ms)  (pid 4302)
+Compiled jquery.pjax.js  (0ms)  (pid 4302)
+Compiled best_in_place.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/rails/confirm.js  (11ms)  (pid 4302)
+Compiled speakker-big.js  (7ms)  (pid 4302)
+Compiled raphael.js  (73ms)  (pid 4302)
+Compiled morris.js  (0ms)  (pid 4302)
+Compiled jquery.rating.js  (0ms)  (pid 4302)
+Compiled jquery-star-rating.js  (6ms)  (pid 4302)
+Compiled lib/abstract-chosen.js  (20ms)  (pid 4302)
+Compiled lib/select-parser.js  (8ms)  (pid 4302)
+Compiled chosen.jquery.js  (94ms)  (pid 4302)
+Compiled chosen-jquery.js  (143ms)  (pid 4302)
+Compiled application.js  (704ms)  (pid 4302)
+Compiled categories.js  (4ms)  (pid 4302)
+Compiled songs.js  (4ms)  (pid 4302)
+Compiled bootstrap_and_overrides.css  (974ms)  (pid 4302)
+Compiled jquery.rating.css  (11ms)  (pid 4302)
+Compiled jquery-star-rating.css  (17ms)  (pid 4302)
+Compiled chosen.css  (190ms)  (pid 4302)
+Compiled application.css  (1493ms)  (pid 4302)
+Compiled welcome.css  (12365ms)  (pid 4302)
+Compiled welcome.js  (7ms)  (pid 4302)
+Compiled mspeakker.css  (0ms)  (pid 4302)
+Compiled speakker.css  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/jquery.min.js  (2ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/jquery.tmpl.min.js  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/fileuploader.js  (2ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/rails.js  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/application.js  (0ms)  (pid 4302)
+Compiled ckeditor/application.js  (195ms)  (pid 4302)
+Compiled ckeditor/filebrowser/stylesheets/uploader.css  (0ms)  (pid 4302)
+Compiled ckeditor/application.css  (6ms)  (pid 4302)
+Connecting to database specified by database.yml
+Compiled jquery.js  (6ms)  (pid 4302)
+Compiled jquery_ujs.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-transition.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-alert.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-modal.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-dropdown.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-scrollspy.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-tab.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-tooltip.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-popover.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-button.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-collapse.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-carousel.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-typeahead.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/bootstrap-affix.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap.js  (154ms)  (pid 4302)
+Compiled bootstrap.js  (87ms)  (pid 4302)
+Compiled jquery.pjax.js  (0ms)  (pid 4302)
+Compiled best_in_place.js  (0ms)  (pid 4302)
+Compiled twitter/bootstrap/rails/confirm.js  (11ms)  (pid 4302)
+Compiled speakker-big.js  (7ms)  (pid 4302)
+Compiled raphael.js  (7ms)  (pid 4302)
+Compiled morris.js  (0ms)  (pid 4302)
+Compiled jquery.rating.js  (0ms)  (pid 4302)
+Compiled jquery-star-rating.js  (6ms)  (pid 4302)
+Compiled lib/abstract-chosen.js  (20ms)  (pid 4302)
+Compiled lib/select-parser.js  (9ms)  (pid 4302)
+Compiled chosen.jquery.js  (98ms)  (pid 4302)
+Compiled chosen-jquery.js  (147ms)  (pid 4302)
+Compiled application.js  (646ms)  (pid 4302)
+Compiled categories.js  (4ms)  (pid 4302)
+Compiled songs.js  (14ms)  (pid 4302)
+Compiled bootstrap_and_overrides.css  (865ms)  (pid 4302)
+Compiled jquery.rating.css  (1ms)  (pid 4302)
+Compiled jquery-star-rating.css  (83ms)  (pid 4302)
+Compiled chosen.css  (186ms)  (pid 4302)
+Compiled application.css  (1434ms)  (pid 4302)
+Compiled welcome.css  (12635ms)  (pid 4302)
+Compiled welcome.js  (8ms)  (pid 4302)
+Compiled mspeakker.css  (0ms)  (pid 4302)
+Compiled speakker.css  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/jquery.min.js  (2ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/jquery.tmpl.min.js  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/fileuploader.js  (5ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/rails.js  (0ms)  (pid 4302)
+Compiled ckeditor/filebrowser/javascripts/application.js  (0ms)  (pid 4302)
+Compiled ckeditor/application.js  (36ms)  (pid 4302)
+Compiled ckeditor/filebrowser/stylesheets/uploader.css  (0ms)  (pid 4302)
+Compiled ckeditor/application.css  (7ms)  (pid 4302)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 16:15:54 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (86.2ms)
+Read fragment views/recent_users_welcome (0.2ms)
+Write fragment views/recent_users_welcome (2.6ms)
+  Rendered welcome/index.html.erb within layouts/welcome (242.7ms)
+Read fragment views/genre (0.1ms)
+Write fragment views/genre (3.0ms)
+  Rendered application/_header.erb (4.9ms)
+  Rendered application/_header_nav.erb (30.2ms)
+  Rendered application/_account_form.html.erb (0.7ms)
+  Rendered application/_footer.html.erb (1.9ms)
+Completed 200 OK in 412ms (Views: 273.0ms | ActiveRecord: 107.1ms)
+
+
+Started GET "/uhbhkj" for 127.0.0.1 at 2012-11-04 16:17:36 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"uhbhkj"}
+Completed 500 Internal Server Error in 4ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with permalink = uhbhkj):
+  app/models/user.rb:206:in `find_by_id_or_name'
+  app/controllers/users_controller.rb:19:in `show'
+
+
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-11-04 16:17:37 +0100
+Processing by UsersController#show as 
+  Parameters: {"id"=>"favicon"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with permalink = favicon):
+  app/models/user.rb:206:in `find_by_id_or_name'
+  app/controllers/users_controller.rb:19:in `show'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 16:23:56 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (1.4ms)
+Read fragment views/recent_users_welcome (0.2ms)
+  Rendered welcome/index.html.erb within layouts/welcome (2.5ms)
+Read fragment views/genre (0.1ms)
+  Rendered application/_header.erb (1.4ms)
+  Rendered application/_header_nav.erb (4.8ms)
+  Rendered application/_account_form.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (1.2ms)
+Completed 200 OK in 15ms (Views: 10.6ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-04 16:42:39 +0100
+Processing by UsersController#index as HTML
+  Rendered application/_not_member.html.erb (1.5ms)
+  Rendered application/_right_nav.html.erb (4.8ms)
+  Rendered users/_user.html.erb (8.1ms)
+  Rendered users/index.html.erb within layouts/application (39.4ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.3ms)
+  Rendered application/_header_nav.erb (5.9ms)
+  Rendered application/_side_videos.erb (30.6ms)
+  Rendered application/_right_bar.html.erb (34.4ms)
+  Rendered application/_footer.html.erb (2.0ms)
+  Rendered application/_playlist.html.erb (1.2ms)
+Completed 200 OK in 97ms (Views: 69.1ms | ActiveRecord: 26.4ms)
+
+
+Started GET "/trending_songs" for 127.0.0.1 at 2012-11-04 16:42:41 +0100
+Processing by SongsController#trending as HTML
+  Rendered application/_not_member.html.erb (0.9ms)
+  Rendered application/_right_nav.html.erb (2.9ms)
+  Rendered songs/trending.html.erb within layouts/application (9.1ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.3ms)
+  Rendered application/_header_nav.erb (5.7ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (3.3ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (0.2ms)
+Completed 200 OK in 30ms (Views: 27.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 16:50:23 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_not_member.html.erb (0.9ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered songs/_pages_nav.erb (8.1ms)
+  Rendered songs/index.html.erb within layouts/application (16.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.2ms)
+  Rendered application/_header_nav.erb (4.8ms)
+  Rendered application/_side_videos.erb (1.5ms)
+  Rendered application/_right_bar.html.erb (2.7ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (0.2ms)
+Completed 200 OK in 48ms (Views: 29.9ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 16:50:31 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_not_member.html.erb (0.9ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered songs/_pages_nav.erb (1.8ms)
+  Rendered songs/index.html.erb within layouts/application (8.5ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.2ms)
+  Rendered application/_header_nav.erb (5.0ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (2.8ms)
+  Rendered application/_footer.html.erb (2.4ms)
+  Rendered application/_playlist.html.erb (0.3ms)
+Completed 200 OK in 42ms (Views: 24.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/videos" for 127.0.0.1 at 2012-11-04 16:50:34 +0100
+Processing by VideosController#index as HTML
+  Rendered application/_not_member.html.erb (1.1ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered videos/index.html.erb within layouts/application (9.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.2ms)
+  Rendered application/_header_nav.erb (5.1ms)
+  Rendered application/_side_videos.erb (1.5ms)
+  Rendered application/_right_bar.html.erb (3.3ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (0.2ms)
+Completed 200 OK in 49ms (Views: 29.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/trending_songs" for 127.0.0.1 at 2012-11-04 16:50:35 +0100
+Processing by SongsController#trending as HTML
+  Rendered application/_not_member.html.erb (1.5ms)
+  Rendered application/_right_nav.html.erb (3.3ms)
+  Rendered songs/trending.html.erb within layouts/application (8.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.1ms)
+  Rendered application/_header_nav.erb (4.5ms)
+  Rendered application/_side_videos.erb (1.2ms)
+  Rendered application/_right_bar.html.erb (2.4ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (0.2ms)
+Completed 200 OK in 22ms (Views: 20.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/account/users/login" for 127.0.0.1 at 2012-11-04 16:50:39 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (4.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (12.5ms)
+Read fragment views/genre (0.3ms)
+  Rendered application/_header.erb (1.2ms)
+  Rendered application/_header_nav.erb (6.6ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/_playlist.html.erb (0.1ms)
+Completed 200 OK in 35ms (Views: 32.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/account/users/sign_up" for 127.0.0.1 at 2012-11-04 16:51:02 +0100
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.erb (1.9ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (7.6ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.3ms)
+  Rendered application/_header_nav.erb (5.3ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (0.1ms)
+Completed 200 OK in 24ms (Views: 22.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/account/users" for 127.0.0.1 at 2012-11-04 16:51:31 +0100
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZRxRjhqlPwILHJ38s7AhjPhrlN47qRthuNDzNR+/k8=", "user"=>{"name"=>"mikkf", "real_name"=>"oksd", "email"=>"a@y.com", "password"=>"[FILTERED]"}, "commit"=>"Sign up"}
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/mikkf
+Completed 302 Found in 748ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/mikkf" for 127.0.0.1 at 2012-11-04 16:51:32 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (9.7ms)
+  Rendered application/_thumbnail_medium.html.erb (112.0ms)
+  Rendered application/_right_nav.html.erb (3.0ms)
+  Rendered application/_send_message_link.html.erb (1.2ms)
+  Rendered application/_comment_form.html.erb (24.3ms)
+  Rendered users/show.html.erb within layouts/application (177.5ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.7ms)
+  Rendered application/_header.erb (7.4ms)
+  Rendered application/_header_nav.erb (10.8ms)
+  Rendered application/_side_videos.erb (1.5ms)
+  Rendered application/_right_bar.html.erb (2.7ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (104.3ms)
+Completed 200 OK in 499ms (Views: 255.1ms | ActiveRecord: 68.6ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2012-11-04 16:51:40 +0100
+Processing by SongsController#new as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (10.7ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered application/_upgrade_info.erb (265.7ms)
+  Rendered songs/new.html.erb within layouts/application (283.9ms)
+Completed 500 Internal Server Error in 338ms
+
+ActionView::Template::Error (undefined local variable or method `learn_more_path' for #<#<Class:0xba30a88>:0xb923578>):
+    4: <p>
+    5: 
+    6: <p>
+    7:   To upload your songs on hypejamz you can buy hypejamz credit via <b>MTN credit</b> by simply sending an sms to ...... with hypejamz your username and the amount you want and your account will be credited within 5min or buy hypejamz credit with your credit card. <%= link_to "learn more about how to get hypejamz credit", learn_more_path %>
+    8: </p>
+    9: <p>
+    10:   With the new and improved hypejamz gold and premium account, you can now Sell your songs on hypejamz and withdraw your money any time.
+  app/views/application/_upgrade_info.erb:7:in `_app_views_application__upgrade_info_erb___344342679_99428640'
+  app/views/songs/new.html.erb:19:in `_app_views_songs_new_html_erb__672158435_98361830'
+
+
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-11-04 16:51:41 +0100
+Processing by UsersController#show as 
+  Parameters: {"id"=>"favicon"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with permalink = favicon):
+  app/models/user.rb:206:in `find_by_id_or_name'
+  app/controllers/users_controller.rb:19:in `show'
+
+
+
+
+Started GET "/trending_songs" for 127.0.0.1 at 2012-11-04 17:00:41 +0100
+Processing by SongsController#trending as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (9.7ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered songs/trending.html.erb within layouts/application (15.8ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.7ms)
+  Rendered application/_header.erb (5.4ms)
+  Rendered application/_header_nav.erb (8.9ms)
+  Rendered application/_side_videos.erb (1.3ms)
+  Rendered application/_right_bar.html.erb (2.4ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (1.8ms)
+Completed 200 OK in 36ms (Views: 33.3ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/videos" for 127.0.0.1 at 2012-11-04 17:00:43 +0100
+Processing by VideosController#index as HTML
+  Rendered application/_public_links.html.erb (2.8ms)
+  Rendered application/_thumbnail_medium.html.erb (10.8ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered videos/index.html.erb within layouts/application (15.6ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.3ms)
+  Rendered application/_header.erb (4.9ms)
+  Rendered application/_header_nav.erb (8.1ms)
+  Rendered application/_side_videos.erb (1.3ms)
+  Rendered application/_right_bar.html.erb (2.4ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/_playlist.html.erb (1.7ms)
+Completed 200 OK in 51ms (Views: 32.2ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 17:00:45 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_public_links.html.erb (3.1ms)
+  Rendered application/_thumbnail_medium.html.erb (10.6ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered songs/_pages_nav.erb (1.6ms)
+  Rendered songs/index.html.erb within layouts/application (17.4ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.4ms)
+  Rendered application/_header.erb (4.4ms)
+  Rendered application/_header_nav.erb (7.8ms)
+  Rendered application/_side_videos.erb (1.4ms)
+  Rendered application/_right_bar.html.erb (2.5ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/_playlist.html.erb (1.6ms)
+Completed 200 OK in 53ms (Views: 33.8ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2012-11-04 17:00:52 +0100
+Processing by UsersController#index as HTML
+  Rendered application/_public_links.html.erb (2.8ms)
+  Rendered application/_thumbnail_medium.html.erb (9.8ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered users/_user.html.erb (18.7ms)
+  Rendered users/index.html.erb within layouts/application (37.9ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.7ms)
+  Rendered application/_header.erb (4.7ms)
+  Rendered application/_header_nav.erb (8.1ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (2.9ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (1.8ms)
+Completed 200 OK in 57ms (Views: 53.0ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/trending_songs" for 127.0.0.1 at 2012-11-04 17:01:01 +0100
+Processing by SongsController#trending as HTML
+  Rendered application/_public_links.html.erb (2.7ms)
+  Rendered application/_thumbnail_medium.html.erb (10.0ms)
+  Rendered application/_right_nav.html.erb (2.6ms)
+  Rendered songs/trending.html.erb within layouts/application (16.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.7ms)
+  Rendered application/_header.erb (4.7ms)
+  Rendered application/_header_nav.erb (8.9ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (2.9ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/_playlist.html.erb (1.6ms)
+Completed 200 OK in 35ms (Views: 33.0ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/videos" for 127.0.0.1 at 2012-11-04 17:01:04 +0100
+Processing by VideosController#index as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (9.9ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered videos/index.html.erb within layouts/application (14.1ms)
+Read fragment views/genre (0.3ms)
+  Rendered application/_profile_actions.erb (1.3ms)
+  Rendered application/_header.erb (4.5ms)
+  Rendered application/_header_nav.erb (9.1ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (2.8ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.7ms)
+Completed 200 OK in 137ms (Views: 117.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/trending_songs" for 127.0.0.1 at 2012-11-04 17:01:06 +0100
+Processing by SongsController#trending as HTML
+  Rendered application/_public_links.html.erb (3.0ms)
+  Rendered application/_thumbnail_medium.html.erb (10.6ms)
+  Rendered application/_right_nav.html.erb (2.9ms)
+  Rendered songs/trending.html.erb within layouts/application (17.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.0ms)
+  Rendered application/_header.erb (5.5ms)
+  Rendered application/_header_nav.erb (9.3ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (3.5ms)
+  Rendered application/_footer.html.erb (2.3ms)
+  Rendered application/_playlist.html.erb (2.8ms)
+Completed 200 OK in 42ms (Views: 39.2ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/mikkf" for 127.0.0.1 at 2012-11-04 17:03:43 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (5.3ms)
+  Rendered application/_thumbnail_medium.html.erb (14.7ms)
+  Rendered application/_right_nav.html.erb (5.5ms)
+  Rendered application/_send_message_link.html.erb (0.1ms)
+  Rendered application/_comment_form.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (33.1ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.6ms)
+  Rendered application/_header.erb (4.6ms)
+  Rendered application/_header_nav.erb (8.0ms)
+  Rendered application/_side_videos.erb (1.1ms)
+  Rendered application/_right_bar.html.erb (2.1ms)
+  Rendered application/_footer.html.erb (1.4ms)
+  Rendered application/_playlist.html.erb (1.7ms)
+Completed 200 OK in 55ms (Views: 48.8ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 17:17:00 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (1.3ms)
+Read fragment views/recent_users_welcome (0.1ms)
+Write fragment views/recent_users_welcome (1.3ms)
+  Rendered welcome/index.html.erb within layouts/welcome (9.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_header.erb (1.4ms)
+  Rendered application/_header_nav.erb (4.7ms)
+  Rendered application/_account_form.html.erb (0.1ms)
+  Rendered application/_footer.html.erb (1.1ms)
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 18:31:04 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (1.4ms)
+Read fragment views/recent_users_welcome (0.2ms)
+  Rendered welcome/index.html.erb within layouts/welcome (2.7ms)
+Read fragment views/genre (0.1ms)
+  Rendered application/_profile_actions.erb (1.7ms)
+  Rendered application/_header.erb (6.6ms)
+  Rendered application/_header_nav.erb (9.9ms)
+  Rendered application/_account_form.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (1.1ms)
+Completed 200 OK in 21ms (Views: 15.9ms | ActiveRecord: 1.1ms)
+Connecting to database specified by database.yml
+[paperclip] Saving attachments.
+
+
+Started GET "/users/mikkf" for 127.0.0.1 at 2012-11-04 18:35:24 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (3.0ms)
+  Rendered application/_thumbnail_medium.html.erb (13.9ms)
+  Rendered application/_right_nav.html.erb (2.9ms)
+  Rendered application/_send_message_link.html.erb (0.1ms)
+  Rendered application/_comment_form.html.erb (2.2ms)
+  Rendered users/show.html.erb within layouts/application (27.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (25.9ms)
+  Rendered application/_header.erb (28.9ms)
+  Rendered application/_header_nav.erb (32.4ms)
+  Rendered application/_side_videos.erb (1.4ms)
+  Rendered application/_right_bar.html.erb (2.5ms)
+  Rendered application/_footer.html.erb (1.2ms)
+  Rendered application/_playlist.html.erb (1.6ms)
+Completed 200 OK in 74ms (Views: 46.7ms | ActiveRecord: 23.4ms)
+
+
+Started GET "/users/mikkf" for 127.0.0.1 at 2012-11-04 18:36:09 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (2.8ms)
+  Rendered application/_thumbnail_medium.html.erb (14.7ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered application/_send_message_link.html.erb (0.0ms)
+  Rendered application/_comment_form.html.erb (1.9ms)
+  Rendered users/show.html.erb within layouts/application (27.4ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (3.4ms)
+  Rendered application/_header.erb (6.5ms)
+  Rendered application/_header_nav.erb (10.0ms)
+  Rendered application/_side_videos.erb (1.1ms)
+  Rendered application/_right_bar.html.erb (2.2ms)
+  Rendered application/_footer.html.erb (1.1ms)
+  Rendered application/_playlist.html.erb (1.6ms)
+Completed 200 OK in 53ms (Views: 44.9ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/mikkf" for 127.0.0.1 at 2012-11-04 18:36:25 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (2.8ms)
+  Rendered application/_thumbnail_medium.html.erb (11.1ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered application/_send_message_link.html.erb (0.0ms)
+  Rendered application/_comment_form.html.erb (2.0ms)
+  Rendered users/show.html.erb within layouts/application (24.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (3.0ms)
+  Rendered application/_header.erb (6.1ms)
+  Rendered application/_header_nav.erb (9.5ms)
+  Rendered application/_side_videos.erb (1.2ms)
+  Rendered application/_right_bar.html.erb (2.3ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.3ms)
+Completed 200 OK in 47ms (Views: 41.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 18:36:28 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (10.1ms)
+  Rendered application/_right_nav.html.erb (2.6ms)
+  Rendered songs/_pages_nav.erb (1.6ms)
+  Rendered songs/index.html.erb within layouts/application (16.7ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (3.4ms)
+  Rendered application/_header.erb (6.0ms)
+  Rendered application/_header_nav.erb (9.3ms)
+Completed 500 Internal Server Error in 47ms
+
+ActionController::RoutingError (No route matches {:action=>"withdraw", :controller=>"withdrawal_requests"}):
+  app/views/application/_profile_actions.erb:18:in `_app_views_application__profile_actions_erb__640351727_99767130'
+  app/views/application/_header.erb:38:in `_app_views_application__header_erb___2956503_97445710'
+  app/views/application/_header_nav.erb:60:in `_app_views_application__header_nav_erb___548461529_97213270'
+  app/views/layouts/application.html.erb:37:in `_app_views_layouts_application_html_erb___327496535_96632220'
+  app/controllers/songs_controller.rb:12:in `index'
+
+
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-11-04 18:36:28 +0100
+Processing by UsersController#show as 
+  Parameters: {"id"=>"favicon"}
+Completed 500 Internal Server Error in 3ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with permalink = favicon):
+  app/models/user.rb:206:in `find_by_id_or_name'
+  app/controllers/users_controller.rb:19:in `show'
+
+
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 18:38:52 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (1.8ms)
+Read fragment views/recent_users_welcome (0.1ms)
+Write fragment views/recent_users_welcome (1.5ms)
+  Rendered welcome/index.html.erb within layouts/welcome (11.8ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (7.3ms)
+  Rendered application/_header.erb (14.7ms)
+  Rendered application/_header_nav.erb (19.3ms)
+Completed 500 Internal Server Error in 38ms
+
+ActionController::RoutingError (No route matches {:action=>"withdraw", :controller=>"withdrawal_requests"}):
+  app/views/application/_profile_actions.erb:18:in `_app_views_application__profile_actions_erb__640351727_99767130'
+  app/views/application/_header.erb:38:in `_app_views_application__header_erb___2956503_97445710'
+  app/views/application/_header_nav.erb:60:in `_app_views_application__header_nav_erb___548461529_97213270'
+  app/views/layouts/welcome.html.erb:29:in `_app_views_layouts_welcome_html_erb___605536553_89102460'
+  app/controllers/welcome_controller.rb:12:in `index'
+
+
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2012-11-04 18:52:52 +0100
+Processing by SongsController#new as HTML
+  Rendered application/_public_links.html.erb (3.0ms)
+  Rendered application/_thumbnail_medium.html.erb (10.5ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered songs/_form.erb (149.3ms)
+  Rendered songs/new.html.erb within layouts/application (165.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (3.7ms)
+  Rendered application/_header.erb (6.6ms)
+  Rendered application/_header_nav.erb (10.2ms)
+Completed 500 Internal Server Error in 184ms
+
+ActionController::RoutingError (No route matches {:action=>"withdraw", :controller=>"withdrawal_requests"}):
+  app/views/application/_profile_actions.erb:18:in `_app_views_application__profile_actions_erb__640351727_99767130'
+  app/views/application/_header.erb:38:in `_app_views_application__header_erb___2956503_97445710'
+  app/views/application/_header_nav.erb:60:in `_app_views_application__header_nav_erb___548461529_97213270'
+  app/views/layouts/application.html.erb:37:in `_app_views_layouts_application_html_erb___327496535_96632220'
+
+
+
+
+Started GET "/favicon.ico" for 127.0.0.1 at 2012-11-04 18:52:53 +0100
+Processing by UsersController#show as 
+  Parameters: {"id"=>"favicon"}
+Completed 500 Internal Server Error in 2ms
+
+ActiveRecord::RecordNotFound (Couldn't find User with permalink = favicon):
+  app/models/user.rb:206:in `find_by_id_or_name'
+  app/controllers/users_controller.rb:19:in `show'
+
+
+Connecting to database specified by database.yml
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2012-11-04 18:54:19 +0100
+Processing by SongsController#new as HTML
+  Rendered application/_public_links.html.erb (86.4ms)
+  Rendered application/_thumbnail_medium.html.erb (265.8ms)
+  Rendered application/_right_nav.html.erb (5.0ms)
+  Rendered songs/_form.erb (189.4ms)
+  Rendered songs/new.html.erb within layouts/application (560.7ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (6.5ms)
+  Rendered application/_header.erb (12.7ms)
+  Rendered application/_header_nav.erb (19.1ms)
+  Rendered application/_side_videos.erb (7.5ms)
+  Rendered application/_right_bar.html.erb (11.0ms)
+  Rendered application/_footer.html.erb (4.1ms)
+Completed 200 OK in 832ms (Views: 673.9ms | ActiveRecord: 20.3ms)
+
+
+Started POST "/songs" for 127.0.0.1 at 2012-11-04 18:55:12 +0100
+Processing by SongsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CZRxRjhqlPwILHJ38s7AhjPhrlN47qRthuNDzNR+/k8=", "song"=>{"title"=>"lbjl;kj;k", "album"=>"kjlk", "description"=>"klm;ol", "genre_ids"=>["", "1"], "art"=>#<ActionDispatch::Http::UploadedFile:0xad28f84 @original_filename="strava.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"song[art]\"; filename=\"strava.jpg\"\r\nContent-Type: image/jpeg\r\n", @tempfile=#<File:/tmp/RackMultipart20121104-7729-w4wm82>>, "mp3"=>#<ActionDispatch::Http::UploadedFile:0xad28d18 @original_filename="01_SHAKE_AM.mp3", @content_type="audio/mp3", @headers="Content-Disposition: form-data; name=\"song[mp3]\"; filename=\"01_SHAKE_AM.mp3\"\r\nContent-Type: audio/mp3\r\n", @tempfile=#<File:/tmp/RackMultipart20121104-7729-1mcuuwl>>}, "commit"=>"Upload Song"}
+[32mCommand[0m :: identify -format %wx%h '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: convert '/tmp/strava20121104-7729-urif0.jpg[0]' -resize "x100" -crop "100x100+31+0" +repage '/tmp/strava20121104-7729-urif020121104-7729-1bfad2s'
+[32mCommand[0m :: file -b --mime '/tmp/strava20121104-7729-urif020121104-7729-1bfad2s'
+[32mCommand[0m :: identify -format %wx%h '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-urif0.jpg[0]'
+[32mCommand[0m :: convert '/tmp/strava20121104-7729-urif0.jpg[0]' -resize "x60" -crop "60x60+19+0" +repage '/tmp/strava20121104-7729-urif020121104-7729-148p8my'
+[32mCommand[0m :: file -b --mime '/tmp/strava20121104-7729-urif020121104-7729-148p8my'
+[32mCommand[0m :: identify -format %wx%h '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: convert '/tmp/strava20121104-7729-1vgb1ff.jpg[0]' -resize "x100" -crop "100x100+31+0" +repage '/tmp/strava20121104-7729-1vgb1ff20121104-7729-1ylwawj'
+[32mCommand[0m :: file -b --mime '/tmp/strava20121104-7729-1vgb1ff20121104-7729-1ylwawj'
+[32mCommand[0m :: identify -format %wx%h '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: identify -format %m '/tmp/strava20121104-7729-1vgb1ff.jpg[0]'
+[32mCommand[0m :: convert '/tmp/strava20121104-7729-1vgb1ff.jpg[0]' -resize "x60" -crop "60x60+19+0" +repage '/tmp/strava20121104-7729-1vgb1ff20121104-7729-qpn1td'
+[32mCommand[0m :: file -b --mime '/tmp/strava20121104-7729-1vgb1ff20121104-7729-qpn1td'
+[paperclip] Saving attachments.
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/users/mikkf/songs/1-lbjl-kj-k
+Completed 302 Found in 1813ms (ActiveRecord: 303.5ms)
+
+
+Started GET "/users/mikkf/songs/1-lbjl-kj-k" for 127.0.0.1 at 2012-11-04 18:55:14 +0100
+Processing by SongsController#show as HTML
+  Parameters: {"user_id"=>"mikkf", "id"=>"1-lbjl-kj-k"}
+[paperclip] Saving attachments.
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (11.2ms)
+  Rendered application/_right_nav.html.erb (2.6ms)
+  Rendered genres/_genre.html.erb (1.2ms)
+  Rendered songs/_song.erb (151.2ms)
+  Rendered songs/_song_graph.html.erb (84.8ms)
+  Rendered application/_comment_form.html.erb (21.4ms)
+  Rendered songs/show.html.erb within layouts/application (287.8ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.3ms)
+  Rendered application/_header.erb (5.5ms)
+  Rendered application/_header_nav.erb (9.1ms)
+  Rendered application/_side_videos.erb (1.2ms)
+  Rendered application/_right_bar.html.erb (7.1ms)
+  Rendered application/_footer.html.erb (1.3ms)
+Completed 200 OK in 787ms (Views: 250.8ms | ActiveRecord: 432.6ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 18:55:36 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (10.2ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered genres/_genre.html.erb (0.5ms)
+  Rendered songs/_song.erb (26.5ms)
+  Rendered songs/_pages_nav.erb (7.3ms)
+  Rendered songs/index.html.erb within layouts/application (182.5ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.4ms)
+  Rendered application/_header.erb (5.4ms)
+  Rendered application/_header_nav.erb (8.9ms)
+  Rendered application/_side_videos.erb (1.2ms)
+  Rendered application/_right_bar.html.erb (6.1ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (2.4ms)
+Completed 200 OK in 227ms (Views: 203.6ms | ActiveRecord: 4.2ms)
+
+
+Started POST "/songs/1/rate?dimension=&show_user_rating=false&small=false&stars=2" for 127.0.0.1 at 2012-11-04 18:55:53 +0100
+Processing by SongsController#rate as */*
+  Parameters: {"dimension"=>"", "show_user_rating"=>"false", "small"=>"false", "stars"=>"2", "id"=>"1"}
+[paperclip] Saving attachments.
+Completed 200 OK in 191ms (Views: 0.3ms | ActiveRecord: 154.2ms)
+
+
+Started POST "/songs/1/rate?dimension=&show_user_rating=false&small=false&stars=2" for 127.0.0.1 at 2012-11-04 18:55:54 +0100
+Processing by SongsController#rate as JS
+  Parameters: {"dimension"=>"", "show_user_rating"=>"false", "small"=>"false", "stars"=>"2", "id"=>"1"}
+[paperclip] Saving attachments.
+Completed 200 OK in 13ms (Views: 0.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 19:02:15 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (20.8ms)
+Read fragment views/recent_users_welcome (0.1ms)
+Write fragment views/recent_users_welcome (1.1ms)
+  Rendered welcome/index.html.erb within layouts/welcome (30.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.8ms)
+  Rendered application/_header.erb (7.6ms)
+  Rendered application/_header_nav.erb (11.6ms)
+  Rendered application/_account_form.html.erb (0.7ms)
+  Rendered application/_footer.html.erb (1.6ms)
+Completed 200 OK in 74ms (Views: 49.2ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/songs/1" for 127.0.0.1 at 2012-11-04 19:02:31 +0100
+Processing by SongsController#show as HTML
+  Parameters: {"id"=>"1"}
+[paperclip] Saving attachments.
+  Rendered application/_public_links.html.erb (3.2ms)
+  Rendered application/_thumbnail_medium.html.erb (11.6ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered genres/_genre.html.erb (0.5ms)
+  Rendered songs/_song.erb (105.7ms)
+  Rendered songs/_song_graph.html.erb (26.6ms)
+  Rendered application/_comment_form.html.erb (1.9ms)
+  Rendered songs/show.html.erb within layouts/application (158.8ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.2ms)
+  Rendered application/_header.erb (5.4ms)
+  Rendered application/_header_nav.erb (8.9ms)
+  Rendered application/_side_videos.erb (1.1ms)
+  Rendered application/_right_bar.html.erb (7.0ms)
+  Rendered application/_footer.html.erb (1.4ms)
+Completed 200 OK in 590ms (Views: 174.1ms | ActiveRecord: 378.7ms)
+
+
+Started GET "/songs" for 127.0.0.1 at 2012-11-04 19:03:14 +0100
+Processing by SongsController#index as HTML
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (10.3ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered genres/_genre.html.erb (0.4ms)
+  Rendered songs/_song.erb (24.0ms)
+  Rendered songs/_pages_nav.erb (0.8ms)
+  Rendered songs/index.html.erb within layouts/application (44.1ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.4ms)
+  Rendered application/_header.erb (5.4ms)
+  Rendered application/_header_nav.erb (8.8ms)
+  Rendered application/_side_videos.erb (1.3ms)
+  Rendered application/_right_bar.html.erb (6.2ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.7ms)
+Completed 200 OK in 84ms (Views: 63.3ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/downloads" for 127.0.0.1 at 2012-11-04 19:03:18 +0100
+Processing by SongsController#downloads as HTML
+  Rendered application/_public_links.html.erb (3.0ms)
+  Rendered application/_thumbnail_medium.html.erb (10.3ms)
+  Rendered application/_right_nav.html.erb (2.7ms)
+  Rendered genres/_genre.html.erb (0.4ms)
+  Rendered songs/_song.erb (24.3ms)
+  Rendered songs/downloads.html.erb within layouts/application (43.7ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.2ms)
+  Rendered application/_header.erb (5.2ms)
+  Rendered application/_header_nav.erb (8.6ms)
+  Rendered application/_side_videos.erb (1.3ms)
+  Rendered application/_right_bar.html.erb (6.3ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.6ms)
+Completed 200 OK in 68ms (Views: 63.1ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/users/mikkf" for 127.0.0.1 at 2012-11-04 19:03:31 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (2.9ms)
+  Rendered application/_thumbnail_medium.html.erb (11.6ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered application/_send_message_link.html.erb (1.1ms)
+  Rendered genres/_genre.html.erb (0.4ms)
+  Rendered songs/_song.erb (27.0ms)
+  Rendered application/_comment_form.html.erb (2.1ms)
+  Rendered users/show.html.erb within layouts/application (68.7ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (2.4ms)
+  Rendered application/_header.erb (5.9ms)
+  Rendered application/_header_nav.erb (10.0ms)
+  Rendered application/_side_videos.erb (1.3ms)
+  Rendered application/_right_bar.html.erb (7.2ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.4ms)
+Completed 200 OK in 113ms (Views: 93.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-04 19:27:31 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (16.5ms)
+Read fragment views/recent_users_welcome (0.4ms)
+  Rendered welcome/index.html.erb within layouts/welcome (18.0ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (3.1ms)
+  Rendered application/_header.erb (6.9ms)
+  Rendered application/_header_nav.erb (11.3ms)
+  Rendered application/_account_form.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (1.1ms)
+Completed 200 OK in 38ms (Views: 33.0ms | ActiveRecord: 2.1ms)
+Connecting to database specified by database.yml
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-05 13:04:24 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (713.5ms)
+Read fragment views/recent_users_welcome (188.7ms)
+  Rendered welcome/index.html.erb within layouts/welcome (1004.0ms)
+Read fragment views/genre (41.8ms)
+  Rendered application/_header.erb (4.4ms)
+  Rendered application/_header_nav.erb (201.8ms)
+  Rendered application/_account_form.html.erb (0.9ms)
+  Rendered application/_footer.html.erb (3.4ms)
+Completed 200 OK in 1673ms (Views: 1535.1ms | ActiveRecord: 50.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2012-11-05 13:04:26 +0100
+Processing by WelcomeController#index as HTML
+  Rendered application/_bottom_info.html.erb (13.6ms)
+Read fragment views/recent_users_welcome (0.2ms)
+  Rendered welcome/index.html.erb within layouts/welcome (15.0ms)
+Read fragment views/genre (0.1ms)
+  Rendered application/_header.erb (1.5ms)
+  Rendered application/_header_nav.erb (4.9ms)
+  Rendered application/_account_form.html.erb (0.2ms)
+  Rendered application/_footer.html.erb (1.2ms)
+Completed 200 OK in 29ms (Views: 23.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/account/users/login" for 127.0.0.1 at 2012-11-05 13:04:30 +0100
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.erb (3.3ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (9.6ms)
+Read fragment views/genre (0.3ms)
+  Rendered application/_header.erb (1.3ms)
+  Rendered application/_header_nav.erb (6.8ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.1ms)
+Completed 200 OK in 56ms (Views: 54.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/account/users/login" for 127.0.0.1 at 2012-11-05 13:04:37 +0100
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"3V7S84yOHpiOb7kclZZeCc9UKO+qmyxknh957Wxz0AU=", "user"=>{"email"=>"a@y.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Sign in"}
+[paperclip] Saving attachments.
+Redirected to http://localhost:3000/mikkf
+Completed 302 Found in 516ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/mikkf" for 127.0.0.1 at 2012-11-05 13:04:38 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (10.9ms)
+  Rendered application/_thumbnail_medium.html.erb (61.7ms)
+  Rendered application/_right_nav.html.erb (5.0ms)
+  Rendered application/_send_message_link.html.erb (1.1ms)
+  Rendered genres/_genre.html.erb (1.3ms)
+  Rendered songs/_song.erb (432.7ms)
+  Rendered application/_comment_form.html.erb (29.4ms)
+  Rendered users/show.html.erb within layouts/application (700.5ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (6.7ms)
+  Rendered application/_header.erb (11.7ms)
+  Rendered application/_header_nav.erb (16.0ms)
+  Rendered application/_side_videos.erb (2.9ms)
+  Rendered application/_right_bar.html.erb (21.4ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (2.0ms)
+Completed 200 OK in 806ms (Views: 646.7ms | ActiveRecord: 124.2ms)
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2012-11-05 13:04:48 +0100
+Processing by SongsController#new as HTML
+  Rendered application/_public_links.html.erb (3.1ms)
+  Rendered application/_thumbnail_medium.html.erb (12.4ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered songs/_form.erb (13.5ms)
+  Rendered songs/new.html.erb within layouts/application (41.0ms)
+Read fragment views/genre (0.3ms)
+  Rendered application/_profile_actions.erb (2.5ms)
+  Rendered application/_header.erb (6.7ms)
+  Rendered application/_header_nav.erb (11.9ms)
+  Rendered application/_side_videos.erb (1.4ms)
+  Rendered application/_right_bar.html.erb (7.2ms)
+  Rendered application/_footer.html.erb (1.3ms)
+Completed 200 OK in 95ms (Views: 89.3ms | ActiveRecord: 3.0ms)
+Connecting to database specified by database.yml
+[paperclip] Saving attachments.
+
+
+Started GET "/songs/new" for 127.0.0.1 at 2012-11-05 13:07:17 +0100
+Processing by SongsController#new as HTML
+  Rendered application/_public_links.html.erb (3.1ms)
+  Rendered application/_thumbnail_medium.html.erb (89.6ms)
+  Rendered application/_right_nav.html.erb (2.8ms)
+  Rendered application/_upgrade_info.erb (1.4ms)
+  Rendered songs/new.html.erb within layouts/application (97.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.3ms)
+  Rendered application/_header.erb (4.7ms)
+  Rendered application/_header_nav.erb (8.4ms)
+  Rendered application/_side_videos.erb (1.6ms)
+  Rendered application/_right_bar.html.erb (7.4ms)
+  Rendered application/_footer.html.erb (1.3ms)
+  Rendered application/_playlist.html.erb (1.9ms)
+Completed 200 OK in 124ms (Views: 120.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mikkf?_pjax=%5Bdata-pjax-container%5D" for 127.0.0.1 at 2012-11-05 13:09:06 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"_pjax"=>"[data-pjax-container]", "id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (3.0ms)
+  Rendered application/_thumbnail_medium.html.erb (11.7ms)
+  Rendered application/_right_nav.html.erb (3.0ms)
+  Rendered application/_send_message_link.html.erb (0.1ms)
+  Rendered genres/_genre.html.erb (0.5ms)
+  Rendered songs/_song.erb (25.2ms)
+  Rendered application/_comment_form.html.erb (2.2ms)
+  Rendered users/show.html.erb (55.8ms)
+Completed 200 OK in 81ms (Views: 68.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/mikkf" for 127.0.0.1 at 2012-11-05 13:09:10 +0100
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"mikkf"}
+  Rendered application/_public_links.html.erb (3.1ms)
+  Rendered application/_thumbnail_medium.html.erb (14.1ms)
+  Rendered application/_right_nav.html.erb (2.9ms)
+  Rendered application/_send_message_link.html.erb (0.0ms)
+  Rendered genres/_genre.html.erb (0.4ms)
+  Rendered songs/_song.erb (25.0ms)
+  Rendered application/_comment_form.html.erb (2.1ms)
+  Rendered users/show.html.erb within layouts/application (55.3ms)
+Read fragment views/genre (0.2ms)
+  Rendered application/_profile_actions.erb (1.3ms)
+  Rendered application/_header.erb (4.5ms)
+  Rendered application/_header_nav.erb (8.2ms)
+  Rendered application/_side_videos.erb (1.4ms)
+  Rendered application/_right_bar.html.erb (6.7ms)
+  Rendered application/_footer.html.erb (1.4ms)
+  Rendered application/_playlist.html.erb (1.5ms)
+Completed 200 OK in 83ms (Views: 74.8ms | ActiveRecord: 4.8ms)

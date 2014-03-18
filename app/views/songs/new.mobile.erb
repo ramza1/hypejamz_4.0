@@ -1,0 +1,18 @@
+<% if can? :create, Song %>
+    <div id="content_wrapper">
+      <div id="active_admin_content">
+        <div id="form-box">
+          <h5 class="page-title">
+            Upload a new song
+          </h5>
+          <div class="form-box">
+            <%= render 'form' %>
+          </div>
+
+          <%= link_to 'Back to Profile', user_path(current_user)  %>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <%= render "upgrade_info" %>
+<% end %>

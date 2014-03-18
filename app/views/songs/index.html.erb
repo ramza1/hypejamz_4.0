@@ -1,0 +1,43 @@
+<%= provide :title, "African Songs"%>
+<%= provide(:right_nav) do %>
+    <% if @user %>
+        <%= render "thumbnail_medium", :user => @user %>
+    <% else %>
+        <% if current_user %>
+         <%= render "thumbnail_medium", :user => current_user %>
+        <% else %>
+            <%= render "not_member" %>
+        <% end %>
+    <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <% if @user %>
+        <i class="icon-music"></i> <%= t("user.user_songs", :name => h_what(@user.name)) %>
+        <%= render "send_message_link", :user => @user %>
+    </span>
+    <% else %>
+        <i class="icon-music icon-box"></i> <%= t("songs_from_hypejamz") %>
+    <% end %>
+  </h4>
+</div>
+<% if @user %>
+   <%= render "profile_links", :user => @user %>
+<% end %>
+<div id="songs">
+  <% if @songs.empty? %>
+     <p class="alert alert-warning"><%= t("song.no_songs_uploaded_yet") %></p>
+  <% else %>
+  <%= render @songs %>
+  <% end %>
+</div>
+<ul class="pager">
+  <%= render "pages_nav" %>
+</ul>
+
+
+
+
+

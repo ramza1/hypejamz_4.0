@@ -1,0 +1,30 @@
+
+  <%= render "song_owner", :user => @user %>
+  <h5 class="centered-text"><%= link_to "#{@user.name.humanize}'s", @user %> Photos</h5>
+
+
+<% if @pictures.empty? %>
+    <div class="padded">
+             <p class="alert alert-info"> <%= @user.name.humanize %> has no photos at the moment. If you dont like uploading photos, you can add people to your fans list by becoming their fan and your photo gallery will be populated with their photos.
+
+               <%= link_to "add a photo", new_picture_path, :class => "btn btn-primary" %> </p>
+    </div>
+   <% else %>
+         <ul id="Gallery" class="gallery">
+            <% for photo in @pictures %>
+                <li>
+                  <a href="<%= image_path(photo.photo(:big))%>" rel="external">
+                       <%= image_tag(photo.photo(:small), :alt => photo.caption) %>
+                  </a>
+                </li>
+            <% end %>
+         </ul>
+<script type="text/javascript">
+
+$(document).ready(function(){
+
+	var myPhotoSwipe = $("#Gallery a").photoSwipe({ enableMouseWheel: true , enableKeyboard: true });
+
+});
+</script>
+<% end %>

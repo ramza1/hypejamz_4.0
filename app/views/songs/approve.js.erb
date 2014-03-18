@@ -1,0 +1,7 @@
+<% if @song.approved? %>
+$('#approve .button').text("unapprove");
+<% else %>
+$('#approve .button').text("approve");
+
+
+<% end %>

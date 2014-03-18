@@ -1,0 +1,33 @@
+<%= form_for(@plan) do |f| %>
+  <% if @plan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@plan.errors.count, "error") %> prohibited this plan from being saved:</h2>
+
+      <ul>
+      <% @plan.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :dollar_price %><br />
+    <%= f.text_field :dollar_price %>
+  </div>
+  <div class="field">
+    <%= f.label :naira_price %><br />
+    <%= f.text_field :naira_price %>
+  </div>
+  <div class="field">
+    <%= f.label :hjc %><br />
+    <%= f.number_field :hjc %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

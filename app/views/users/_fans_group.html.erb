@@ -1,0 +1,38 @@
+<%= content_tag(:li) do %>
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-cog"></i>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to fan do %>
+              <i class="icon-user"></i> <%= fan.name.humanize %>'s Profile
+          <% end %>
+        </li>
+        <% unless current_user == fan %>
+            <li>
+              <%= link_to toggle_subscription_path(:id => fan.id) do %>
+                  <% if current_user && current_user.is_friend?(fan) %>
+                      <i class="icon-star"></i>   <%= t("user.unfan") %>
+                  <% else %>
+                      <i class="icon-star-empty"></i>  <%= t("user.become_fan")%>
+                  <% end %>
+              <% end %>
+            </li>
+        <% end %>
+        <li>
+          <%= link_to user_path(fan) do %>
+              <i class="icon-comment"></i> write on wall
+          <% end %>
+        </li>
+      </ul>
+    </div>
+<%= image_tag fan.icon(:thumb), :class => "fan-image" %>
+<div class="details">
+  <h6><%= link_to_unless_current fan.name.humanize, fan, :class => "pops", :rel=>"popover", "data-content"=> fan.about || "No description", "data-original-title"=> fan.name.humanize %></h6>
+  <div><%= t("user.real_name") %> <%= link_to fan.real_name, fan %> <br/>
+    <span class="songs-meta"><%= link_to pluralize(fan.songs_count, "song"), user_songs_path(fan) %> | <%= link_to pluralize(fan.videos_count, "video"), user_videos_path(fan) %></span>
+  </div>
+</div>
+<% end %>

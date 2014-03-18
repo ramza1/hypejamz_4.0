@@ -1,0 +1,15 @@
+<% @videos.each do |video| %>
+    <li>
+   <a href="<%= url_for video%>" class="albumcontainer transition_border ">
+     <img onload src="//i2.ytimg.com/vi/<%= video.yt_video_id %>/default.jpg" class ="album_art" width=100px height=100px; />
+     <span class="m_playall transition_opacity" href="#" style="display: inline;"></span>
+   </a>
+      <div class="song-description">
+         
+        <p><%= link_to video.title, video, :class => "white" %></p>
+        <p><%= video.duration.nil? ? "?" : "#{video.duration.strftime("%I:%M")}" %></p>
+        <p class="small-name"><%= time_ago_in_words(video.created_at) %> ago</p>
+          <p class="small-name">By <%= link_to video.user.name, user_profile_path(video.user) %></p>
+      </div>
+    </li>
+ <% end %>

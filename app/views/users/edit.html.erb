@@ -1,0 +1,82 @@
+<%= provide :title, "Edit Profile" %>
+
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => current_user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4><i class="icon-edit"></i> <%= t("user.edit_basic") %></h4>
+</div>
+<%= form_for(@user, :html => {:class => "form-horizontal"}) do |f| %>
+            <% if @user.errors.any? %>
+                <div class="alert alert-error">
+                  <h4 class="maroon"><%= pluralize(@user.errors.count, "error") %> prohibited making your changes saved:</h4>
+
+                  <ul>
+                    <% @user.errors.full_messages.each do |msg| %>
+                        <li><%= msg %></li>
+                    <% end %>
+                  </ul>
+                </div>
+            <% end %>
+<fieldset>
+  <% if params[:picture] %>
+   <li>
+    <%= f.label :icon %>
+    <%= f.file_field :icon %>
+   </li>
+  <li>
+    <%= f.submit "Upload Photo", :class => "button" %>
+  </li>
+  <% else %>
+   <div class="control-group">
+    <%= f.label :real_name, :class => "control-label" %>
+     <div class="controls">
+       <%= f.text_field :real_name, :class => "input-xlarge" %>
+     </div>
+  </div>
+    <div class="control-group">
+      <%= f.label :about, :class => "control-label"  %>
+      <div class="controls">
+        <%= f.text_area :about, :class => "input-xlarge", :style => "height: 100px;" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+       <%= f.label :twitter_username, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :twitter_username, :class => "input-xlarge" %>
+      </div>
+    </div>
+
+  <div class="control-group">
+    <%= f.label :facebook_username, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :facebook_username, :class => "input-xlarge" %>
+    </div>
+  </div>
+
+  <div class="control-group">
+      <%= f.label :icon, :class => "control-label" %>
+    <div class="controls">
+      <%= f.file_field :icon %>
+    </div>
+  </div>
+
+  <div class="form-actions">
+    <button class="btn btn-primary"  type="submit">
+      <i class="icon-edit"></i> <%= t("user.edit") %>
+    </button>
+    <%= link_to edit_user_registration_path, :class => "btn btn-warning" do %>
+         <i class="icon-cog"></i> <%= t("user.advanced_settings") %>
+    <% end %>
+    <%= link_to user_path(@user), :class => "btn" do %>
+        <i class="icon-remove-sign"></i> <%= t("user.cancel") %>
+    <% end %>
+  </div>
+
+ <% end %>
+ </fieldset>
+<% end %>
+

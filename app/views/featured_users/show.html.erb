@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @featured_user.user %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @featured_user.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @featured_user.end %>
+</p>
+
+
+<%= link_to 'Edit', edit_featured_user_path(@featured_user) %> |
+<%= link_to 'Back', featured_users_path %>

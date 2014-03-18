@@ -1,0 +1,19 @@
+.picture{
+  float: left;
+  margin-right: 4px;
+  position: relative;
+  margin-bottom: 10px;
+  .image-thumb{
+    padding:3px;
+    display: block;
+    border: 1px solid #c0c0c0;
+    width: 130px;
+    height: 100px;
+  }
+  .picture-icons{
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 3px;
+  }
+}

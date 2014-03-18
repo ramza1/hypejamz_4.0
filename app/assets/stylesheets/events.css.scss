@@ -1,0 +1,34 @@
+.event{
+  width: 50%;
+  float: left;
+  color: #fff;
+}
+
+.event-image{
+  float: left;
+}
+
+.event-description{
+   margin-left: 68px;
+}
+
+.event-title{
+ font-weight: bold;
+}
+
+.event-info{
+  font-size: 11px;
+}
+
+.remote-event-link{
+ color: #fff;
+ text-decoration: none;
+  &:hover{
+   color: gold;
+   text-decoration: none;
+  }
+}
+
+.ready-event{
+ color: #fff;
+}

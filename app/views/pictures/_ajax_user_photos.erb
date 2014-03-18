@@ -1,0 +1,10 @@
+<div class="ajax-loader-box">
+  <div class="ajax-header">
+    <h3>My Photos</h3>
+  </div>
+  <% if @pictures.empty? %>
+      <p class="no-comments"> No photo for <%= user.name.humanize %></p>
+  <% else %>
+      <%= render @pictures %>
+  <% end %>
+</div>

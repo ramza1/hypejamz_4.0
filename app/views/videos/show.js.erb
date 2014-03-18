@@ -1,0 +1,5 @@
+$('.small-loading').hide();
+$('.ajax-loader-box').empty();
+var li = $("<%= escape_javascript(render("videos/video_details"))%>").hide();
+ $('.ajax-loader-box').prepend(li);
+li.fadeIn('slow');

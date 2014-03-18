@@ -1,0 +1,88 @@
+<div data-role="page" data-back-btn="true" class="user-page"  data-dom-cache="true" data-theme="b">
+        <header data-role="header" data-theme="a" class="heading">
+         <h1>Hot Gist's</h1>
+          <%= render "mobile_session" %>
+      <div data-role="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", :class => "", "data-icon" => "home"  %>
+                    </li>
+                  <li>
+                      <%= link_to "Gist's",  stories_path, "data-theme" => "a", :class => "ui-btn ui-btn-active ui-btn-up-a", "data-icon" => "grid"   %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for users_path %>" class=""   data-theme="a" data-icon="people" >
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-icon= "media" >
+                            Songs
+                        </a>
+                    </li>
+                </ul>
+      </div>
+        </header><!-- /header -->
+        <div data-role="content" data-theme="d">
+
+        <div class="story-box">
+          <div class="story-title">
+            <h1><%= @story.title %></h1>
+          <p class="story-meta">
+            <span> By <%= link_to @story.user.name.humanize, @story.user, :class => "story-link" %> &bull; <%= time_ago_in_words(@story.created_at) %> ago </span>
+            <span style="float: right;"><%= link_to @story.category.name, @story.category, :class => "story-link" %></span>
+          </p>
+         </div>
+          <div class="story-image">
+            <%= image_tag @story.clip(:small), :class => "story-art"%>
+          </div>
+
+          <div class="story-description">
+            <%= raw(@story.body)%>
+          </div>
+          <% if can? :update, @story %>
+          <div class="story-description">
+             <%= link_to "Edit", edit_story_path(@story), :class => "story-link" %> | <%= link_to "Delete", @story, :method => :delete, :class => "story-link"%>
+          </div>
+          <% end %>
+        </div>
+
+
+  <div class="clear"></div>
+  <div class="double-margin-top"></div>
+    <ul data-role="listview" data-theme="a" data-split-theme="a" data-split-icon="user" data-split-theme="b">
+      <li  data-role="list-divider" ><%= pluralize(@story.comments_count, "Comments")%></li>
+       <% for comment in @story.comments %>
+        <li>
+          <a href="<%= url_for comment.user %>">
+            <%= image_tag comment.user.icon(:thumb), :class => "icon ul-li-icon ui-li-thumb avatar-user" %>
+            <h4>
+              <span class="left-user-name"><%= comment.user.name %></span>
+              <span class="left-time"><%= distance_of_time_in_words_to_now(comment.created_at)%> ago</span>
+            </h4>
+            <p><b><%= comment.comment %></b></p>
+          </a>
+        </li>
+       <% end %>
+    </ul>
+        </div><!-- /content -->
+  <div class="clear"></div>
+    <% if current_user %>
+             <%= form_for([@story, @story.comments.new], :remote => true, :html => {:id => "new_comment-#{@story.id}"}, "data-theme" => "b") do |f| %>
+                  <div data-role="fieldcontain" class="ui-hide-label">
+                     <%= text_area_tag "comment" %>
+                    <%= submit_tag "comment" %>
+                  </div>
+
+             <% end %>
+             <% else %>
+      <div class="story-title">
+             <p class="comment" style="color: #fff; font-size: 12px;">
+               <%= link_to "log in", new_user_session_path, :class => "story-link" %> / <%= link_to "sign up", new_user_registration_path, :class => "story-link" %> <span style="color: #fff;">to comment on this gist</span>
+             </p>
+      </div>
+             <% end %>
+
+  <%= render "mobile_footer" %>
+    </div><!-- /page -->

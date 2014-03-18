@@ -1,0 +1,20 @@
+<% if is_admin? %>
+    <div id="content_wrapper">
+      <div id="active_admin_content">
+        <div id="form-box">
+          <h5 class="page-title">
+            Upload a new music album
+          </h5>
+          <div class="form-box">
+            <%= render 'form' %>
+          </div>
+
+          <%= link_to 'Back to Profile', user_path(current_user)  %>
+        </div>
+      </div>
+    </div>
+<% else %>
+    <div class="padded">
+      <p class="alert alert-error">This feature is currently unavailable at the moment</p>
+    </div>
+<% end %>

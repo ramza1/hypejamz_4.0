@@ -1,0 +1,45 @@
+<%= form_for @sponsor do |f| %>
+  <% if @sponsor.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@sponsor.errors.count, "error") %> prohibited this sponsor from being saved:</h2>
+
+      <ul>
+      <% @sponsor.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :site_url %><br />
+    <%= f.text_field :site_url %>
+  </div>
+  <div class="field">
+    <%= f.label :ad, "thumbnail" %><br />
+    <%= f.file_field :ad %>
+  </div>
+  <div class="field">
+    <%= f.label :active %>
+    <%= f.check_box :active %>
+  </div>
+  <div class="field">
+    <%= f.label :force_top, "Stay ot the side" %>
+    <%= f.check_box :force_top%>
+  </div>
+
+  <div class="field">
+    <%= f.label :top_ad, "Stay on Top of image slide" %>
+    <%= f.check_box :top_ad %>
+  </div>
+
+  <div class="field">
+    <%= f.label :header_position, "Header Advert" %>
+    <%= f.check_box :header_position%>
+  </div>
+  <p><%= f.submit %></p>
+<% end %>
+

@@ -1,0 +1,17 @@
+<section data-role="page" data-nobackbtn="false" class="song-page">
+        <header data-role="header" data-theme="a" class="heading">
+        <h1>HypeJamz</h1>
+        </header><!-- /header -->
+        <div data-role="content"  class="ui-seablue">
+
+            <div style="" id="" class="song_content">
+              <div class="mp_description ">
+
+                  <h2><%= @picture.caption %> </h2>
+
+              </div>
+
+            </div>
+          <%= image_tag @picture.photo(:big), :style => "width: 207px; height: 200px; "%>
+    </div>
+    </section><!-- /page -->

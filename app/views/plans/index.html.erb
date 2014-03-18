@@ -1,0 +1,36 @@
+<div id="plans" class="span8 offset2">
+  <div class="page-header">
+    <h1><i class="icon-heart"></i> HypeJamz Credit</h1>
+  </div>
+  <% @plans.each do |plan| %>
+      <div class="plan">
+        <div class="name"><%= plan.name %></div>
+        <div class="details">
+          <div class="price">
+            <%= number_to_currency plan.dollar_price, :precision => 2%>
+          </div>
+          <div class="per_month">-N-<%= plan.naira_price %></div>
+          <div class="kisses"><%= plan.hjc %> HJC</div>
+          <div class="per_month"><i class="icon-heart"></i></div>
+          <div class="signup">
+            <form method="POST" action="https://voguepay.com/pay/" target="_blank">
+              <input type="hidden" name="v_merchant_id" value="demo"/>
+              <input type="hidden" name="merchant_ref" value="<%= plan.id %>"/>
+              <input type="hidden" name="memo" value="Hypejamz credit purchase from hypejamz"/>
+              <input type="hidden" name="notify_url" value="<%= url_for notification_url %>"/>
+              <input type="hidden" name="success_url" value="<%= url_for thank_you_url %>"/>
+              <input type="hidden" name="fail_url" value="<%= url_for failed_payment_url %>"/>
+              <input type="hidden" name="total" value="<%= plan.naira_price.to_i %>"/>
+              <input type="image" src="http://voguepay.com/images/buttons/buynow_blue.png" alt="Buy Now">
+            </form>
+          </div>
+        </div>
+      </div>
+  <% end %>
+  <div class="clear"></div>
+</div>
+
+<%= content_for :bottom do %>
+
+     <div style="display: none;"></div>
+<% end %>

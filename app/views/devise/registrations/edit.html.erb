@@ -1,0 +1,87 @@
+<%= form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put, :class => "form-horizontal" }) do |f| %>
+  <%= devise_error_messages! %>
+ <fieldset>
+   <legend><%= t("user.advanced_update") %></legend>
+   <div class="control-group">
+     <%= f.label :icon, "Upload profile image", :class => "control-label" %>
+     <div class="controls">
+     <%= f.file_field :icon, :class => "input-xlarge"  %>
+     </div>
+   </div>
+
+
+
+   <div class="control-group">
+     <%= f.label :real_name, :class => "control-label" %>
+     <div class="controls">
+       <%= f.text_field :real_name, :class => "input-xlarge" %>
+     </div>
+   </div>
+
+
+   <div class="control-group">
+     <%= f.label :email, :class => "control-label" %>
+     <div class="controls">
+       <%= f.email_field :email, :class => "input-xlarge" %>
+     </div>
+   </div>
+
+   <div class="control-group">
+     <%= f.label :about, :class => "control-label"  %>
+     <div class="controls">
+       <%= f.text_area :about, :class => "input-xlarge", :style => "height: 100px;" %>
+     </div>
+   </div>
+
+   <div class="control-group">
+     <%= f.label :twitter_username, :class => "control-label" %>
+     <div class="controls">
+       <%= f.text_field :twitter_username, :class => "input-xlarge" %>
+     </div>
+   </div>
+
+   <div class="control-group">
+     <%= f.label :facebook_username, :class => "control-label" %>
+     <div class="controls">
+       <%= f.text_field :facebook_username, :class => "input-xlarge" %>
+     </div>
+   </div>
+
+   <legend><%= t("user.change_password") %></legend>
+
+   <div class="control-group">
+     <%= f.label :password, :class => "control-label" %>
+     <div class="controls">
+       <%= f.password_field :password, :class => "input-xlarge" %> <span class="alert alert-info">leave blank if you don't want to change it</span>
+     </div>
+   </div>
+
+   <div class="control-group">
+     <%= f.label :current_password, :class => "control-label" %>
+     <div class="controls">
+       <%= f.password_field :current_password, :class => "input-xlarge" %> <span class="alert alert-warning"><%= t("user.password_needed") %></span>
+     </div>
+   </div>
+
+   <div class="form-actions">
+     <button class="btn btn-primary"  type="submit">
+       <i class="icon-edit"></i> <%= t("user.edit") %>
+     </button>
+     <%= link_to user_path(current_user), :class => "btn" do %>
+         <i class="icon-remove-sign"></i> <%= t("user.cancel") %>
+     <% end %>
+   </div>
+
+   <legend><%= t("user.cancel_account") %></legend>
+
+   <div class="form-actions">
+     <%= link_to  registration_path(resource_name), :confirm => "Are you sure?", :method => :delete, :class => "btn btn-danger" do %>
+         <i class="icon-trash"></i> <%= t("user.cancel_account") %>
+     <% end %>
+     <%= link_to :back, :class => "btn" do %>
+         <i class="icon-chevron-left"></i> <%= t("back") %>
+     <% end %>
+   </div>
+</fieldset>
+<% end %>
+

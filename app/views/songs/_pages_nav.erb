@@ -1,0 +1,11 @@
+<% if @songs.previous_page %>
+  <li class="previous"><%= link_to "Prev", params.merge(page: @songs.previous_page), :class => 'def' %></li>
+<% else %>
+  <li class="previous disabled"><%= link_to_unless_current "", params.merge(page: @songs.previous_page), :class => 'def disable' %></li>
+<% end %>
+<li class="page-num badge">Page <%= @songs.current_page %></li>
+<% if @songs.next_page %>
+  <li class="next"><%= link_to "Next", params.merge(page: @songs.next_page), :class => "next_page" %></li>
+<% else %>
+  <li class="next disabled"><%= link_to_unless_current "", params.merge(page: @songs.previous_page), :class => 'def disable' %></li>
+<% end %>

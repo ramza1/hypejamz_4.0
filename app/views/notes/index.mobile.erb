@@ -1,0 +1,159 @@
+<div data-role="page" data-dom-cache="false" data-theme="b" data-add-back-btn="true">
+	<div data-role="header">
+      <h1><% if params[:id] %>
+            <%= @user.name.humanize %>'s Yarns
+            <% else %>
+              HypeJamz
+            <% end %>
+       </h1>
+      <%= render "mobile_session" %>
+      <div data-role="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Profile", user_path(@user), "data-theme" => "a", :class => "ui-btn ui-btn-active ui-btn-up-a", "data-icon" => "user" %>
+                    </li>
+                    <li>
+                      <%= link_to "Photos", user_pictures_path(@user), "data-theme" => "a", "data-icon" => "photo" %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for user_songs_path(@user) %>" data-theme="a" data-icon= "media">
+                            Songs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for user_videos_path(@user) %>" class=""   data-theme="a" data-icon= "video">
+                            Videos
+                        </a>
+                    </li>
+                </ul>
+      </div>
+	</div>
+  <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+      <% if me?%>
+      <div data-role="collapsible" class="double-margin-bottom">
+        <h3>Yarn With your fans</h3>
+<div data-role="fieldcontain">
+  <%= form_for Note.new, :remote => true do |f| %>
+    <fieldset data-role="controlgroup" class="ui-corner-all ui-controlgroup ui-controlgroup-vertical">
+      <%= f.check_box :allow_comments %>
+	   <%= f.label :allow_comments %>
+       <%= f.check_box :fans_only %>
+	   <%= f.label :fans_only %>
+    </fieldset>
+      <fieldset>
+        <%= f.text_area :body %>
+      </fieldset>
+      <fieldset>
+      <%= f.submit "Yarn", "data-role" => "button", "data-inline" => true %>
+      </fieldset>
+             <span id="text-count">
+       300
+     </span>
+  <% end %>
+</div>
+        </div>
+   <% end %>
+  <div class="clear"></div>
+    <ul data-role="listview" data-theme="a">
+      <% if @notes.empty? %>
+          <% if @user.artist? %>
+              <p class="no-item"><%= @user.name.humanize %> has no yarns at the moment.</p>
+                    <% else %>
+              <p class="no-item"> No yarns at the moment. Subscribe to as many artistes as possible to get the latest yarns form them </p>
+                    <% end %>
+      <% else %>
+       <% for note in @notes %>
+        <li id="<%= note.id %>">
+          <a href="<%= url_for note %>">
+            <%= image_tag note.user.icon(:thumb), :class => "icon ul-li-icon ui-li-thumb" %>
+            <h4>
+              <span class="left-user-name"><%= note.user.name %></span>
+              <span class="left-time"><%= distance_of_time_in_words_to_now(note.created_at)%> ago</span>
+            </h4>
+            <p><b><%= truncate(note.body, :length => 150) %></b></p>
+            <% if can? :destroy, note %>
+            <p style="padding-left: 88px;"><%= link_to "delete", note, :method => :delete, :class => "story-link" %></p>
+            <% end %>
+            <span class="ui-li-count" title="<%= pluralize(note.comments_count, "reply") %>"><%= note.comments_count %></span>
+          </a>
+        </li>
+       <% end %>
+      <% end %>
+    </ul>
+	</div>
+            <%= render "mobile_footer" %>
+<script type="text/javascript">
+$(function() {
+  $('#note_body').keyup(function() {
+    var content_length = $(this).val().length;
+    var remaining = 300 - content_length
+    $('#text-count').html(remaining);
+    if (remaining < 21 && remaining > 9) {
+      $('#text-count').removeClass('red');
+      $('#text-count').addClass('dark_red');
+    } else if (remaining <= 9) {
+      $('#text-count').removeClass('dark_red');
+      $('#text-count').addClass('red');
+    } else {
+      $('#text-count').removeClass('dark_red').removeClass('red');
+    }
+    if ( remaining < 0) {
+        $('#submit-button').attr('disabled','disabled')
+        $('#submit-button').addClass("disable")
+    }else if (remaining >= 0) {
+        $('#submit-button').removeAttr('disabled')
+        $('#submit-button').removeClass("disable")
+        $('#submit-button').live('click', function(){
+        $('.loading-box').show();
+        })
+    }
+  })
+})
+
+
+$(function(){
+
+	$('div').live('pageshow',function(event,ui){
+
+		if ( event.target.id.indexOf('swipedelete') >= 0) {
+
+			// remove any existing swipe areas
+
+			$('.aDeleteBtn').remove();
+
+			// add swipe event to the list item
+
+			$('ul li').bind('swiperight', function(e){
+
+				// reference the just swiped list item
+
+				var $li = $(this);
+
+				// remove all buttons first
+
+				$('.aDeleteBtn').remove();
+
+				// create buttons and div container
+
+				var $deleteBtn = $('<a>Delete</a>').attr({
+
+						'class': 'aDeleteBtn ui-btn-up-r',
+
+						'href': "/remove_yarn/" + $li.attr('id')
+
+					});
+
+				// insert swipe div into list item
+
+				$li.prepend($deleteBtn);
+
+			});
+
+		}
+
+	});
+
+});
+</script>
+</div>

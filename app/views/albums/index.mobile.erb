@@ -1,0 +1,33 @@
+<div class="songs">
+  <% if params[:user_id] %>
+      <%= render "song_owner", :user => @user %>
+      <h5 class="centered-text"><%= link_to "#{@user.name.humanize}'s", @user %> Albums</h5>
+  <% else %>
+      <em style="font-size: 13px; font-weight: bold; padding-left: 7px;">
+        Newly added music albums
+      </em>
+  <% end %>
+  <ul class="mobile-songs-list">
+    <% @albums.each do |album| %>
+        <a href="<%= url_for album %>"><li>
+          <div class="song_art">
+            <%= image_tag album.album_art(:big) %>
+          </div>
+          <div class="arrow-left"> > </div>
+          <div class="song-meta-data">
+            <h5><%= truncate(album.name.humanize, :length => 30) %></h5>
+            <div class="song-description">
+              <div class="song-artist-info">
+                By: <%= truncate(album.about, :length => 150) %>
+              </div>
+              <div class="song-data">
+                <%= pluralize(album.comments_count, "comment") %> &bull; <%= pluralize(album.download_count, "download") %>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </li></a>
+        <div class="clear"></div>
+    <% end %>
+  </ul>
+</div>

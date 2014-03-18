@@ -1,0 +1,137 @@
+<%= provide :title, h_what(@user.name) %>
+
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => @user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4><i class="icon-home"></i> <%= t("user.profile", :person =>  h_what(@user.name)) %>
+    <%= render "send_message_link", :user => @user %>
+  </h4>
+</div>
+
+<ul class="profile-icons">
+  <li>
+      <i class="icon-home active-link"></i>
+  </li>
+  <li>
+    <%= link_to user_songs_path(@user), :class => "pjax-link", :title=> t("user.user_songs", :name => h_what(@user.name)) do %>
+        <i class="icon-music"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_pictures_path(@user), :class => "pjax-link", :title=> t("user.user_photos", :name => h_what(@user.name)) do %>
+        <i class="icon-picture"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_videos_path(@user), :class => "pjax-link", :title=> t("user.user_videos", :name => h_what(@user.name)) do %>
+       <i class="icon-film"></i>
+    <% end %>
+  </li>
+  <% if me? %>
+  <li>
+    <%= link_to user_messages_path(@user), :class => "pjax-link", :title=> t("user.user_messages", :name => h_what(@user.name)) do %>
+        <i class="icon-envelope"></i>
+    <% end %>
+  </li>
+  <% end %>
+  <li>
+    <%= link_to fans_user_path(@user), :class => "pjax-link", :title=> t("user.user_fans", :name => h_what(@user.name)) do %>
+        <i class="icon-user"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to favorite_songs_path(@user), :class => "pjax-link", :title=> t("user.user_playlist", :name => h_what(@user.name)) do %>
+        <i class="icon-headphones"></i>
+    <% end %>
+  </li>
+</ul>
+<hr>
+
+<div class="profile-bio">
+  <div class="page-header" style="text-align: center;">
+    <h4 style="font-size: 20px"><i class="icon-picture"></i></h4>
+  </div>
+  <% if @pictures.empty? %>
+  <p class="alert alert-warning">
+    <%= t("picture.no_photo_available") %>
+  </p>
+  <% else %>
+  <div class="photo-gallery">
+  <%= render @pictures %> <br />
+  <%= link_to user_pictures_path(@user), :class => "btn" do %>
+      <i class="icon-picture"></i> <%= t("picture.view_more_photos_by") %> <%= h_what(@user.name) %>
+  <% end %>
+  </div>
+      <div class="clear"></div>
+  <% end %>
+  <div class="page-header top-icon">
+    <h4 style="font-size: 20px"><i class="icon-music"></i></h4>
+  </div>
+   <% if @songs.empty? %>
+     <p class="alert alert-warning" style="margin-top: 10px;"><%= t "user.no_song" %></p>
+  <% else %>
+    <div style="margin-top: 10px;">
+    <%= render @songs %>   <br/>
+  <%= link_to user_songs_path(@user), :class => "btn" do %>
+      <i class="icon-music"></i> <%= t("song.view_more_songs_by", :person => h_what(@user.name)) %>
+  <% end %>
+      </div>
+  <% end %>
+
+  <div class="page-header top-icon">
+    <h4 style="font-size: 20px"><i class="icon-film"></i></h4>
+  </div>
+  <% if @videos.empty? %>
+      <p class="alert alert-warning" style="margin-top: 10px;"><%= t "user.no_video" %></p>
+  <% else %>
+      <div style="margin-top: 10px;">
+        <%= render @videos %>   <br/>
+        <%= link_to user_videos_path(@user), :class => "btn" do %>
+            <i class="icon-film"></i> <%= t("video.view_more_videos_by", :person => h_what(@user.name)) %>
+        <% end %>
+      </div>
+  <% end %>
+  <%= provide(:fans_block) do %>
+      <div class="page-header" style="margin-top: 55px;">
+        <h6><%= t("user.user_fans", :name => @user.name.humanize) %> <span style="float:right;"><i class="icon-user"></i></span></h6>
+      </div>
+      <div class="recommended-songs">
+     <% if @users.empty? %>
+       <p class="alert alert-warning" style="margin-top: 10px;"><%= t("user.no_fans", :name => @user.name.humanize) %></p>
+      <% else %>
+      <div style="margin-top: 10px;">
+        <ul class="fans-list">
+
+               <%= render :partial => "users/fans_group", :collection => @users, :as => :fan %>
+
+          <div class="more-group">
+            <%= link_to "view more fans", fans_user_path(@user) %>
+          </div>
+        </ul>
+      </div>
+     <% end %>
+      </div>
+  <% end %>
+</div>
+
+<div class="page-header comment-header" style="margin-top: 10px;">
+  <h4><i class="icon-comment"></i> <span id="comments_count-<%= @user.id %>"><%= pluralize @user.comments_count, t("comment.comment")%></span> </h4>
+</div>
+
+<div id="comments">
+  <div id="comment-block-for-<%= @user.id %>" class="comments song-comment">
+    <% if @user.comments.empty? %>
+        <p id="no-comment-block-for-<%= @user.id %>" class="alert alert-info"><%= t("user.no_comment")%></p>
+    <% else %>
+        <%= render @user.comments %>
+    <% end%>
+  </div>
+  <% if current_user %>
+      <%= render "comment_form", :object => @user %>
+  <% else %>
+      <p class="alert alert-error"><%= link_to "Log In", new_user_session_path %> or <%= link_to "Join Now!", new_user_registration_path %> <%= t("user.no_comment_account", :name => @user.name.humanize)%></p>
+  <% end %>
+</div>

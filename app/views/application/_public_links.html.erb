@@ -1,0 +1,37 @@
+<ul class="dropdown-menu">
+  <li>
+    <%= link_to user_profile_path(user), :class => "pjax-link" do %>
+        <i class="icon-user"></i> Profile
+    <% end %>
+  </li>
+  <li class="divider"></li>
+
+  <li>
+    <%= link_to fans_user_path(user), :class => "pjax-link" do %>
+        <i class="icon-edit"></i> Fans
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_songs_path(user) do %>
+        <i class="icon-music"></i> Songs
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_videos_path(user) do %>
+        <i class="icon-film"></i> Videos
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_pictures_path(user) do %>
+        <i class="icon-picture"></i> photos
+    <% end %>
+  </li>
+  <% if current_user == user %>
+  <li>
+    <%= link_to messages_path do %>
+        <i class="icon-envelope"></i> Inbox &nbsp; <b class="badge <% unless current_user.unread_messages.nil? %>badge-important<% end %>"><%= current_user.unread_messages.count %></b>
+    <% end %>
+
+  </li>
+  <% end %>
+</ul>

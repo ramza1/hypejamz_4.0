@@ -1,0 +1,23 @@
+<% if current_user && current_user.liked_songs.any? %>
+    <audio class="projekktor speakker dark" style="right: 200px;">
+
+    </audio>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            projekktor('.projekktor',{
+                playerFlashMP3: "http://localhost:3000/jarisplayer.swf",
+                playlist: [
+                  <% current_user.liked_songs.each do |track| %>
+                    {
+                        0:{src:'<%= track.mp3.url %>', type: 'audio/mp3'},
+                        config: {
+                            title: '<%= track.title%>',
+                            poster: '<%= track.art.url(:small) %>'
+                        }
+                    },
+                  <% end %>
+                ]
+            });
+        });
+    </script>
+<% end %>

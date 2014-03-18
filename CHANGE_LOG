@@ -1,0 +1,36 @@
+version 3.1
+features
+Added pagination links to songs
+
+
+
+Version 3
+features
+Added edit link to songs
+Added download to songs
+Added comments to songs
+Added social shearing
+Added artist facebook username and twitter username.
+Added fancy tool tips
+
+Fixes
+Modified video to have delete and edit links
+Video is now working in profile
+Adjusted countdown pagination link to be below the list.
+re Designed the video show page
+Added authentications to featured users and featured songs
+Fixed issue of the song in the countdown appearing more than once. but still require more work
+Changed message icon to mail icon.
+
+Todo
+Add wall to profile
+Add comments to videos.
+Build the mobile layout.
+
+Heavy redesign has taken place
+developed the mobilw app
+added wall to profile on mobile
+added activity updates
+ todo
+
+add video comments and video activity notification

@@ -1,0 +1,37 @@
+#comments{
+  textarea{
+    width: 98.58%;
+    height: 64px;
+  }
+}
+
+.comment{
+  color: #444;
+  border-top: 1px solid #eee;
+  border-bottom: 1px solid #fff;
+  padding: 10px 0;
+  .comment-user{
+    float: left;
+    img{
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+      border-radius: 3px;
+    }
+  }
+  .comment-description{
+    font-size: 0.87654em;
+    margin-left: 37px;
+    .time-stamps{
+      color: #9d9d9d;
+    }
+  }
+}
+
+.comment:first-child{
+ padding-top: 0;
+ border-top: none;
+}
+
+.comment:last-child{
+  border-bottom: none;
+}

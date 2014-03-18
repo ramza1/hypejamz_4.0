@@ -1,0 +1,40 @@
+<ul class="profile-icons">
+  <li>
+    <%= link_to user_path(user), :class => "pjax-link" do %>
+        <i class="icon-home <% if controller_name == "users" && action_name == "show" %>active-link<% end %>"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_songs_path(user), :class => "pjax-link" do %>
+        <i class="icon-music <% if controller_name == "songs" and action_name == "show" %>active-link<% end %>"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_pictures_path(user), :class => "pjax-link" do %>
+    <i class="icon-picture <% if controller_name == "pictures" %>active-link<% end %>"></i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to user_videos_path(user), :class => "pjax-link" do %>
+        <i class="icon-film <% if controller_name == "videos" %>active-link <% end %>"></i>
+    <% end %>
+  </li>
+  <% if current_user == user %>
+      <li>
+        <%= link_to user_messages_path(user), :class => "pjax-link" do %>
+            <i class="icon-envelope <% if controller_name == "messages" %>active-link<% end %>"></i>
+        <% end %>
+      </li>
+  <% end %>
+  <li>
+    <%= link_to fans_user_path(user), :class => "pjax-link", :title=> t("user.user_fans", :name => h_what(@user.name)) do %>
+        <i class="icon-user <% if controller_name == "users" and action_name == "fans" %>active-link<% end %>"> </i>
+    <% end %>
+  </li>
+  <li>
+    <%= link_to favorite_songs_path(user), :class => "pjax-link" do %>
+        <i class="icon-headphones <% if controller_name == "songs" and action_name == "favorite" %>active-link<% end %>"></i>
+    <% end %>
+  </li>
+</ul>
+<hr>

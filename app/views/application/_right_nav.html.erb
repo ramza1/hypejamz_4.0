@@ -1,0 +1,40 @@
+<div class="nav-items-block">
+  <ul>
+    <li>
+      <%= link_to trending_songs_path, :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("trending_info"), "data-original-title"=> t("trending") do %>
+          <i class="icon-signal"></i>  <%= t "trending" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to videos_path, :rel=>"popover", "data-trigger"=>"hover",  "data-content"=> t("videos_info"), "data-original-title"=> t("videos") do %>
+        <i class="icon-film"></i>  <%= t "videos" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to songs_path, :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("music_info"), "data-original-title"=> t("music")  do %>
+        <i class="icon-music"></i> <%= t "music" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to users_path, :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("people_info"), "data-original-title"=> t("people")  do %>
+          <i class="icon-user"></i> <%= t "people" %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to trending_songs_path, :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("credit_info"), "data-original-title"=> t("get_hypejamz_credit") do %>
+        <i class="icon-heart"></i> <%= t "get_hypejamz_credit" %>
+      <% end %>
+    </li>
+    <li>
+      <% if current_user %>
+      <%= link_to  favorite_songs_path(current_user), :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("playlist_info"), "data-original-title"=> t("playlist") do %>
+          <i class=" icon-headphones"></i> <%= t "playlist" %>
+      <% end %>
+      <% else %>
+          <%= link_to  new_user_session_path, :rel=>"popover", "data-trigger"=>"hover", "data-content"=> t("playlist_info_account"), "data-original-title"=> t("playlist") do %>
+              <i class=" icon-headphones"></i> <%= t "playlist" %>
+          <% end %>
+      <% end %>
+    </li>
+  </ul>
+</div>

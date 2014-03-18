@@ -1,0 +1,83 @@
+// Place all the styles related to the messages controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+.left-message{
+ margin-bottom: 10px;
+}
+
+.message-header{
+ padding: 10px;
+ margin-bottom: 2px;
+}
+
+.message{
+ background: #000;
+ color: #fff;
+ padding: 10px 5px;
+ border-radius: 5px;
+ margin-bottom: 10px;
+ overflow: hidden;
+}
+
+.gravatar-image{
+ float: left;
+}
+
+.message-description{
+ margin-left: 90px;
+ color: #fff;
+}
+
+.message-nav{
+ a{
+  color: gold;
+ }
+ ul{
+  margin-top: 2px;
+ }
+ li{
+  list-style: none;
+  float: left;
+  margin-right: 5px;
+ }
+}
+
+.message-nav2{
+ a{
+  color: gold;
+ }
+ ul{
+  margin-top: 2px;
+ }
+ li{
+  list-style: none;
+  float: left;
+  margin-right: 5px;
+ }
+}
+
+.box-message{
+ padding: 10px;
+ .message-nav{
+     a{
+       color: #16387C;
+     }
+
+ }
+}
+
+.inbox{
+ float: right;
+ margin-right: 2px;
+ a{
+  font-size: 13px;
+ }
+}
+
+#menu li .inbox-link{
+ font-size: 14px;
+}
+
+li{
+ list-style: none;
+}

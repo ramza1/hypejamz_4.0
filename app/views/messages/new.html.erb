@@ -1,0 +1,24 @@
+<%= provide :title, t("message.send_message") %>
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => current_user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <% if @user %>
+        <i class="icon-envelope"></i> Send message to <%= @user.name.humanize %>
+    <% else %>
+        <i class="icon-envelope"></i> Send a new message
+    <% end %>
+  </h4>
+</div>
+<% if can? :create, Message %>
+
+
+    <%= render 'form' %>
+
+
+<% else %>
+    <%= render "upgrade_info" %>
+<% end %>

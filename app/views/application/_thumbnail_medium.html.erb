@@ -1,0 +1,132 @@
+<div class="profile">
+  <div>
+    <div class="profile-image">
+      <%= image_tag user.icon(:thumb) %>
+    </div>
+    <div class="profile-details">
+      <div class="page-header" style="margin-top: 0; margin-bottom: 5px;">
+        <h4><i class="icon-user"></i> <%= h_what(user.name)%></h4>
+      </div>
+      <p>
+        <%= user.about.present? ? truncate(user.about, :length => 80) : t("user.no_description") %>
+      </p>
+    </div>
+  </div>
+  <div class="clear"></div>
+  <hr style="margin: 0;">
+  <div class="profile-meta">
+   <ul>
+     <li>
+        <i class="icon-music"></i><br/>
+        <%= user.songs_count %>
+     </li>
+
+     <li>
+       <i class="icon-film"></i> <br/>
+       <%= user.videos_count %>
+     </li>
+     <li><i class="icon-user"></i><br/>
+        <%= user.friends_of.count %>
+     </li>
+     <% if current_user == user %>
+       <li>
+         <i class="icon-heart"></i><br/>
+         <span class="badge badge-info"><%= format_number(user.account_balance.to_i)%></span>
+       </li>
+     <% else %>
+         <li>
+           <i class="icon-headphones"></i><br/>
+           <%= user.liked_songs.count %>
+         </li>
+     <% end %>
+   </ul>
+  </div>
+  <div class="clear"></div>
+  <hr style="margin-top: 2px;">
+  <div class="btn-toolbar">
+    <% if current_user == user %>
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class="icon-cog"></i>  <%= t("options") %>
+        <span class="caret"></span>
+      </a>
+      <ul class="dropdown-menu">
+        <li>
+          <%= link_to user_profile_path(user), :class => "pjax-link" do %>
+              <i class="icon-user"></i> <%= t("user.my_profile") %>
+          <% end %>
+        </li>
+        <li class="divider"></li>
+
+        <li>
+          <%= link_to edit_user_path(user), :class => "pjax-link" do %>
+              <i class="icon-edit"></i> <%= t("user.update_profile") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_song_path do %>
+              <i class="icon-upload"></i> <%= t("song.upload_song") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_video_path, :class => "pjax-link" do %>
+              <i class="icon-upload"></i> <%= t("video.upload_video") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to new_picture_path, :class => "pjax-link" do %>
+              <i class="icon-upload"></i> <%= t("picture.upload_photo") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to user_songs_path(user), :class => "pjax-link" do %>
+              <i class="icon-music"></i> <%= t("song.manage_songs")%>
+          <% end %>
+        </li>
+        <li>
+          <% if current_user.payment_address.nil? %>
+          <%= link_to new_payment_address_path, :class => "pjax-link" do %>
+              <i class="icon-certificate"></i> <%= t("user.create_payment_address")%>
+          <% end %>
+          <% else %>
+              <%= link_to payment_address_path(current_user.payment_address), :class => "pjax-link" do %>
+                  <i class="icon-certificate"></i> <%= t("user.manage_payment_address")%>
+              <% end %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to user_videos_path(user), :class => "pjax-link" do %>
+              <i class="icon-film"></i> <%= t("video.manage_videos") %>
+          <% end %>
+        </li>
+        <li>
+          <%= link_to favorite_songs_path(user) do %>
+              <i class="icon-headphones"></i> <%= t("playlist") %>
+          <% end %>
+        </li>
+      </ul>
+    </div>
+    <% end %>
+    <div class="btn-group">
+      <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+        <i class=" icon-home"></i> <%= h_what(user.name) %>
+        <span class="caret"></span>
+      </a>
+        <%= render "public_links", :user => user %>
+    </div>
+    <% unless current_user == user %>
+    <div class="btn-group">
+      <% if current_user && current_user.is_friend?(user) %>
+         <%= link_to toggle_subscription_path(:id => user.id), :class => "btn" do %>
+            <i class="icon-star" style="color: #a52a2a;"></i>   <%= t("user.unfan") %>
+         <% end %>
+      <% else %>
+          <%= link_to toggle_subscription_path(:id => user.id), :class => "btn" do %>
+              <i class="icon-star-empty"></i>  <%= t("user.become_fan")%>
+          <% end %>
+    <% end %>
+  </div>
+    <% end %>
+</div>
+<div class="clear"></div>
+</div>

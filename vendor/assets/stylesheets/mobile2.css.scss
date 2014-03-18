@@ -1,0 +1,360 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+  *= require jquery-ui-1.8.13.custom
+  *= require_self
+*/
+
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+
+@import "bootstrap_and_overrides.css.less";
+
+body{
+  background: #d0d0d0 url("hypejsmzbackground.png") repeat;
+}
+
+#container{
+
+}
+
+.clear {
+  clear: both;
+  height: 0;
+  overflow: hidden;
+}
+
+.mobile-songs-list{
+  list-style: none;
+  a{
+    text-decoration: none;
+    display: block;
+    &:hover{
+      background: #eee;
+    }
+  }
+   li{
+     padding: 5px 7px;
+     border-top: 1px solid #ddd;
+     position: relative;
+     .arrow-left{
+       font-size: 34px;
+       right: 21px;
+       float: right;
+       padding-top: 22px;
+       padding-left: 30px;
+       font-weight: bold;
+       color: #dadada;
+     }
+     .song_art{
+       float: left;
+       margin-right: 7px;
+       img{
+         border-radius: 3px;
+       }
+     }
+     h5{
+       color: #333;
+     }
+     .song-description{
+       color: #999;
+       font-size: 11px;
+       line-height: 13px;
+     }
+     .price-box{
+       position: absolute;
+       right: 0;
+       background:
+         #C6C6C6;
+       -webkit-border-radius: 0px 0px 0px 3px;
+       -moz-border-radius: 0px 0px 0px 3px;
+       border-radius: 0px 0px 0px 3px;
+       padding: 3px;
+       font-size: 10px;
+       top: 0;
+       color:
+         #333;
+     }
+   }
+}
+
+.owner{
+  padding: 5px 7px;
+  border-bottom: 1px solid #ccd5e4;
+  max-width:100%;
+  .owner-thumb{
+    float: left;
+    img{
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+    }
+  }
+  .owner-meta{
+    margin-left: 40px;
+    font-size: 11px;
+    color: #999999;
+  }
+}
+
+.right-floater{
+  float: right;
+  padding-left: 10px;
+  color: #ddd;
+}
+
+.song-info{
+  padding: 5px 7px;
+  img{
+    border-radius: 3px;
+  }
+}
+
+.song-title{
+ margin-bottom: 5px;
+}
+
+.song-thumb{
+  float: left;
+}
+
+.song-meta{
+  padding-left: 70px;
+  h5{
+    line-height: 14px;
+  }
+}
+
+.song-description{
+  font-size: 11px;
+  color: #999999;
+  line-height: 13px;
+  padding-top: 2px;
+}
+
+.info-block{
+  padding: 5px 7px;
+}
+
+.song-actions{
+  text-align: center;
+}
+
+.small-top-space{
+  margin-top: 4px;
+}
+
+.songs-comment-block{
+  margin-top:3px;
+ h5{
+   padding: 0px 5px;
+   border-bottom: 1px solid #00A6C7;
+   margin-bottom: 2px;
+ }
+  li{
+    padding: 5px 7px;
+    display: block;
+    border-bottom: 1px solid #ddd;
+  }
+}
+
+.comment-meta{
+
+}
+
+.comment-user-thumb{
+  float: left;
+  img{
+    border-radius: 3px;
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+  }
+}
+
+.comment-meta{
+  padding-left: 40px;
+  font-size: 12px;
+}
+
+.comment-user-name{
+  color: #9c9c9c;
+}
+
+.details-of-comment{
+  font-size: 11px;
+  color: #9d9d9d;
+}
+
+.comment textarea{
+  width: 98%;
+}
+
+.content_wrapper{
+
+}
+
+.page-title{
+  padding: 5px 7px;
+  border-bottom: 1px solid #e0dfe3;
+  margin-bottom: 5px;
+}
+
+.form-box{
+  padding: 5px 7px;
+}
+
+.more-width{
+  width: 96%;
+}
+
+.extra-padding{
+  margin: 5px 7px;
+}
+
+.credit-example{
+  list-style: none;
+}
+
+.user-thumb{
+  float: right;
+  img{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+}
+
+.user-name{
+  margin-right: 40px;
+  color: #9c9c9c;
+}
+
+.centered-text{
+  text-align: center;
+  color: #333;
+  a{
+    color: #333;
+    &:hover{
+      color: #08C;
+    }
+  }
+}
+
+.user-page{
+  padding: 5px 7px;
+}
+
+.user-thumb-info{
+  float: left;
+  img{
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+  }
+}
+
+.user-description{
+  padding-left: 80px;
+}
+
+.user-profile-options{
+  padding: 5px 7px;
+  border-bottom: 1px solid #e9f5ff
+}
+
+.left-floater{
+  float: left;
+}
+
+.fans-block{
+  margin-top: 6px;
+  padding: 5px 3px;
+}
+
+.fans-section{
+  h5{
+    border-bottom: 1px solid #e9f5ff;
+    padding: 5px 7px;
+  }
+}
+
+.bottom-part{
+  padding: 5px 7px;
+}
+
+.subscribers-list{
+  overflow: hidden;
+  list-style: none;
+    img{
+      border-radius: 3px;
+      -webkit-border-radius: 3px;
+      -moz-border-radius: 3px;
+    }
+}
+
+.fran-image-block{
+  float: left;
+}
+
+.fan-details{
+  margin-left: 35px;
+  font-size: 11px;
+   a{
+     color: #2373a5;
+   }
+}
+
+.centralize-text{
+  text-align: center;
+}
+
+.padded{
+  padding: 5px 7px;
+}
+
+.gallery{
+  padding:5px 7px;
+  overflow: hidden;
+  li{
+    float: left;
+    margin: 3px;
+    img{
+      border-radius: 3px;
+      -moz-border-radius: 3px;
+      -webkit-border-radius: 3px;
+    }
+  }
+}
+
+.video-player{
+  padding: 5px 7px;
+}
+
+.more-padding-left{
+  padding-left: 110px;
+}
+
+.song-meta-data{
+  margin-left: 67px;
+}
+
+.no-left-margin{
+  margin-left: 0px;
+}
+
+.no-padding-left{
+  padding-left: 0px;
+}
+
+.video-description{
+  color: #363636;
+  font-size: 11px;
+  padding: 5px 7px;
+}
+
+.fan-request-block{
+  margin-top: 3px;
+}

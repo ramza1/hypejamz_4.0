@@ -1,0 +1,23 @@
+<div class="block-b">
+  <div class="page-header">
+     <h2>Latest Events</h2>
+  </div>
+  <ul class="related-events">
+     <% for event in Event.published.latest %>
+            <li>
+              <a href="<%= url_for event %>" class="event-link">
+                <%= image_tag event.eve(:small_60), :alt => "" %>
+                <div class="event-name-container">
+                   <p><%= truncate(event.name, :length => 90) %></p>
+                   <div class="info"><%= markdown(truncate(event.description, :length => 70)) %>
+           <div class="time-ago">
+             <%= distance_of_time_in_words_to_now(event.created_at) %> ago &nbsp; <%= pluralize(event.comments_count, "comment")%>
+           </div>
+                   </div>
+                </div>
+
+              </a>
+            </li>
+     <% end %>
+  </ul>
+</div>

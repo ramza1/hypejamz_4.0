@@ -1,0 +1,30 @@
+<%= provide :title, @genre.name %>
+<%= provide(:right_nav) do %>
+        <% if current_user %>
+            <%= render "thumbnail_medium", :user => current_user %>
+        <% else %>
+            <%= render "not_member" %>
+        <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+        <i class="icon-music icon-box"></i> <%= @genre.name %>
+  </h4>
+</div>
+<div id="songs">
+  <% if @songs.empty? %>
+      <p class="alert alert-warning"><%= t("song.no_songs_uploaded_yet") %></p>
+  <% else %>
+      <%= render @songs %>
+  <% end %>
+</div>
+<ul class="pager">
+  <%= render "pages_nav" %>
+</ul>
+
+
+
+
+

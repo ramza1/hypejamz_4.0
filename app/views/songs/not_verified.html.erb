@@ -1,0 +1,56 @@
+
+<div class="song-hype">
+  <ul class="songs-list2">
+     <% for song_hype in FeaturedSong.random_songs %>
+          <%= render song_hype.song %>
+     <% end %>
+  </ul>
+
+</div>
+
+<div class="mp_wrapper">
+<%= render "right-nav" %>
+<div class="all-songs-wrapper">
+  <div class="users-header">
+     <h2 id="title-ajax">Un approved songs
+     </h2>
+<div class="search-box">
+<%= form_tag song_search_path, :method => :get, :id => "search-form" do  %>
+<span class="glass"><i></i></span>
+  <%= text_field_tag :q, @q, :placeholder => "Search for song", :id => "search-query" %>
+<% end %>
+</div>
+  </div>
+  <ul id="songs">
+     <%= render @songs %>
+  </ul>
+
+
+</div>
+</div>
+
+
+<script type="text/javascript ">
+  $(function(){
+      $('.play-me').live("click", function(){
+         $('.player-box').slideDown();
+      $('.now-playing').empty();
+      $('.now-playing').html("<p class='small-loading'>loading....</p>");
+      });
+  });
+</script>
+
+<script type="text/javascript">
+  $(function(){
+    $('.remote-event-link').click(function(e){
+      $('#songs').empty();
+      $('.pagination').show();
+      $('#songs').html("<p class='small-loading'>loading....</p>");
+      if (history && history.replaceState) {
+        history.replaceState(null, document.title, this.href);
+      }
+      e.preventDefault();
+    });
+  })
+</script>
+

@@ -1,0 +1,133 @@
+<div class="mp_wrapper">
+<%= render "users/user_info", :user => @user %>
+<div class="mp_content_wrapper">
+  <%= render "social_functions", :user => @user %>
+<div style="margin-top: 10px">
+    <div class="song-details-first">
+      <%= image_tag @song.art(:small), :class => "albumcontainer transition_border play-me" %>
+      <div class="song-info-block">
+        <h2><%= @song.title.capitalize %></h2>
+        <ul class="song-meta-data">
+        <li><b><%= @song.album %></b></li>
+        <li><span><%= @song.description %></span></li>
+        </ul>
+        <ul class="inline">
+            <li> <%= image_tag("document_fill_8x8.png")%>  <%= pluralize(@song.download_count, "download")%></li> &bull;
+             <li><%= image_tag("play_alt_8x8.png")%> <%= pluralize(@song.play_count, "play")%></li>    &bull;
+            <li><%= image_tag("comment_alt1_fill_8x8.png")%> <%= pluralize(@song.comments_count, "comment")%>
+            </li>
+        </ul>
+        <div class="">
+          <% if @song.for_sale? %> <p class="info-block">You need <b><%= @song.price%> Hypejamz credit</b> to download this song. <%= link_to "Recharge your account today", learn_more_path %> or <%= link_to "learn more about hypejamz credit", learn_more_path %></p> <% end %>
+          <%= link_to download_song_path(@song) do %>
+             <span class="btn"><i class="icon-download"></i> Download</span>
+          <% end %>
+          <%= link_to favourite_song_path(@song) do %>
+              <%= raw make_favourite_song(@song) %>
+          <% end %>
+        </div>
+        <div class="media-player">
+         <%= mp3_player @song.mp3.url, width: "200"  %>
+        </div>
+
+      </div>
+    </div>
+</div>
+<div class="clear"></div>
+<% unless @song.approved? %>
+<% reply = @song.replies.first(:select => 'id, yes', :conditions => ['user_id = ?', current_user]) %>
+
+            <% if reply %>
+<div class="reply-box  double-margin-top">
+				<p class="small-fonts">
+					You responded <em><%= reply.yes? ? "Love" : "Hate" -%></em>.
+				</p>
+				<div>
+					<%= form_for(:reply, :url => song_reply_path(@song, reply),
+											   :html => {:method => :put}) do |f| %>
+						<%= f.hidden_field :yes, :value => reply.yes? ? Reply::Response::No : Reply::Response::Yes %>
+						<%= submit_tag "Change to #{reply.yes? ? "Hate" : "Love"}", :class => "button" %>
+					<% end %>
+				</div>
+</div>
+            <% else %>
+<div class="reply-box  double-margin-top">
+  <p class="small-fonts">
+    love or hate this song
+  </p>
+  <div style="float: right; margin-left: 20px">
+					<%= form_for(:reply, :url => song_replies_path(@song)) do |f| %>
+						<%= f.hidden_field :yes, :value => Reply::Response::No %>
+						  <%= submit_tag "Hate", :class => "button" %>
+					<% end %>
+  </div>
+  <div style="float: right;">
+					<%= form_for(:reply, :url => song_replies_path(@song)) do |f| %>
+						<%= f.hidden_field :yes, :value => Reply::Response::Yes %>
+						  <%= submit_tag "Love", :class => "button" %>
+					<% end %>
+  </div>
+</div>
+
+			<% end %>
+<% end %>
+
+<div class="clear"></div>
+
+<% if current_user && current_user.admin? %>
+      <div id="approve">
+         <%= link_to @song.approved? ? "unapproved song" : "approve song", approve_song_path(@song), :class => "button", :remote => true %>
+      </div>
+<% end %>
+
+<div class="clear"></div>
+<div class="songs-comment-block">
+  <h1 id="comments_count-<%= @song.id %>"><%= pluralize(@song.comments_count, "comment" )%></h1>
+
+           <div id="comment-block-for-<%= @song.id %>" class="comments song-comment">
+             <%= render @song.comments %>
+           </div>
+<% if current_user %>
+           <div id="comment-form-for-<%= @song.id%>">
+            <div class="comment-form-block">
+             <div class="comment-avatar">
+               <%= image_tag(current_user.icon(:small)) %>
+             </div>
+             <%= form_for([@song, @song.comments.new], :remote => true, :html => {:id => "new_comment-#{@song.id}"}) do |f| %>
+                 <div class="comment_area">
+                  <div class="comment-text-area">
+                     <%= text_area_tag "comment" %>
+                  </div>
+                   <div class="comment-button">
+                     <%= submit_tag "comment", :class => "btn btn-primary" %>
+                   </div>
+                 </div>
+             <% end %>
+           </div>
+           </div>
+<% else %>
+    <p class="no-comments">You need to <%= link_to "Log In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to comment on this post.</p>
+<% end %>
+</div>
+  </div>
+
+
+
+
+</div>
+
+
+
+<script type="text/javascript ">
+  $(function(){
+      $('.play-me').live("click", function(){
+         $('.player-box').slideDown();
+      $('.now-playing').empty();
+      $('.now-playing').html("<p class='small-loading'>loading....</p>");
+      });
+  });
+</script>
+ <script>
+$('video,audio').mediaelementplayer();
+
+</script>

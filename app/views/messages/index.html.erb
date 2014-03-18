@@ -1,0 +1,34 @@
+<%= provide :title, "Inbox messages"%>
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => @user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <i class="icon-envelope"></i> <%= t("message.inbox_messages")%>
+    <span class="right">
+      <%= link_to new_message_path, :class => "btn" do %>
+         <i class="icon-envelope"></i> <%= t("message.send_message") %>
+      <% end %>
+    </span>
+  </h4>
+</div>
+<% if @user %>
+    <%= render "profile_links", :user => @user %>
+<% end %>
+<div id="songs">
+  <% if @messages.empty? %>
+      <p class="alert alert-warning"><%= t("messages.no_message") %></p>
+  <% else %>
+      <%= render @messages %>
+  <% end %>
+</div>
+
+
+
+
+
+
+
+

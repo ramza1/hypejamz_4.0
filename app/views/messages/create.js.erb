@@ -1,0 +1,3 @@
+$('#new_message')[0].reset()
+$('#myModal').modal('hide')
+alert("Your message has been delivered to <%= @message.receiver.name.humanize %>")

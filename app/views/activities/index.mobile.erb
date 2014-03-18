@@ -1,0 +1,68 @@
+<div data-role="page" data-dom-cache="true" class="home" class="ui-seablue" data-theme="b" data-add-back-btn="true">
+          <header data-role="header" data-theme="a" class="heading">
+            <h1>Activity Updates</h1>
+       <%= render "mobile_session" %>
+             <nav data-role="navbar" align="CENTER" id="navbar" data-iconpos="bottom">
+<% if @user %>
+                <ul>
+                    <li>
+                      <%= link_to "Yarns", user_profile_path(@user), "data-theme" => "a", "data-icon" => "yarn"  %>
+                    </li>
+
+                    <li>
+                      <%= link_to "Photos", user_pictures_path(@user), "data-theme" => "a", "data-icon" => "photo" %>
+                    </li>
+
+
+                    <li>
+                        <a href="<%= url_for user_songs_path(@user) %>" data-theme="a" data-icon= "media">
+                            Songs
+                        </a>
+                    </li>
+
+
+                    <li>
+                        <a href="<%= url_for user_videos_path(@user) %>" class=""   data-theme="a" data-icon= "video">
+                            Videos
+                        </a>
+                    </li>
+
+                </ul>
+<% else %>
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", :class => "", "data-icon" => "home"  %>
+                    </li>
+                  <li>
+                      <%= link_to "Gist's",  stories_path, "data-theme" => "a", :class => "", "data-icon" => "grid"   %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for users_path %>" class=""   data-theme="a" data-icon="people" >
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-icon= "media" >
+                            Songs
+                        </a>
+                    </li>
+                </ul>
+<% end %>
+            </nav>
+        </header><!-- /header -->
+        <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+<ul data-role="listview" data-theme="a">
+       <% for activity in @activities %>
+        <li id="<%= activity.id %>">
+            <%= image_tag activity.user.icon(:thumb), :class => "icon ul-li-icon ui-li-thumb" %>
+            <p><b><%= raw minifeed_message activity %></b></p>
+            <p><%= time_ago_in_words activity.created_at %> ago</p>
+        </li>
+       <% end %>
+</ul>
+
+        </div><!-- /content -->
+
+        <%= render "mobile_footer" %>
+    </div>

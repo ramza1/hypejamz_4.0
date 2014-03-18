@@ -1,0 +1,22 @@
+<div class="mp_wrapper">
+<%= render "users/user_info", :user => @user %>
+<div class="mp_content_wrapper">
+
+
+  <%= render "social_functions", :user => @user %>
+
+
+  <div class="ajax-loader-box">
+    <div class="ajax-header">
+      <h3>My Videos</h3>
+    </div>
+    <% if @videos.empty? %>
+        <p class="no-comments">No Video for <%= @user.name.humanize %> at the moment </p> <% if me? %> <%= link_to "add video", new_video_path %> <% end %>
+    <% else %>
+      <%= render @videos %>
+    <% end %>
+ </div>
+</div>
+
+
+</div>

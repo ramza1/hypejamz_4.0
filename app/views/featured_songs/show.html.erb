@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Song:</b>
+  <%= @featured_song.song_id %>
+</p>
+
+<p>
+  <b>Position:</b>
+  <%= @featured_song.position %>
+</p>
+
+<p>
+  <b>Start:</b>
+  <%= @featured_song.start %>
+</p>
+
+<p>
+  <b>End:</b>
+  <%= @featured_song.end %>
+</p>
+
+
+<%= link_to 'Edit', edit_featured_song_path(@featured_song) %> |
+<%= link_to 'Back', featured_songs_path %>

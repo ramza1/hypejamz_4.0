@@ -1,0 +1,110 @@
+@import "bootstrap_and_overrides.css.less";
+
+.extra-margin-top{
+  margin-top: 15px;
+}
+
+.membership-header{
+  font-size: 14px;
+}
+
+.double-margin-top{
+  margin-top: 60px;
+}
+
+.normal-list{
+  margin-left: 0;
+  list-style: none;
+  margin-top: 10px;
+  li{
+    margin-bottom: 5px;
+    overflow: hidden;
+    img{
+      border-radius: 6px;
+      float: left;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.details{
+  margin-left: 55px;
+  h6{
+   a{
+   color: inherit;
+     &:hover{
+       color: #888;
+       text-decoration: none;
+     }
+  }
+ }
+}
+
+.no-margin-bottom{
+  margin-bottom: 0;
+}
+
+.songs-meta{
+  color: #999;
+  font-size: 11px;
+}
+
+@import "songs.css.scss";
+
+.hypejamz-logo{
+  position: relative;
+  height: 311px;
+  img{
+    position:absolute;
+  }
+}
+
+.recent-people{
+  margin: 0;
+  list-style: none;
+  li{
+   float: left;
+     a{
+       display: block
+    }
+     img{
+      border-radius: 4px;
+      width: 48px;
+      height: 48px;
+    }
+  }
+}
+
+.about-block{
+  margin-top: 38px;
+}
+
+.footer-links{
+  float: right;
+  li{
+    display: inline;
+    margin-left: 10px;
+    a{
+      color: #222;
+      &:hover{
+        color: #888;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+.hypejamz-slide{
+  position: relative;
+  .logo{
+    position:absolute;
+    z-index: -99999;
+    top: -65px;
+    text-align: center;
+    left: 98px;
+  }
+  .slide{
+    margin-top: 55px;
+  }
+}

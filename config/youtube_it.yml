@@ -1,0 +1,11 @@
+common: &common
+  dev_key: AI39si7UOhe-Igf6D0Exb9e2GK-eHBwNqQ1Q6oPLDMqigf9-2T0qSkBm7Nqm37AaKVfklFW2cRhALFE323XjkN6p1ULznoSb2Q
+  username:  rzaartz@gmail.com
+  password:  roseline
+  
+test:
+  <<: *common
+development:
+  <<: *common
+production:
+  <<: *common

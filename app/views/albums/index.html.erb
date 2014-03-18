@@ -1,0 +1,48 @@
+<% if params[:user_id] %>
+    <%= render "user_albums" %>
+<% else %>
+
+    <div class="song-hype">
+      <ul class="songs-list2">
+        <% for song_hype in FeaturedSong.random_songs %>
+            <%= render song_hype.song %>
+        <% end %>
+      </ul>
+
+    </div>
+
+    <div class="mp_wrapper">
+      <%= render "right_nav" %>
+      <div class="all-songs-wrapper">
+        <div class="users-header">
+          <h2 id="title-ajax">Albums
+          </h2>
+          <div class="search-box">
+            <%= form_tag album_search_path, :method => :get, :id => "search-form" do  %>
+                <span class="glass"><i></i></span>
+                <%= text_field_tag :q, @q, :placeholder => "Search for albums", :id => "search-query" %>
+            <% end %>
+          </div>
+        </div>
+        <ul id="songs">
+          <%= render @albums %>
+        </ul>
+
+
+      </div>
+    </div>
+    <ul class="pagination group">
+      <%= render "pages_nav" %>
+    </ul>
+<% end %>
+<script type="text/javascript ">
+    $(function(){
+        $('.play-me').live("click", function(){
+            $('.player-box').slideDown();
+            $('.now-playing').empty();
+            $('.now-playing').html("<p class='small-loading'>loading....</p>");
+        });
+    });
+</script>
+
+

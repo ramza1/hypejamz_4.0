@@ -1,0 +1,15 @@
+<%- unless activity.item.nil? -%>
+  <li class="<%= activity.id %>">
+    <div class="profile-image">
+    <%= image_tag activity.user.icon(:small), :class => "thumb" %>
+  </div>
+  <div class="activity-description">
+  <p><%= raw minifeed_message activity %></p>
+  <p class="meta published">
+    <%= time_ago_in_words activity.created_at %> ago
+  </p>
+  </div>
+<div class="clear"></div>
+  </li>
+<div class="clear"></div>
+<%- end -%>

@@ -1,0 +1,38 @@
+<% if current_user %>
+ <% unless current_user == user %>
+   <span class="right">
+     <a class="btn" data-toggle="modal" href="#myModal" >
+       <i class="icon-envelope"></i> <%= t("message.send_message") %>
+     </a>
+   </span>
+   <div class="clear"></div>
+
+   <div class="modal hide fade" id="myModal">
+      <div class="modal-header">
+         <button type="button" class="close" data-dismiss="modal">×</button>
+         <h3>Send message to <%= user.name.humanize %></h3>
+      </div>
+      <%= form_for Message.new, :remote => true, :html => {:class => "form-inline"} do |f| %>
+        <div class="modal-body">
+          <p>
+            <%= f.text_area :body, :rows => 3, :style => "width: 98%;", :placeholder => "Type your message here" %>
+          </p>
+        </div>
+        <div class="modal-footer">
+           <a href="#" class="btn" data-dismiss="modal"><i class="icon-remove-sign"></i> Close</a>
+           <button type="submit" class="btn btn-primary">
+             <i class="icon-ok-sign"></i> Send
+           </button>
+        </div>
+         <%= f.hidden_field(:receiver_id, :value => user.id) %>
+      <% end %>
+   </div>
+ <% end %>
+<% else %>
+    <span class="right">
+    <%= link_to new_message_path(:receiver_id => user.id), :class => "btn" do %>
+        <i class="icon-envelope"></i> <%= t("message.send_message") %>
+    <% end %>
+    </span>
+    <div class="clear"></div>
+<% end %>

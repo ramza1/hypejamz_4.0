@@ -1,0 +1,23 @@
+<% if can? :create, Album %>
+<div id="content_wrapper">
+  <div id="active_admin_content">
+    <div id="form-box">
+      <h2>
+        Upload a new Album
+      </h2>
+      <%= render 'form' %>
+
+      <%= link_to 'Back to Profile', user_path(current_user)  %>
+    </div>
+  </div>
+</div>
+
+<% else %>
+
+<div class="padded">
+  <p class="alert alert-info">
+    Only gold users are allowed to upload albums. Upgrade to the new Hypejamz gold user account to sell your album or upload your album. To upgrade, contact us at 08100990852 for to verify your account as the real owner of this account.
+  </p>
+</div>
+
+<% end %>

@@ -1,0 +1,71 @@
+<div class="my_bio">
+      <div class="bottom-part">
+        <div class="fan-base">
+          <div class="fan-base-top">
+            <div class="fan-base-title">
+              <h4>Recently Joined</h4>
+            </div>
+          </div>
+          <div class="subscribers">
+            <ul class="subscribers-list">
+                  <% User.recently_joined.each do |friend| %>
+                      <li><%= link_to image_tag(friend.icon(:small), :title => friend.name, :class => "wes thumb"), user_path(friend)  %></li>
+                  <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="bottom-part">
+        <div class="fan-base">
+          <div class="fan-base-top">
+            <div class="fan-base-title">
+              <h4>Photo Gallery</h4>
+            </div>
+          </div>
+          <div class="subscribers">
+            <ul class="subscribers-list">
+                  <% Picture.global_pictures.each do |picture| %>
+                      <li><a href="<%= image_path(picture.photo(:big).to_s) %>" title="<%= picture.caption %>" rel="photo_group" class="image-thumb transition_border"><%= image_tag(picture.photo(:small_32), :class => "thumb") %></a></li>
+                  <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+          <div class="bottom-part">
+            <div class="fan-base">
+              <div class="fan-base-top">
+                <div class="fan-base-title">
+                  <h4>Latest Songs</h4>
+                </div>
+              </div>
+              <div class="subscribers">
+                <div class="subscribers-list">
+                      <% Song.global_songs.each do |latest_song| %>
+                          <div class="favourite-song">
+                            <%= image_tag latest_song.art(:big), :class => "small-thumb thumb" %>
+                            <div class="meta-details">
+                              <p><b><%= link_to truncate(latest_song.title, :length => 20), latest_song, :title => latest_song.title, :class => "user-name wes" %></b></p>
+                              <p><%= link_to latest_song.user.name, latest_song.user, :class => "song-link" %></p>
+                              <p><%= link_to image_tag("next.png"), latest_song, :remote => true, :class => "play-me", :title => "play" %></p>
+                            </div>
+                          </div>
+                      <% end %>
+                </div>
+              </div>
+            </div>
+          </div>
+</div>
+
+
+<script type="text/javascript ">
+    $(function(){
+        $('.play-me').live("click", function(){
+            $('.player-box').slideDown();
+            $('.now-playing').empty();
+            $('.now-playing').html("<p class='small-loading'>loading....</p>");
+        });
+    });
+</script>
+
+
+

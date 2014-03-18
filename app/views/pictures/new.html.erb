@@ -1,0 +1,16 @@
+<%= provide :title, t("picture.upload_photo") %>
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => current_user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <i class="icon-upload"></i> <%= t("photo.upload_photo") %>
+  </h4>
+</div>
+
+
+
+    <%= render 'form' %>
+

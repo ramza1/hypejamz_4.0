@@ -1,0 +1,15 @@
+<%= div_for comment do %>
+  <div class="comment-user">
+     <%= image_tag comment.user.icon(:small), :class => "thumb" %>
+  </div>
+  <div class="comment-description">
+    <b><%= link_to comment.user.name, user_profile_path(comment.user), :class => "gold" %></b> <%= comment.comment %>
+    <% if can? :destroy, comment %>
+      <span class="time-stamps">
+        <%= distance_of_time_in_words_to_now(comment.created_at) %> ago <%= link_to "delete", comment, :method => :delete, :class => "note-coment-link", :remote => true %>
+      </span>
+    <% end %>
+  </div>
+    <div class="clear"></div>
+<% end %>
+<div class="clear"></div>

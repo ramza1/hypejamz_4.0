@@ -1,0 +1,25 @@
+<%= provide :title, t("user.fans", :name => h_what(@user.name))%>
+<%= provide(:right_nav) do %>
+        <%= render "thumbnail_medium", :user => @user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+        <i class="icon-music"></i> <%= t("user.fans", :name => h_what(@user.name)) %>
+    <%= render "send_message_link", :user => @user %>
+  </h4>
+</div>
+    <%= render "profile_links", :user => @user %>
+<div id="songs">
+  <% if @fans.empty? %>
+      <p class="alert alert-warning"><%= t("user.no_fans", :name => h_what(@user.name)) %></p>
+  <% else %>
+      <%= render @fans %>
+  <% end %>
+</div>
+
+
+
+
+

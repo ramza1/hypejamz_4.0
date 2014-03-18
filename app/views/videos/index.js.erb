@@ -1,0 +1,4 @@
+$('.small-loading').hide();
+var li = $("<%= escape_javascript(render("videos/ajax_user_videos", :user => @user))%>").hide();
+$('.ajax-loader-box').prepend(li);
+li.fadeIn('slow');

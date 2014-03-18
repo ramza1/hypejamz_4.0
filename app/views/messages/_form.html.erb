@@ -1,0 +1,38 @@
+<%= form_for(@message, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @message.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@message.errors.count, "error") %> prohibited this message from being saved:</h2>
+
+      <ul>
+      <% @message.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+<fieldset>
+    <% if @user %>
+      <%= f.hidden_field :receiver_id %>
+    <% else %>
+      <div class="control-group">
+        <%= f.label :receiver_id, "To", :class => "control-label" %>
+        <div class="controls">
+          <%= f.collection_select(:receiver_id, current_user.friends, :id, :name)%>
+        </div>
+      </div>
+    <% end %>
+  <div class="control-group">
+    <%= f.label :body, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_area :body, :rows => 3, :placeholder => "Type your message here", :class => "input-xlarge", :style => "height: 200px;" %>
+    </div>
+  </div>
+
+
+  <div class="form-actions">
+    <button type="submit" class="btn btn-primary">
+       <i class="icon-ok-sign"></i> Send Message
+    </button>
+  </div>
+</fieldset>
+<% end %>

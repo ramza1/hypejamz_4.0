@@ -1,0 +1,11 @@
+<%= render "song_owner", :user => @video.user %>
+
+<h5 class="centralize-text"><%= @video.title %></h5>
+<div class="video-player">
+ <iframe class="youtube-player" type="text/html" src="http://www.youtube.com/embed/<%= @video.yt_video_id %>" frameborder="0" width="100%">
+</iframe>
+</div>
+
+<div class="video-description">
+  <%= @video.description %>
+</div>

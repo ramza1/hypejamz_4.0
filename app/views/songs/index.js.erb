@@ -1,0 +1,17 @@
+<% if params[:user_id]%>
+$('.small-loading').hide();
+var li = $("<%= escape_javascript(render("songs/ajax_user_songs", :user => @user))%>").hide();
+$('.ajax-loader-box').prepend(li);
+li.fadeIn('slow');
+
+<% else %>
+$('.small-loading').hide();
+$('#songs').append('<%= j render(@songs) %>');
+$('a.pop').popover();
+<% if @songs.next_page %>
+  $('.pager').prepend('<%= j(render "songs/pages_nav")%>');
+<% else %>
+  $('.pager').hide();
+<% end %>
+
+<% end %>

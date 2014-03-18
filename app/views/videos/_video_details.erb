@@ -1,0 +1,16 @@
+<% if request.xhr? %>
+   <%= link_to "back", user_path(@user), :remote => true, :class => "remote-event-link" %>
+ <% end %>
+<div class="page_description">
+
+  <h2>
+      <%= @video.title %>
+  </h2>
+  <div class="ready-event">
+  <iframe class="youtube-player" type="text/html" width="640" height="385" src="http://www.youtube.com/embed/<%= @video.yt_video_id %>" frameborder="0">
+</iframe>
+  </div>
+</div>
+
+<%= render "videos/other_user_videos", :user => @user, :my_video => @video %>
+

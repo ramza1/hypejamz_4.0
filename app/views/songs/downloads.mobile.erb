@@ -1,0 +1,28 @@
+<div class="songs">
+      <em style="font-size: 13px; font-weight: bold; padding-left: 7px;">
+        Top Downloads
+      </em>
+  <ul class="mobile-songs-list">
+    <% @songs.each do |song| %>
+        <a href="<%= url_for song %>"><li>
+          <div class="song_art">
+            <%= image_tag song.art(:big) %>
+          </div>
+          <div class="arrow-left"> > </div>
+          <div class="song-meta-data">
+            <h5><%= truncate(song.title, :length => 30) %></h5>
+            <div class="song-description">
+              <div class="song-artist-info">
+                By: <%= song.user.name.humanize %>
+              </div>
+              <div class="song-data">
+                <%= pluralize(song.comments_count, "comment") %> &bull; <%= pluralize(song.download_count, "download") %>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </li></a>
+        <div class="clear"></div>
+    <% end %>
+  </ul>
+</div>

@@ -1,0 +1,16 @@
+<%= simple_form_for(@payment_address, html: {:class => "form-horizontal"}) do |f| %>
+  <%= f.error_notification %>
+
+  <div class="form-inputs">
+    <%= f.input :address, placeholder: "Address to receive checks" %>
+    <%= f.input :state, placeholder: "state of providence" %>
+    <%= f.input :country, :prompt => "select a country" %>
+    <%= f.input :zip, placeholder: "zip code" %>
+    <%= f.input :phone_number, :placeholder => "Reachable phone number" %>
+    <%= f.input :alternate_phone_number %>
+  </div>
+
+  <div class="form-actions">
+    <%= f.button :submit %>
+  </div>
+<% end %>

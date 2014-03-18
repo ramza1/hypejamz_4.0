@@ -1,0 +1,23 @@
+<li><%= link_to new_song_path do %>
+      <i class="icon-plus-sign"></i> Upload songs
+  <% end %>
+</li>
+<li><%= link_to new_video_path do %>
+      <i class="icon-plus-sign"></i> Upload video
+  <% end %>
+</li>
+<li><%= link_to  new_picture_path do %>
+      <i class="icon-plus-sign"></i> Upload picture
+  <% end %>
+</li>
+
+<% if can? :create, WithdrawalRequest %>
+    <% if WithdrawalRequest.count('*', :conditions => ['user_id = ?', current_user.id]) > 0 %>
+        <p class="alert alert-info">Currently processing your request.</p>
+    <% else %>
+   <li><%= link_to withdraw_withdrawal_request_path, :method => :post do %>
+        <i class="icon-money"></i> Cash Out
+     <% end %>
+   </li>
+
+<% end end %>

@@ -1,0 +1,41 @@
+<%-
+    #locals
+    user ||= @message.sender
+    name ||= @message.sender.name
+-%>
+
+<%= provide :title, "Inbox messages'"%>
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => current_user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <i class="icon-envelope"></i> <%= t("message.reading_message")%>
+    <span style="font-size: 12px;">
+      <%= link_to messages_path do %>
+          &larr; Back to Inbox
+      <% end %>
+    </span>
+    <%= render "send_message_link", :user => @message.sender %>
+  </h4>
+</div>
+<% if @user %>
+    <%= render "profile_links", :user => current_user %>
+<% end %>
+<div id="songs">
+  <div class="song read">
+    <div class="song-pic">
+      <%= image_tag user.icon(:thumb), :class => "profile-icon" %>
+    </div>
+    <div class="song-details user">
+      <div class="description">
+        <p class="info"><b><%= link_to_unless_current user.name.humanize, user, :class => "user-link" %></b> &nbsp; <%= @message.body %>
+        </p>
+      </div>
+    </div>
+    <div class="clear"></div>
+  </div>
+</div>
+

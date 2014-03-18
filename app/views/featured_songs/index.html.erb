@@ -1,0 +1,29 @@
+<h1>Listing featured_songs</h1>
+
+<table>
+  <tr>
+    <th>Song</th>
+    <th>Position</th>
+    <th>Start</th>
+    <th>End</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @featured_songs.each do |featured_song| %>
+  <tr>
+    <td><%= featured_song.song_id %></td>
+    <td><%= featured_song.position %></td>
+    <td><%= featured_song.start %></td>
+    <td><%= featured_song.end %></td>
+    <td><%= link_to 'Show', featured_song %></td>
+    <td><%= link_to 'Edit', edit_featured_song_path(featured_song) %></td>
+    <td><%= link_to 'Destroy', featured_song, confirm: 'Are you sure?', method: :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Featured song', new_featured_song_path %>

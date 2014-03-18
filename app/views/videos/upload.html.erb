@@ -1,0 +1,16 @@
+
+      <%= form_tag @upload_info[:url], :html => {:multipart => true, :class => "form-horizontal"} do %>
+        <%= hidden_field_tag :token, @upload_info[:token] %>
+<fieldset>
+   <legend>Step 2: upload a new video</legend>
+  <div class="control-group">
+        <%= label_tag :file, :class => "control-label" %>
+        <div class="controls">
+          <%= file_field_tag :file %>
+        </div>
+  </div>
+  <div class="form-actions">
+        <%= submit_tag "Upload video" %>
+  </div>
+</fieldset>
+      <% end %>

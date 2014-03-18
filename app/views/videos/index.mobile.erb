@@ -1,0 +1,42 @@
+<div class="songs">
+  <% if params[:user_id] %>
+      <%= render "song_owner", :user => @user %>
+      <h5 class="centered-text">
+        <%= link_to "#{@user.name.humanize}'s", @user %> videos
+      </h5>
+      <% if @videos.empty? %>
+        <div class="padded">
+          <p class="alert alert-info centralize-text">No videos for <%= @user.name %> <br/>
+            <%= link_to "add video", new_video_path, :class => "btn btn-primary" %>
+          </p>
+        </div>
+      <% end %>
+  <% else %>
+      <em style="font-size: 13px; font-weight: bold; padding-left: 7px;">
+        Latest videos on hypejamz
+      </em>
+  <% end %>
+  <ul class="mobile-songs-list">
+    <% @videos.each do |video| %>
+        <a href="<%= url_for video %>"><li>
+          <div class="song_art">
+            <img onload src="//i2.ytimg.com/vi/<%= video.yt_video_id %>/default.jpg" class ="album_art" width=70px height=70px; />
+          </div>
+          <div class="arrow-left"> > </div>
+          <div class="song-meta-data">
+            <h5><%= truncate(h_what(video.title), :length => 30) %></h5>
+            <div class="song-description">
+              <div class="song-artist-info">
+                <%= truncate(h_what(video.description), :length => 150) %>
+              </div>
+              <div class="song-data">
+                <%= time_ago_in_words(video.created_at) %> ago
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </li></a>
+        <div class="clear"></div>
+    <% end %>
+  </ul>
+</div>

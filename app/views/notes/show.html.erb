@@ -1,0 +1,9 @@
+<%
+ note ||= @note
+%>
+<div class="mp_wrapper">
+  <%= render "users/user_info", :user => @user %>
+  <div class="mp_content_wrapper">
+   <%= render @note %>
+</div>
+</div>

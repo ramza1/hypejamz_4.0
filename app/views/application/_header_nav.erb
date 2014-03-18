@@ -1,0 +1,61 @@
+<ul class="nav">
+  <li class="dropdown <% if controller_name == "songs" %> active <% end %>">
+    <a href="#"
+       class="dropdown-toggle"
+       data-toggle="dropdown">
+      <i class="icon-music icon-white"></i> Songs
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Songs Gallery", songs_path %></li>
+      <li><%= link_to "Top Downloads", downloads_path %></li>
+      <li><%= link_to "Trending", trending_songs_path %></li>
+      <li><%= link_to "upload your song", new_song_path %></li>
+      <li class="divider"></li>
+      <% cache "genre" do %>
+        <% for genre in Genre.all %>
+          <li><%= link_to genre.name, genre  %></li>
+        <% end %>
+      <% end %>
+    </ul>
+  </li>
+  <li class="divider-vertical"></li>
+  <li class="dropdown <% if controller_name == "videos" %> active <% end %>">
+    <a href="#"
+       class="dropdown-toggle"
+       data-toggle="dropdown">
+      <i class="icon-film icon-white"></i> Videos
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Latest Videos", videos_path %></li>
+      <li><%= link_to "Upload video", new_video_path %></li>
+    </ul>
+  </li>
+  <li class="divider-vertical"></li>
+  <%= form_tag  search_box_path, :method => 'get', :class => "navbar-search"  do %>
+      <%= text_field_tag :q, @q, :placeholder => "search for songs", :class => "search-query span2" %>
+  <% end %>
+  <li class="divider-vertical"></li>
+  <li class=" <% if controller_name == "users" %> active <% end %>"><%= link_to users_path do %>
+        <i class="icon-user icon-white"></i> People
+    <% end %></li>
+  <li class="divider-vertical"></li>
+  <li class="dropdown <% if controller_name == "songs" %> active <% end %>">
+    <a href="#"
+       class="dropdown-toggle"
+       data-toggle="dropdown">
+      <i class="icon-heart icon-white"></i> Get HJ Credits
+      <b class="caret"></b>
+    </a>
+    <ul class="dropdown-menu">
+      <li><%= link_to "Get Hypejamz Credit(ATM&Credit card)", plans_path %></li>
+      <li><%= link_to "Get hypejamz via Mobile money", hypejamz_credit_path %></li>
+
+      <li><%= link_to "About Hypejamz credit", about_us_path %></li>
+      <li><%= link_to "Verify your Hypejamz Account ", new_verification_path %></li>
+    </ul>
+  </li>
+</ul>
+
+<%= render "header" %>

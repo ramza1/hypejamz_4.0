@@ -1,0 +1,48 @@
+<div data-role="page" data-dom-cache="true" class="home" class="ui-seablue" data-theme="b" data-back-btn="true" >
+        <header data-role="header" data-theme="a" class="heading">
+            <h1>Hottest Gists</h1>
+              <%= render "mobile_session" %>
+             <nav data-role="navbar" align="CENTER" id="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", :class => "", "data-icon" => "home"  %>
+                    </li>
+                  <li>
+                      <%= link_to "Blog",  stories_path, "data-theme" => "a", :class => "ui-btn ui-btn-active ui-btn-up-a", "data-icon" => "grid"   %>
+                    </li>
+
+                    <li>
+                        <a href="<%= url_for users_path %>" class=""   data-theme="a" data-icon="people" >
+                            People
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-icon= "media" >
+                            Songs
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header><!-- /header -->
+        <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+          <% if can? :create, Story%>
+              <%= link_to "Add Gist", new_story_path, "data-role" => "button", "data-icon" => "add", :class => "double-margin-bottom"%>
+          <% end %>
+<ul data-role="listview" class="browse" data-theme="a">
+       <% for story in @stories %>
+        <li id="<%= story.id %>">
+          <a href="<%= url_for story %>">
+            <%= image_tag story.clip(:small_100), :class => "icon ul-li-icon ui-li-thumb" %>
+            <h4>
+             <span class="left-user-name"><%= story.title %></span>
+             </h4>
+            <p><b><%= truncate(strip_tags(story.body), :length => 150) %></b></p>
+            <p>By <%= story.user.name %></p>
+          </a>
+        </li>
+       <% end %>
+</ul>
+        </div><!-- /content -->
+
+        <%= render "mobile_footer" %>
+    </div>

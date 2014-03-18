@@ -1,0 +1,7 @@
+$('#notes').prepend("<%= j(render(@note))%>");
+$('#new_note')[0].reset();
+$("#<%= dom_id(@note)%>").effect("highlight", {}, 30000);
+$("#text-count").text("300");
+$("#text-count").removeClass("dark_red").removeClass("red");
+$("#text-count").addClass("text-count");
+$('.loading-box').hide();

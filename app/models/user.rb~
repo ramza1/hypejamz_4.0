@@ -1,0 +1,246 @@
+class User < ActiveRecord::Base
+  # Include default devise modules. Others available are:
+  # :token_authenticatable, :confirmable,
+  # :lockable, :timeoutable and :omniauthable
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :trackable, :validatable, :omniauthable
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :password_confirmation, :remember_me
+  FEED_SIZE = 10
+
+
+
+  # Setup accessible (or protected) attributes for your model
+  attr_accessible :email, :password, :remember_me, :name, :about, :facebook_username, :twitter_username, :icon, :real_name, :permalink, :artist, :premium_user
+
+  validates_acceptance_of :terms_of_service, :on => :create
+  has_many :verifications
+  validates :name, :presence => true, :uniqueness => true
+  validates_format_of :name, :with => /^[\w\_\.]+$/i, :allow_blank => true, :message => "should only contain letters, numbers, or underscores(_)"
+  validates :real_name, :presence => true
+  before_create :set_permalink
+  after_update :update_permalink
+  #validates_length_of :about, :maximum => 300, :message => "less than 300 words if you don't mind"
+  scope :artists, where("artist = (?) AND songs_count >= (?)", true, 1).order("created_at desc")
+  validates_exclusion_of :name, :in => %w(admin super_admin back2back stories notes messages subscribe artists artist mobile_featured_song download_mobile_app developers mobile_featured download_mobile_app remove_yarn join_now)
+
+
+  has_attached_file :icon,
+                    :path => ":rails_root/public/system/:attachment/:id/:style/:normalized_icon_file_name",
+                    :styles => {:thumb => "60x60#", :small => "32x32#", :big => "100x100#"}, :default_url => 'default_:style.png',
+                    :url => "/system/:attachment/:id/:style/:normalized_icon_file_name"
+  validates_attachment_content_type :icon, :content_type => ['image/jpeg', 'image/png', 'image/gif']
+  validates_attachment_size :icon, :less_than => 1.megabyte
+  has_many :authentications, :dependent => :destroy
+  has_many :identities, :dependent => :destroy
+  has_many :songs, :dependent => :destroy
+  has_many :pictures, :dependent => :destroy
+  has_many :events, :dependent => :destroy
+  has_many :videos, :dependent => :destroy
+  has_many :hypes, :dependent => :destroy
+  has_many :featured_users, :dependent => :destroy
+  has_many :sent_messages,     :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'sender_id'
+  has_many :received_messages, :class_name => 'Message', :order => 'created_at desc', :foreign_key => 'receiver_id'
+  has_many :unread_messages,   :class_name => 'Message', :conditions => {:read => false}, :foreign_key => 'receiver_id'
+  has_many :friendships
+  has_many :friends, :through => :friendships
+  has_many :favourites
+  has_many :liked_songs, :through => :favourites
+  has_many :notes
+  has_many :feeds
+  has_many :comments, :as => :commentable, :order => 'created_at DESC'
+  has_many :activities, :through => :feeds, :order => 'activities.created_at DESC',
+                                            :limit => FEED_SIZE,
+                                            :include => :user
+  has_many :comments, :as => :commentable, :order => 'created_at DESC',
+                      :limit => 10
+  has_many :albums
+  has_one :payment_address
+  has_many :withdrawal_requests
+  make_flagger
+
+  scope :recently_joined, order("created_at desc").limit(4)
+  scope :new_members, order("created_at desc").limit(10)
+  scope :random_hypes, :order => "RAND()", :limit => 10
+  after_save :expire_cache
+
+
+  scope :like, lambda { |*args|
+    query = args.flatten.first
+    where("name like ? OR id like ? OR username like ?", "%#{query}%", "%#{query}", "%#{query}")
+  }
+
+
+  def recent_activity
+    Activity.find_all_by_user_id(self, :order => 'created_at DESC',
+                                         :limit => FEED_SIZE)
+  end
+
+  cattr_accessor :featured_user
+  @@featured_user = {:date=>Date.today-4, :user=>nil}
+  User::NOWHERE = 'Nowhere'
+
+  def self.featured
+    find_options = {
+        :conditions => ["about IS NOT NULL"],
+    }
+#    find(:first, find_options.merge(:offset => rand( count(find_options) - 1)))
+    find(:first, find_options.merge(:offset => rand(count(find_options)).floor))
+  end
+
+  scope :see, lambda { |*args|
+    query = args.flatten.first
+    where("name like ?", "%#{query}")
+  }
+
+  scope :fans, where("artist = (?) OR songs_count = (?)", false, 0).order("created_at desc")
+
+  def friends_of
+    Friendship.where("friend_id = ?", self.id).map{|f|f.user}
+  end
+
+  def has_network?
+    !Friendship.first(:conditions => ["friend_id = ?", id]).blank?
+  end
+
+  Paperclip.interpolates :normalized_icon_file_name do |attachment, style|
+    attachment.instance.normalized_icon_file_name
+  end
+
+  def normalized_icon_file_name
+    "#{self.icon_file_name.gsub( /[^a-zA-Z0-9_\.]/, ' ')}"
+  end
+
+  def first_forty
+    Friendship.where("friend_id = ?", self.id).limit(40).map{|f|f.user}
+  end
+
+  def add_friend(friend)
+    friendship = friendships.build(:friend_id => friend.id)
+    if !friendship.save
+      logger.debug "User '#{friend.email}' already exists in the user's friendship list."
+    end
+  end
+
+  def like(song)
+    favourite = favourites.build(:liked_song_id => song.id)
+    if !favourite.save
+      logger.debug "song already exists in playlist."
+    end
+  end
+
+  def expire_cache
+    ActionController::Base.cache_store.delete_matched("recent_users_welcome")
+  end
+
+  def remove_friend(friend)
+    friendship = Friendship.first(:conditions => ["user_id = ? and friend_id = ?", self.id, friend.id])
+    if friendship
+      friendship.destroy
+    end
+  end
+
+  def unlike(song)
+    favourite = Favourite.first(:conditions => ["user_id = ? and liked_song_id = ?", self.id, song.id])
+    if favourite
+      favourite.destroy
+    end
+  end
+
+  def is_friend?(friend)
+    self.friends.include? friend
+  end
+
+  def likes(song)
+    self.liked_songs.include? song
+  end
+
+  def all_notes
+    Note.where("user_id in (?)", friends.map(&:id).push(self.id)).order("created_at desc")
+  end
+
+  def gallery
+    Picture.where("user_id in (?)", friends.map(&:id).push(self.id)).order("created_at desc")
+  end
+
+  def subscribed_songs
+    Song.where("user_id in (?)", friends.map(&:id).push(self.id)).order("created_at desc")
+  end
+
+
+
+  def self.from_omniauth(auth)
+    where(auth.slice(:provider, :uid)).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.name = auth.info.nickname
+      user.email = auth.info.email
+      user.image = auth.info.image
+    end
+  end
+
+  def self.new_with_session(params, session)
+    if session["devise.user_attributes"]
+      new(session["devise.user_attributes"], without_protection: true) do |user|
+        user.attributes = params
+        user.valid?
+      end
+    else
+      super
+    end
+  end
+
+  def password_required?
+    super && provider.blank?
+  end
+
+  def can_edit?(what)
+    case what.class.name
+    when 'User'
+      self.admin? or what == self
+      else
+      raise "Unrecognized argument to can_edit? (#{what.inspect})"
+    end
+  end
+
+  def self.find_by_id_or_name(arg)
+        User.find_by_permalink!(arg)
+  end
+
+  def set_permalink
+    self.permalink = name.downcase.gsub(/[^0-9a-z]+/, ' ').strip.gsub(' ', '_')
+  end
+
+  def to_param
+    [permalink].join('-')
+  end
+
+  def update_permalink
+   self.permalink = name.downcase.gsub(/[^0-9a-z]+/, ' ').strip.gsub(' ', '_')
+  end
+
+  def award_user_credits(amount_add)
+    self.add_credits(amount_add)
+  end
+
+  def deduct_user_credits(amount_minus)
+    self.deduct_credits(amount_minus)
+  end
+
+  def add_credits(new_credit)
+    update_account_balance(new_credit)
+  end
+
+  def deduct_credits(credit_to_deduct)
+    add_credits(-credit_to_deduct)
+  end
+
+  private
+
+  def update_account_balance(new_credit)
+    new_score = self.account_balance += new_credit
+    self.update_attribute(:account_balance, new_score)
+  end
+
+end

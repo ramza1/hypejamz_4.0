@@ -1,0 +1,112 @@
+<div class="user-profile-options">
+  <div class="left-floater">
+    <%= render "users/mobile_actions", :user => @user%>
+  </div>
+  <div class="right-floater">
+    <h5><%= link_to_unless_current "#{@user.name.humanize}'s", @user %> profile</h5>
+  </div>
+  <div class="clear"></div>
+</div>
+
+  <div class="clear"></div>
+
+<div class="user-page">
+  <div class="user-thumb-info">
+    <%= image_tag @user.icon(:thumb) %>
+  </div>
+
+  <div class="user-description">
+    <%= @user.about.present? ? truncate(@user.about, :length => 250) : "No biography at the moment" %>
+  </div>
+ <div class="clear"></div>
+
+
+</div>
+
+<div class="fans-section">
+ <h5>My Fans</h5>
+ <div class="fans-block">
+   <% if @user.friends_of.empty? %>
+       <p class="centralize-text alert alert-info"><%= @user.name.humanize %> has no fans at the moment.
+         <% unless current_user == @user %>
+         <%= link_to  toggle_subscription_path(:id => @user.id), :class => "btn btn-small" do %>
+             <% if current_user && current_user.is_friend?(@user) %>
+                 <i class="icon-star"></i> Unfan
+             <% else %>
+                 <i class="icon-star-empty"></i> Become a fan
+             <% end %>
+         <% end %>
+         <% end %>
+       </p>
+   <% else %>
+       <div class="bottom-part">
+         <div class="fan-base">
+           <div class="subscribers">
+             <ul class="subscribers-list">
+               <% if @user.first_forty.any? %>
+                   <% for friend in @user.first_forty %>
+                           <%= link_to image_tag(friend.icon(:small), :title => friend.name, :class => "wes thumb"), user_path(friend)  %>
+                   <% end %>
+               <% else %>
+                   <p class="friends-display-about"><%= t('no_fan')%></p>
+               <% end %>
+             </ul>
+<div class="fan-request-block">
+  <%= link_to toggle_subscription_path(:id => @user.id), :class => "btn btn-small btn-primary" do %>
+      <% if current_user && current_user.is_friend?(@user) %>
+          <i class="icon-star icon-white"></i> Unfan
+      <% else %>
+          <i class="icon-star-empty icon-white"></i> Become a fan
+      <% end %>
+  <% end %>
+</div>
+           </div>
+         </div>
+       </div>
+   <% end %>
+ </div>
+
+  <div class="songs-comment-block">
+    <h5><em><%= pluralize @user.comments_count, "Comment" %></em></h5>
+    <ul class="comments">
+      <% @user.comments.each do |comment| %>
+          <li>
+            <div class="comment-user-thumb">
+              <%= image_tag comment.user.icon(:small) %>
+            </div>
+            <div class="comment-meta">
+              <span class="comment-user-name"><em><%= link_to comment.user.name.humanize, comment.user %> &ndash; </em></span> <%= comment.comment %>
+              <div class="details-of-comment">
+                <span class="time-stamps"><%= time_ago_in_words(comment.created_at)%> ago </span> &bull;
+                <%= link_to "delete", comment, :method => :delete, :confirm => "are you sure" %>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <div class="clear"></div>
+      <% end %>
+      <li>
+        <% if current_user %>
+            <div class="comment-user-thumb">
+              <%= image_tag(current_user.icon(:small)) %>
+            </div>
+            <div class="comment-meta">
+              <%= form_for([@user, @user.comments.new], :html => {:id => "new_comment-#{@user.id}"}) do |f| %>
+                  <%= text_area_tag "comment", "", "style" => "width: 96%;" %>
+                  <div class="comment-button">
+                    <%= submit_tag "comment", :class => "btn btn-primary" %>
+                  </div>
+              <% end %>
+            </div>
+            <div class="clear"></div>
+        <% else %>
+            <p class="alert alert-warning">You need to <%= link_to "Log In", new_user_session_path %> or <%= link_to "Sign Up", new_user_registration_path %> to comment on <%= @user.name.humanize %>'s wall.</p>
+        <% end %>
+      </li>
+      <div class="clear"></div>
+    </ul>
+    <div class="clear"></div>
+
+  </div>
+
+</div>

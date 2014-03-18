@@ -1,0 +1,28 @@
+<div class="hypejamz-slide">
+
+</div>
+
+  <h3>
+    HpeJamz Africa
+  </h3>
+  <p>
+    Africa's Largest Music Network for all African music artistes. With HypeJamz, you can build your profile, upload your songs, videos, photos, send privare message between artistes and fans, track downloads and sales of your song, play online and also build your music playlist and lots more. <%= link_to "Learn More", about_us_path, class: "btn" %>
+   </p>
+
+<%= render "bottom_info" %>
+<% cache "recent_users_welcome" do %>
+<div>
+  <h6>
+    Recently Joined
+  </h6>
+ <% u = User.first %>
+<ul class="recent-people">
+        <% User.recently_joined.each do |user| %>
+        <li>
+          <%= link_to image_tag(user.icon(:thumb)), user, :title => user.name.humanize %>
+        </li>
+      <% end %>
+</ul>
+</div>
+<% end %>
+

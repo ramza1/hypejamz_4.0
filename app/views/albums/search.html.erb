@@ -1,0 +1,30 @@
+<div class="song-hype">
+  <ul class="songs-list2">
+    <% for hype in SongHype.all %>
+        <%= render hype %>
+    <% end %>
+  </ul>
+
+</div>
+
+
+<div class="users-wrapper">
+  <div class="users-header">
+    <h2>Search Result
+    </h2>
+    <div class="search-box">
+      <%= form_tag song_search_path, :method => :get, :id => "search-form" do  %>
+          <span class="glass"><i></i></span>
+          <%= text_field_tag :q, @q, :placeholder => "Search for Albums", :id => "search-query" %>
+      <% end %>
+    </div>
+  </div>
+
+  <div class="users-list">
+    <% if @albums.any? %>
+        <%= render @albums %>
+    <% else %>
+        <p>No result matches you search </p>
+    <% end %>
+  </div>
+</div>

@@ -1,0 +1,38 @@
+<%= provide :title, "Music Videos"%>
+<%= provide(:right_nav) do %>
+    <% if @user %>
+        <%= render "thumbnail_medium", :user => @user %>
+    <% else %>
+        <% if current_user %>
+            <%= render "thumbnail_medium", :user => current_user %>
+        <% else %>
+            <%= render "not_member" %>
+        <% end %>
+    <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+        <i class="icon-film icon-box"></i> <%= t("search") %>
+        <span class="right">
+      <%= form_tag  videos_search_box_path, :method => 'get', :class => "navbar-search"  do %>
+      <%= text_field_tag :v, @v, :placeholder => "search for videos", :class => "search-query span3" %>
+    </span>
+        <div class="clear"></div>
+    <% end %>
+  </h4>
+</div>
+
+<div id="songs">
+  <% if @videos.empty? %>
+      <p class="alert alert-warning"><%= t("no_result") %></p>
+  <% else %>
+      <%= render @videos %>
+  <% end %>
+</div>
+
+
+
+
+

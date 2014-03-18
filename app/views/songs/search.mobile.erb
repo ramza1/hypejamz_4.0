@@ -1,0 +1,44 @@
+<div data-role="page" class="home"  data-dom-cache="true" data-backbtn="true" data-theme="b" class="ui-seablue" data-add-back-btn="true">
+  <header data-role="header" data-theme="a" class="heading" data-position="fixed">
+    <h1>
+          Search result
+    </h1>
+    <%= render "mobile_session" %>
+    <nav data-role="navbar" align="CENTER" id="navbar" data-iconpos="bottom">
+      <ul>
+            <li>
+              <a href="<%= url_for users_path %>" data-theme="a" data-url="/artists" class ="" data-icon = "people">
+                People
+              </a>
+            </li>
+            <li>
+              <a href="<%= url_for songs_path %>" class="ui-btn ui-btn-active ui-btn-up-a"   data-theme="a" data-url="" data-icon = "media">
+                Songs
+              </a>
+            </li>
+            <li>
+              <a href="<%= url_for videos_path %>" class=""   data-theme="a" data-url="" data-icon = "video">
+                Videos
+              </a>
+            </li>
+      </ul>
+    </nav>
+  </header><!-- /header -->
+  <div data-role="content" data-tab="tab-content"  class="ui-seablue">
+    <% if @songs.empty? %>
+        <p class="no-item">No song matches your search results
+          </p>
+    <% else %>
+        <%= render "songs/mobile_songs", :songs => @songs %>
+    <% end %>
+        <div data-role="controlgroup" data-type="horizontal">
+          <% if @songs.previous_page %>
+              <%= link_to "Prev", params.merge(page: @songs.previous_page), "data-role"=>"button" %>
+          <% end %>
+          <% if @songs.next_page %>
+              <%= link_to "Next", params.merge(page: @songs.next_page), "data-role"=>"button" %>
+          <% end %>
+        </div>
+  </div><!-- /content -->
+  <%= render "mobile_footer" %>
+</div>

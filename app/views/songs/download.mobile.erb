@@ -1,0 +1,23 @@
+<div class="extra-padding alert alert-error">
+  Sorry you dont have enough credit to download this song.
+  <p>
+    You can get hypejamz credit by simply sending an sms to 1131 with your username and the amount you what to load on your account(<b>MTN subscribers only.</b>)
+  </p>
+  <p>Example</p>
+  <ul class="credit-example">
+    <li>USERNAME: hypejamz</li>
+    <li>AMOUNT: 100</li>
+  </ul>
+  <% unless current_user %>
+  <p>
+    Dont for get to <%= link_to "sign up", new_user_registration_path %> for free first.
+  </p>
+ <% end %>
+  <p><%= link_to "Learn more about hypejamz credit", learn_more_path, :class => "btn btn-small" %></p>
+</div>
+
+<div class="clear"></div>
+<div class="extra-padding">
+  <%= link_to "back to song", song_path(@song) %>
+</div>
+

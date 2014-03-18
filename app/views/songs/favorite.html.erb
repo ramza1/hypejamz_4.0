@@ -1,0 +1,39 @@
+<%= provide :title, t("user.playlist", :name => @user.name.humanize) %>
+<%= provide(:right_nav) do %>
+    <% if @user %>
+        <%= render "thumbnail_medium", :user => @user %>
+    <% else %>
+        <% if current_user %>
+            <%= render "thumbnail_medium", :user => current_user %>
+        <% else %>
+            <%= render "not_member" %>
+        <% end %>
+    <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+    <% if @user %>
+        <i class="icon-music"></i> <%= @user.name %>'s playlist songs
+        <%= render "send_message_link", :user => @user %>
+    <% else %>
+        <i class="icon-align-justify"></i> Songs From Hypejamz
+    <% end %>
+  </h4>
+</div>
+<% if @user %>
+    <%= render "profile_links", :user => @user %>
+<% end %>
+<div id="songs">
+  <% if @songs.empty? %>
+      <p class="alert alert-warning"><%= t("song.no_songs_on_your_playlist_yet") %></p>
+  <% else %>
+      <%= render @songs %>
+  <% end %>
+</div>
+
+
+
+
+

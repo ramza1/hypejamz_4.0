@@ -1,0 +1,33 @@
+<%= form_for(@featured_user) do |f| %>
+  <% if @featured_user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@featured_user.errors.count, "error") %> prohibited this featured_user from being saved:</h2>
+
+      <ul>
+      <% @featured_user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :user_name %><br />
+    <%= f.text_field :user_name, data: {autocomplete_source: json_users_path} %>
+  </div>
+  <div class="field">
+    <%= f.label :start %><br />
+    <%= f.datetime_select :start %>
+  </div>
+  <div class="field">
+    <%= f.label :end %><br />
+    <%= f.datetime_select :end %>
+  </div>
+  <li>
+      <%= f.label :image, "Hype pic" %>
+      <%= f.file_field :image %>
+  </li>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

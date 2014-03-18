@@ -1,0 +1,11 @@
+<% if @albums.previous_page %>
+    <li class="prev"><%= link_to "Prev", params.merge(page: @albums.previous_page), :class => 'def' %></li>
+<% else %>
+    <li class="prev disabled"><%= link_to_unless_current "", params.merge(page: @albums.previous_page), :class => 'def disable' %></li>
+<% end %>
+<li class="page-num">Page <%= @albums.current_page %></li>
+<% if @albums.next_page %>
+    <li class="next"><%= link_to "Next", params.merge(page: @albums.next_page), :class => "next_page" %></li>
+<% else %>
+    <li class="next disabled"><%= link_to_unless_current "", params.merge(page: @albums.previous_page), :class => 'def disable' %></li>
+<% end %>

@@ -1,0 +1,98 @@
+.right-profile-image{
+  float: right;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  border-radius: 3px;
+}
+
+.profile-icons{
+  margin-left: 0;
+  list-style: none;
+  text-align: center;
+  li{
+    display: inline;
+    margin-right: 20px;
+    font-size: 35px;
+    a{
+      color: inherit;
+      &:hover{
+        color: #08C;
+      }
+    }
+    .active-link{
+      color:#08C;
+    }
+  }
+}
+
+.profile_songs{
+  margin-bottom: 10px;
+}
+
+.pictures{
+  margin-bottom: 20px;
+}
+
+.profile-bio{
+  list-style: none;
+  margin-left: 0;
+  .gallery{
+    padding-bottom: 10px;
+    border-bottom: 1 px solid #fff;
+    border-top: 1px solid #eee;
+    &:first-child{
+      border-top: 0;
+    }
+  }
+}
+
+.top-icon{
+  text-align: center;
+  border-top: 1px solid #eee;
+  padding-top: 12px;
+}
+
+.profile-meta{
+  ul{
+    li{
+      float: left;
+      width: 24.88%;
+      text-align: center;
+    }
+  }
+}
+
+.fans-list{
+  margin-left: 0;
+  list-style: none;
+   .songs-meta{
+     a{
+       color: inherit;
+       &:hover{
+         color: #08c;
+       }
+     }
+   }
+  h6{
+    a{
+      color: inherit;
+      &:hover{
+        color: #08c;
+      }
+    }
+  }
+  .btn-group{
+    float: right;
+  }
+}
+
+.more-group{
+  float: right;
+  font-size: 11px;
+  a{
+    color: #2d2d2d;
+    &:hover{
+      color: #08c;
+    }
+  }
+}

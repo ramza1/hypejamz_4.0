@@ -1,0 +1,95 @@
+<%= provide :title, @song.title %>
+
+<%= provide(:right_nav) do %>
+    <% if current_user %>
+        <%= render "thumbnail_medium", :user => current_user %>
+    <% else %>
+        <%= render "not_member" %>
+    <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4><i class="icon-music"></i> <%= @song.title %></h4>
+</div>
+<div id="songs">
+  <%= render @song %>
+
+  <%= render "song_graph", song: @song %>
+
+  <ul class="song-options">
+    <li>
+      <%= link_to download_song_path(@song), :class => "btn btn-small" do %>
+          <i class="icon-download"></i> <%= t("song.download_song")%>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to favourite_song_path(@song), :class => "btn btn-small" do %>
+          <i class="icon-headphones"></i> <%= raw make_favourite_song(@song) %>
+      <% end %>
+    </li>
+    <li>
+      <%= link_to @song.user, :class => "btn btn-small" do %>
+          <i class="icon-user"></i> <%= t("user.view_profile", :person => h_what(@song.user.name) ) %>
+      <% end %>
+    </li>
+    <li class="hjc-value badge"><i class="icon-heart"></i> <%= @song.price.nil? ? SONG_AMOUNT : format_number(@song.price.to_i) %> hjc</li>
+  </ul>
+</div>
+
+<div class="page-header comment-header">
+  <h4><i class="icon-comment"></i> <span id="comments_count-<%= @song.id %>"><%= pluralize @song.comments_count, t("comment.comment")%></span> </h4>
+</div>
+
+<div id="comments">
+  <div id="comment-block-for-<%= @song.id %>" class="comments song-comment">
+    <% if @song.comments.empty? %>
+        <p id="no-comment-block-for-<%= @song.id %>" class="alert alert-info"><%= t("song.no_comment")%></p>
+    <% else %>
+        <%= render @song.comments %>
+    <% end%>
+  </div>
+  <% if current_user %>
+    <%= render "comment_form", :object => @song %>
+  <% else %>
+    <p class="alert alert-error"><%= link_to "Log In", new_user_session_path %> or <%= link_to "Join Now!", new_user_registration_path %> to leave your comment(s) on this song.</p>
+  <% end %>
+</div>
+
+
+
+
+<%= content_for :bottom do %>
+    <audio class="projekktor speakker dark" style="right: 200px;">
+
+    </audio>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            projekktor('.projekktor',{
+                playerFlashMP3: "<%= SWF_PLAYER %>",
+                playlist: [
+                    {
+                        0:{src:'<%= @song.mp3.url %>', type: 'audio/mp3'},
+                        config: {
+                            title: '<%= @song.title%>',
+                            poster: '<%= @song.art.url(:small) %>'
+                        }
+                    },
+                    <% if current_user && current_user.liked_songs.any? %>
+                    <% current_user.liked_songs.each do |track| %>
+                      <% unless track == @song %>
+                    {
+                        0:{src:'<%= track.mp3.url %>', type: 'audio/mp3'},
+                        config: {
+                            title: '<%= track.title%>',
+                            poster: '<%= track.art.url(:small) %>'
+                        }
+                    },
+                    <% end end end %>
+                ]
+            });
+        });
+    </script>
+<% end %>
+
+

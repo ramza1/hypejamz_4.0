@@ -1,0 +1,57 @@
+    <div data-role="page" class="home"  data-dom-cache="true" data-backbtn="true" data-theme="b" class="ui-seablue" data-add-back-btn="true">
+        <header data-role="header" data-theme="a" class="heading">
+            <h1>Featured Artists</h1>
+            <%= render "mobile_session" %>
+            <nav data-role="navbar" align="CENTER" id="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Home", root_url, "data-theme" => "a", "data-icon" => "home"  %>
+                    </li>
+                    <li>
+                        <a href="<%= url_for users_path %>" data-theme="a" data-url="/artists" class ="ui-btn ui-btn-active ui-btn-up-a" data-icon = "people">
+                            Artists
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for songs_path %>" class=""   data-theme="a" data-url="" data-icon = "media">
+                            Songs
+                        </a>
+                    </li>
+                    <li>
+                        <a href="<%= url_for videos_path %>" class=""   data-theme="a" data-url="" data-icon = "video">
+                            Videos
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </header><!-- /header -->
+        <div data-role="content" data-tab="tab-content"  class="costom-content">
+    <ul data-role="listview" data-theme="a" data-split-theme="a" data-split-icon="user" data-inset="true" data-split-theme="b">
+       <% for featured_user in @featured_users %>
+        <li id="<%= featured_user.user.id %>">
+          <a href="<%= url_for user_profile_path(featured_user.user) %>">
+            <%= image_tag featured_user.user.icon(:thumb), :class => "icon ul-li-icon ui-li-thumb avatar-user" %>
+            <h4>
+              <span class="left-user-name"><%= featured_user.user.name %></span>
+              <span class="left-time">
+                <% if featured_user.user.songs.any? %>
+                  <%= image_tag "media_12.png", :alt => "", :title => pluralize(featured_user.user.songs_count, "song")  %>
+                <% end %>
+                  <% if featured_user.user.notes.any? %>
+                    <%= image_tag "mobile/article_12x12.png", :alt => "", :title => pluralize(featured_user.user.notes_count, "yarn")%>
+                  <% end %>
+                  <% if featured_user.user.pictures.single_pictures.any? %>
+                    <%= image_tag "mobile/photo_16.png", :alt => "", :title => pluralize(featured_user.user.pictures_count, "photo") %>
+                 <% end %>
+              </span>
+             </h4>
+            <p><b><%= truncate(featured_user.user.about, :length => 100) %></b></p>
+            <span class="ui-li-count" title="<%= pluralize(featured_user.user.songs_count, "song") %>"><%= featured_user.user.songs_count %></span>
+          </a>
+          <a href="<%= url_for user_path(featured_user.user) %>" title="view profile"></a>
+        </li>
+       <% end %>
+    </ul>
+        </div><!-- /content -->
+        <%= render "mobile_footer" %>
+    </div>

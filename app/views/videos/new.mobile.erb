@@ -1,0 +1,14 @@
+<div id="content_wrapper">
+  <div id="active_admin_content">
+    <div id="form-box">
+      <h5 class="page-title">
+        Step 1: add information about your video.
+      </h5>
+      <div class="form-box">
+      <%= form_for @video, :url => upload_new_video_path, :html => { :class => :form } do |f| -%>
+          <%= render :partial => "form", :locals => {:f => f} %>
+      <% end -%>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="ad-zone">
+  <%= image_tag "demo/2a318ac7ac37dc988a8de15a924570ac.jpg" %>
+</div>
+
+<% if content_for?(:fans_block) %>
+    <%= yield(:fans_block)%>
+<% end %>
+
+<%= render "side_videos" %>
+
+<div class="page-header" style="margin-top: 55px;">
+   <h6>Recently added songs  <span style="float:right;"><i class="icon-volume-up"></i></span></h6>
+</div>
+
+<div class="recommended-songs">
+  <ul>
+    <% Song.most_recent.each do |song| %>
+      <li>
+        <%= image_tag song.art(:big) %>
+        <div class="details">
+          <h6><%= song.title %></h6>
+          <div>By: <a href="#"><%= song.user.name.humanize %></a> <br/>
+            <span class="songs-meta"><%= pluralize(song.download_count, "download") %> | added <%= time_ago_in_words(song.created_at) %> ago</span>
+          </div>
+        </div>
+      </li>
+    <% end %>
+  </ul>
+</div>
+

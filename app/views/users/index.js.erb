@@ -1,0 +1,8 @@
+$('.small-loading').hide();
+$('.users-list').append('<%= j render(@users) %>');
+<% if @users.next_page %>
+  $('.pagination').prepend('<%= j(render "users/pages_nav")%>');
+<% else %>
+  $('.pagination').hide();
+<% end %>
+$().popover("placement, bottom")

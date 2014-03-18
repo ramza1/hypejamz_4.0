@@ -1,0 +1,70 @@
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => @user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+
+<div class="page-header" style="margin-top: 0;">
+  <h4><i class="icon-certificate"></i> <%= t("user.payment_address") %>
+    <%= render "send_message_link", :user => @user %>
+    <span class="right">
+      <%= t("user.verified") %> <% if @payment_address.verified? %> <i class="icon-ok-sign"></i> <% else %> <i class="icon-remove-sign"></i><% end %>
+    </span>
+  </h4>
+</div>
+
+
+<p>
+  <b>Address:</b>
+  <%= @payment_address.address %>
+</p>
+
+<p>
+  <b>State:</b>
+  <%= @payment_address.state %>
+</p>
+
+<p>
+  <b>Country:</b>
+  <%= @payment_address.country %>
+</p>
+
+<p>
+  <b>Zip:</b>
+  <%= @payment_address.zip %>
+</p>
+
+<p>
+  <b>Phone number:</b>
+  <%= @payment_address.phone_number %>
+</p>
+
+<p>
+  <b>Alternate phone number:</b>
+  <%= @payment_address.alternate_phone_number %>
+</p>
+
+<p>
+  <b>Verified:</b>
+  <% if @payment_address.verified? %>
+      <span class="badge badge-success"><%= t("user.yes")  %></span>
+  <% else %>
+      <span class="badge badge-important"><%= t("user.no")  %></span>
+  <% end %>
+</p>
+<% if can? :destroy, @payment_address  %>
+<%= link_to @payment_address, method: :delete, data: {:confirm => t('user.delete_payment_address'), "confirm-title" => t('destroy_confirm_title'),"data-confirm-cancel" => t('cancel'),"confirm-proceed" => t('proceed'), "confirm-proceed-class" => "btn-danger"}, class: "btn btn-danger" do %>
+    <i class="icon-trash"></i> <%= t("delete") %>
+<% end %>
+<% end %>
+
+<% unless @payment_address.verified? %>
+    <div class="verification-box">
+      <%= form_tag  verification_box_path(address_id: @payment_address.id), :method => 'get', :class => "form-inline well"  do %>
+          <i class="icon-ok-sign"></i>
+          <%= text_field_tag :q, @q, :placeholder => "Enter your verification code here", :class => "search-query span3" %>
+          <%= submit_tag "Verify Now!", class: "btn btn-primary" %>
+      <% end %>
+    </div>
+<% end %>
+

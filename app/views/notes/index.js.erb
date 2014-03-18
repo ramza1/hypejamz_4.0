@@ -1,0 +1,7 @@
+$('.small-loading').hide();
+$('#notes').append('<%= j render(@notes) %>');
+<% if @notes.next_page %>
+  $('.pagination').prepend('<%= j(render "notes/pages_nav")%>');
+<% else %>
+  $('.pagination').hide();
+<% end %>

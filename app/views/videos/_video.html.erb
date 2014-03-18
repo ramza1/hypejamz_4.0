@@ -1,0 +1,43 @@
+    <div class="song">
+      <div class="btn-group">
+        <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+          <i class="icon-cog"></i>
+          <span class="caret"></span>
+        </a>
+        <ul class="dropdown-menu">
+          <li>
+            <%= link_to video do %>
+                <i class="icon-eye-open"></i> <%= t("video.watch_video") %>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to video.user do %>
+                <i class="icon-user"></i> <%= t("user.profile", :person => video.user.name.humanize) %>
+            <% end %>
+          </li>
+          <li class="divider"></li>
+          <li>
+            <a href="<%= video_path(video) %>#comments">
+              <i class="icon-comment"></i> <%= t("comment.add_comment")%>
+            </a>
+          </li>
+        </ul>
+      </div>
+      <div class="song-pic">
+        <img onload src="//i2.ytimg.com/vi/<%= video.yt_video_id %>/default.jpg" class ="album_art" width=100px height=100px; />
+        <!--
+        <img onload src="//i2.ytimg.com/vi/<%#= video.yt_video_id %>/default.jpg" width=120px height=90px; />
+        -->
+      </div>
+      <div class="song-details video">
+            <h5><%= link_to_unless_current video.title.humanize, video, :class => "song-link" %></h5>
+            <div class="description">
+              <p>By: <%= link_to video.user.name.humanize, video.user %> <br/>
+              </p>
+        <p class="info"><%= truncate(video.description, :length => 250) %><br/>
+          <%= ratings_for video %> <span class="side-time-stamps"><%= time_ago_in_words(video.created_at)%> ago</span>
+        </p>
+        </div>
+      </div>
+      <div class="clear"></div>
+    </div>

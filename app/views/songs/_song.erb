@@ -1,0 +1,80 @@
+<div class="song">
+  <div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="icon-cog"></i>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to song.user do %>
+            <i class="icon-user"></i> <%= t("user.view_profile", :person => h_what(song.user.name) ) %>
+        <% end %>
+      </li>
+      <li class="divider"></li>
+      <li>
+        <%= link_to favourite_song_path(song) do %>
+            <i class="icon-plus"></i>
+                <%= raw make_favourite_song(song) %>
+
+        <% end %>
+      </li>
+      <li>
+        <%= link_to download_song_path(song) do %>
+            <i class="icon-download"></i> <%= t("song.download_song")%> <b class="badge"><i class="icon-heart"></i> <%= song.price.nil? ? SONG_AMOUNT : format_number(song.price.to_i)  %> <%= t("hjc") %></b>
+        <% end %>
+      </li>
+      <li>
+        <a href="<%= song_path(song) %>#comments">
+          <i class="icon-comment"></i> <%= t("comment.add_comment")%>
+        </a>
+      </li>
+      <li>
+        <%= link_to report_song_path(song) do %>
+            <i class="icon-flag"></i> <%= raw report_song(song) %>
+        <% end %>
+      </li>
+      <% if can? :update, song %>
+          <li>
+            <%= link_to edit_song_path(song) do %>
+                <i class="icon-edit"></i> <%= t("song.edit_song")%>
+            <% end %>
+          </li>
+          <li>
+            <%= link_to song, method: :delete, data: {:confirm => t('delete_song_body'), "confirm-title" => t('destroy_confirm_title'),"data-confirm-cancel" => t('cancel'),"confirm-proceed" => t('proceed'), "confirm-proceed-class" => "btn-danger"} do %>
+                  <i class="icon-trash"></i> <%= t("delete") %>
+            <% end %>
+          </li>
+    <% end %>
+    </ul>
+  </div>
+  <div class="song-pic">
+    <a href="<%= url_for song%>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag song.art(:small), :alt => song.try(:title), :class => "album-art thumb" %>
+      <% unless @song %>
+        <span class="m_playall transition_opacity" href="#" style="display: inline;"></span>
+      <% end %>
+    </a>
+  </div>
+  <div class="song-details">
+    <% Mp3Info.open(song.mp3.path) do |mp3| %>
+        <h5><%= link_to_unless_current song.title.humanize, song, :class => "" %></h5>
+        <div class="description">
+          <p><%= t("by")%> <%= link_to_unless_current song.user.name.humanize, song.user, :class => "pop", :rel=>"popover", "data-trigger"=>"hover", "data-content"=> song.user.about || "No description", "data-original-title"=> song.user.name.humanize %> <span class="faint-info">&ndash; <%= mp3.tag.artist.humanize %> <br/>
+          <%= t("song.duration")%> <%= mp3.tag.length %> min &bull; Album: <%= mp3.tag.album.humanize %>
+            <% if song.genres.any? %>
+
+                <ul class="genre-list">
+                  Genre  <%= render song.genres %>
+                </ul>
+
+             <% end %>
+                </span>
+          </p>
+    <% end %>
+    <p class="info"><%= strip_links truncate(song.description, :length => 50) %><br/>
+      <%= ratings_for song %> <span class="side-time-stamps">
+      <i class="icon-comment"></i> <%= song.comments_count %> | <%= song.downloads_count %> <i class="icon-download"></i> | <%= song.play_count %> <i class="icon-play"></i> | <%= time_ago_in_words(song.created_at)%> <%= t("ago")%></span>
+    </p>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

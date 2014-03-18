@@ -1,0 +1,12 @@
+<%= form_for([object, object.comments.new], :remote => true, :html => {:id => "new_comment-#{object.id}"}) do |f| %>
+    <div class="comment_area">
+      <div class="comment-text-area">
+        <%= text_area_tag "comment" %>
+      </div>
+      <div class="comment-button">
+        <button class="btn btn-primary" type="submit">
+          <i class="icon-comment"></i> add comment
+        </button>
+      </div>
+    </div>
+<% end %>

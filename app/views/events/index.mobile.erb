@@ -1,0 +1,35 @@
+<div class="songs">
+  <% if params[:user_id] %>
+      <%= render "song_owner", :user => @user %>
+      <h5 class="centered-text"><%= link_to "#{@user.name.humanize}'s", @user %> events</h5>
+  <% else %>
+      <em style="font-size: 13px; font-weight: bold; padding-left: 7px;">
+        Latest Events
+      </em>
+  <% end %>
+  <ul class="mobile-songs-list">
+    <% @events.each do |event| %>
+        <a href="<%= url_for event %>"><li>
+          <% if event.event.present? %>
+          <div class="song_art">
+            <%= image_tag event.event(:small) %>
+          </div>
+          <% end %>
+          <div class="arrow-left"> > </div>
+          <div class="song-meta-data <% unless event.event.present? %> no-left-margin <% end %>">
+            <h5><%= truncate(event.name, :length => 30) %></h5>
+            <div class="song-description">
+              <div class="song-artist-info">
+                By: <%= h_what(event.user.name) %>
+              </div>
+              <div class="song-data">
+                <%= pluralize(event.comments_count, "comment") %> &bull; <%= event.start_time.strftime("Starts at %m/%d/%Y") %>
+              </div>
+            </div>
+          </div>
+          <div class="clear"></div>
+        </li></a>
+        <div class="clear"></div>
+    <% end %>
+  </ul>
+</div>

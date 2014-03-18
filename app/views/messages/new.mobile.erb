@@ -1,0 +1,49 @@
+<div class="user-profile-options">
+  <div class="left-floater">
+    <%= render "users/mobile_actions", :user => @user%>
+  </div>
+  <div class="right-floater">
+    <h5><%= link_to_unless_current "#{@user.name.humanize}'s", @user %> profile</h5>
+  </div>
+  <div class="clear"></div>
+</div>
+
+<div class="padded">
+  <h5 class="centralize-text">Send message to <%= @user.name.humanize %></h5>
+<% if can? :create, Message %>
+<%= form_for(@message) do |f| %>
+          <% if @message.errors.any? %>
+              <div class="alert alert-error">
+                <h4><%= pluralize(@message.errors.count, "error") %> prohibited this song from being saved:</h4>
+
+                <ul>
+                  <% @message.errors.full_messages.each do |msg| %>
+                      <li><%= msg %></li>
+                  <% end %>
+                </ul>
+              </div>
+          <% end %>
+    <fieldset>
+      <ol>
+        <li>
+          <%= f.label :subject %>
+          <%= f.text_field :subject, :class => "more-width" %>
+        </li>
+        <li>
+          <%= f.label :body %>
+          <%= f.text_area :body, :rows => 5, :class => "more-width" %>
+        </li>
+        <%= f.hidden_field :receiver_id %>
+        <div class="actions">
+          <%= f.submit "Send Message", :class => "btn btn-primary" %>
+        </div>
+      </ol>
+    </fieldset>
+<% end %>
+<% else %>
+  <p class="alert alert-error centralize-text">
+    Sorry you need <b>5hjc</b> to send <%= link_to @user.name.humanize, @user %> a message.  <br/>
+   <b><%= link_to "Get hypejamz credit(HJC)", learn_more_path, :class => "btn btn-small btn-info" %></b>
+  </p>
+<% end %>
+</div>

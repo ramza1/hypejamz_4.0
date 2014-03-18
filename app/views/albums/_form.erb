@@ -1,0 +1,50 @@
+<%= form_for(@album) do |f| %>
+  <% if @album.errors.any? %>
+    <div class="alert alert-error">
+      <h4 class="maroon"><%= pluralize(@album.errors.count, "error") %> prohibited this album from being saved:</h4>
+
+      <ul>
+      <% @album.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.text_field :name, :placeholder => "Titleb of Album", :class => "more-width" %>
+  </div>
+  <div class="field">
+    <%= f.label :released_date %><br />
+    <%= f.text_field :released_date, :placeholder => "Released Date" %>
+  </div>
+  <div class="field">
+    <%= f.text_area :about, :rows => 3, :placeholder => "Description about this album. If possible include list of track", :class => "more-width" %>
+  </div>
+    <div class="alert alert-info">
+           <p>
+             <%= f.check_box :for_sale %>(Check this box if you want to sell this album.)</p>
+             <p>Please note that Albums for sell cannot be downloaded without hypejamz credit. So you can encourage people to recharge their hypejamz account to download your Album and your account would be credited automatically
+             
+           </p>
+    </div>
+    <div class="field">
+      <%= f.select :price, [['Select the price for this album', nil], ['-N- 1,500', '1500'], ['-N- 1,000', '1000'], ['-N- 500', '500'], ['-N- 200', '200']], :placeholder => "Price" %><span style="color: #fff;">(Only if you want to sell this album.)</span>
+    </div>
+    <div class="upload-field">
+      <%= f.label :album_art, "Upload Album art(Ex: .jpeg, .png, .gif)" %>
+      <%= f.file_field :album_art %>
+    </div>
+
+    <div class="upload-field">
+      <div class="alert alert-info">
+        <p>Please ensure that all your songs are packed into an <b>archive</b> using winrar(.rar), winzip(.zip) or tagball(.tar).</p>
+        <p>Note that your album would undergo review before placed for download to ensure that it contains the appropriate and required songs. This review is done as soon as your album is upload into our system with any of the required formats.</p>
+      </div>      
+      <%= f.label :file, "Upload your Album(Ex .rar, .zip, .tar format)" %>
+      <%= f.file_field :file %>
+    </div>
+  <div class="actions">
+    <%= f.submit @album.new_record? ? "Upload Album" : "Edit Album", :class => 'btn' %>
+  </div>
+<% end %>

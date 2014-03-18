@@ -1,0 +1,59 @@
+ <%= div_for note do %>
+     <div class="note-icon"><%= image_tag "prev.png"%></div>
+         <%= image_tag note.user.icon(:thumb), :class => "thumb" %>
+         <div class="note-details">
+             <i class="icon-tag" style="float: right;"></i>
+           <p><span><%= link_to note.user.name, user_profile_path(note.user), :class => "gold" %></span> <%= note.body %></p>
+           <div class="time-ago">
+             <ul>
+               <li><%= distance_of_time_in_words_to_now(note.created_at) %> ago</li>
+                 <% if note.allow_comments? %>
+                   <li id="comments_count-<%= note.id %>">
+                      <%= link_to_if note.comments_count > 2, pluralize(note.comments_count, "comment"), note, :class => "note-coment-link", :remote => true, :rel => "facebox" %>
+                   </li>
+                   <li>
+                     <b><%= link_to_function 'add comment', "$('#comment-form-for-#{note.id}').slideToggle();", :class => "action-link" %></b>
+                   </li>
+                 <% end %>
+               <% if can? :destroy, note %>
+                 <li><%= link_to "delete", note, :method => :delete, :remote => true, :class => "action-link" %></li>
+               <% end %>
+             </ul>
+
+           </div>
+           <div class="clear"></div>
+           <div id="comment-block-for-<%= note.id %>" class="comments">
+             <%= render note.comments.limit(2) %>
+           </div>
+           <% if note.allow_comments? %>
+           <div id="comment-form-for-<%= note.id%>" style="display: none;">
+          <% if current_user %>
+            <div class="comment-form-block">
+             <div class="comment-avatar">
+               <%= image_tag(current_user.icon(:small)) %>
+             </div>
+             <% if current_user == note.user || current_user.is_friend?(note.user)%>
+             <%= form_for([note, note.comments.new], :remote => true, :html => {:id => "new_comment-#{note.id}"}) do |f| %>
+                 <div class="comment_area">
+                  <div class="comment-text-area">
+                     <%= text_area_tag "comment" %>
+                  </div>
+                   <div class="comment-button">
+                     <%= submit_tag "send", :class => "button" %>
+                   </div>
+                 </div>
+             <% end %>
+             <% else %>
+             <p class="comment">
+                <%= link_to "Subscribe", toggle_subscription_path(:id => note.user.id), :class => "gold" %> to
+                <b><%= link_to note.user.name, user_profile_path(note.user) %></b> to comment on his post
+             </p>
+             <% end %>
+           </div>
+          <% else %>
+            <p><%= link_to "Join hypejamz", new_user_registration_path %> or <%= link_to "Login", new_user_session_path %> and subscribe to <%= note.user.name %> to comment on this yarn.</p>
+          <% end %>
+           </div>
+          <% end %>
+         </div>
+ <% end %>

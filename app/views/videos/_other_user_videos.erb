@@ -1,0 +1,24 @@
+<% if user.videos.other_videos(my_video).any? %>
+    <div class="page_description">
+      <h2>
+        Other Videos
+      </h2>
+      <ul class="songs-list">
+        <% user.other_videos.each do |video| %>
+            <li>
+              <a href="<%= url_for video%>" data-remote="true" class="albumcontainer transition_border remote-event-link">
+                <img onload src="//i2.ytimg.com/vi/<%= video.yt_video_id %>/default.jpg" class ="album_art" width=100px height=100px; />
+                <span class="m_playall transition_opacity" href="#" style="display: inline;"></span>
+              </a>
+              <div class="song-description">
+
+                <p><%= link_to video.title, video, :class => "white" %></p>
+                <p><%= video.duration.nil? ? "?" : "#{video.duration.strftime("%I:%M")}" %></p>
+                <p class="small-name"><%= time_ago_in_words(video.created_at) %> ago</p>
+                <p class="small-name">By <%= link_to video.user.name, user_path(video.user) %></p>
+              </div>
+            </li>
+            </ul>
+        <% end %>
+        </div>
+<% end %>

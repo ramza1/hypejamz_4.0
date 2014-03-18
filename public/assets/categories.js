@@ -1,0 +1,1 @@
+(function(){jQuery(function(){return $("#song_genre_ids").chosen()})}).call(this);

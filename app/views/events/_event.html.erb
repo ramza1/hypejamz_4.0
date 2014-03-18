@@ -1,0 +1,14 @@
+<%= div_for event do %>
+     <a href="<%= url_for user_event_path(event.user, event) %>" data-remote="true" class="remote-event-link"><%= image_tag event.event(:small), :class => "event-image" %>
+    <div class="event-description">
+      <div class="event-title">
+       <%= event.name %>
+      </div>
+      <div class="event-info">
+       <%= truncate(event.description, :length => 50) %>
+      </div>
+      <% if can? [:update, :destroy], event %>
+        <%= link_to "Edit", edit_event_path(event) %>
+      <% end %>
+    </div></a>
+<% end %>

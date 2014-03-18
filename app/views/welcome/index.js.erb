@@ -1,0 +1,1 @@
+$("#menu-items").html("<%= escape_javascript(%w[hype latest_artists].include?(params[:view]) ? render(params[:view]) : render("hype")) %>");

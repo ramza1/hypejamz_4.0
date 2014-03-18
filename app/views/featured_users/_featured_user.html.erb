@@ -1,0 +1,22 @@
+   <li>
+       <a href="#">
+         <span class="ei_image"><%= image_tag featured_user.image(:thumb) %></span>
+         <span title="<%= featured_user.user.name %>" class=" wes ei_preview"><%= image_tag featured_user.image(:thumb) %></span>
+       </a>
+		<div class="ei_descr">
+			<h2><%= featured_user.user.name%></h2>
+			<h3><%= featured_user.user.real_name %></h3>
+			<p>
+         <%= truncate(featured_user.user.about, :length => 500) %>
+			</p>
+     <div class="user-items">
+
+          <%= link_to 'View profile', user_profile_path(featured_user.user) %>
+            |
+           <%= link_to pluralize(featured_user.user.songs_count, "song"), user_path(featured_user.user), :class => "left-wing" %>
+
+     </div>
+		</div>
+
+      <div class="clear"></div>
+	</li>

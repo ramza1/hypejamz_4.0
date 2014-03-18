@@ -1,0 +1,80 @@
+.white{
+ color: #fff;
+}
+
+.all-videos-wrapper {
+    background: url("playerbg.png") repeat scroll left top transparent;
+    border-radius: 0 10px 10px 0;
+    float: left;
+    left: 0;
+    min-height: 380px;
+    padding: 20px;
+    top: 0;
+    width: 650px;
+    margin-top: 20px;
+}
+
+.video-details{
+  color: #fff;
+  a{
+   color: #fff;
+   &:hover{
+    color: gold;
+   }
+  }
+}
+
+.right-video-list{
+ background: url("playerbg.png") repeat scroll left top transparent;
+ float: right;
+    width: 238px;
+    margin-top: 20px;
+    padding: 5px;
+ border-radius: 0 10px 10px 0;
+   li{
+    .small-name{
+     font-size: 10px;
+     a{
+      color: gold;
+     }
+    }
+   }
+}
+
+.videos-list{
+    overflow: hidden;
+    color: #fff;
+ li{
+   float: left;
+   background: #000;
+    margin-right: 7px;
+    padding: 6px;
+    width: 45%;
+    border-radius: 7px;
+    margin-bottom: 7px;
+    height: 100px;
+    .album-art{
+     float: left;
+     width: 100px;
+     height: 100px;
+    }
+    p{
+     font-size: 12px;
+     padding-bottom: 2px;
+    }
+    .small-name{
+     font-weight: normal;
+     font-size: 11px;
+     a{
+      color: gold;
+     }
+    }
+ }
+ .mp3_download{
+  width: 76px;
+ }
+}
+
+.video-header{
+  padding-bottom: 10px;
+}

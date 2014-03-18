@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html class="ui-mobile-rendering">
+<head>
+	<title>HypeJamz Mobile</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+    <%= stylesheet_link_tag "/stylesheets/reset.css", "/stylesheets/jquery.mobile-1.1.0-rc.1.min.css", "mobile", "/stylesheets/photoswipe.css" %>
+    <%= javascript_include_tag "/javascripts/jquery.js", "/javascripts/jquery_ujs.js", "/javascripts/jquery.mobile-1.1.0-rc.1.min.js", "/javascripts/jquery.mousewheel.min.js" %>
+  <%= javascript_include_tag "/javascripts/klass.min.js", "/javascripts/code.photoswipe.jquery-3.0.4.min.js" %>
+    <%= csrf_meta_tags %>
+<script>
+$(document).bind("mobileinit", function(){
+  $.mobile.touchOverflowEnabled = true;
+});
+</script>
+  <%= yield(:head) %>
+</head>
+<body>
+     <%= yield %>
+</body>
+</html>

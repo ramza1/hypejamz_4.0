@@ -1,0 +1,20 @@
+<%= provide :title, t("song.upload_song") %>
+<%= provide(:right_nav) do %>
+    <%= render "thumbnail_medium", :user => current_user %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4>
+     <i class="icon-upload"></i> <%= t("song.upload_song") %>
+  </h4>
+</div>
+<% if can? :create, Song %>
+
+
+<%= render 'form' %>
+
+
+ <% else %>
+    <%= render "upgrade_info" %>
+ <% end %>

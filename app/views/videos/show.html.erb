@@ -1,0 +1,43 @@
+<%= provide :title, @video.title %>
+
+<%= provide(:right_nav) do %>
+    <% if current_user %>
+        <%= render "thumbnail_medium", :user => current_user %>
+    <% else %>
+        <%= render "not_member" %>
+    <% end %>
+    <hr>
+    <%= render "right_nav" %>
+<% end %>
+<div class="page-header" style="margin-top: 0;">
+  <h4><i class="icon-music"></i> <%= @video.title %></h4>
+</div>
+<div id="songs">
+  <%= render @video %>
+</div>
+
+<div class="video-player">
+  <iframe class="youtube-player" type="text/html" width="100%" height="385" src="http://www.youtube.com/embed/<%= @video.yt_video_id %>" frameborder="0">
+  </iframe>
+</div>
+
+<div class="page-header comment-header">
+  <h4><i class="icon-comment"></i> <span id="comments_count-<%= @video.id %>"><%= pluralize @video.comments_count, t("comment.comment")%></span> </h4>
+</div>
+
+<div id="comments">
+  <div id="comment-block-for-<%= @video.id %>" class="comments song-comment">
+    <% if @video.comments.empty? %>
+        <p id="no-comment-block-for-<%= @video.id %>" class="alert alert-info"><%= t("video.no_comment")%></p>
+    <% else %>
+        <%= render @video.comments %>
+    <% end%>
+  </div>
+  <% if current_user %>
+      <%= render "comment_form", :object => @video %>
+  <% else %>
+      <p class="alert alert-error"><%= link_to "Log In", new_user_session_path %> or <%= link_to "Join Now!", new_user_registration_path %> to leave your comment(s) on this video.</p>
+  <% end %>
+</div>
+
+

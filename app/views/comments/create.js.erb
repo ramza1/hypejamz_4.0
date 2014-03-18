@@ -1,0 +1,7 @@
+<% if @comment == @parent.comments.first %>
+$('#no-comment-block-for-<%= @parent.id %>').remove();
+<% end %>
+$('#comment-block-for-<%= @parent.id %>').append("<%= escape_javascript(render(@comment))%>");
+$('#comments_count-<%= @parent.id %>').text("<%= pluralize(@parent.comments.count, "Comment")%>");
+$('#new_comment-<%= @parent.id %>')[0].reset();
+

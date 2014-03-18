@@ -1,0 +1,32 @@
+<fieldset class="inputs">
+  <div class="control-group">
+    <%= f.label :title, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :title, :class => "input-xlarge" %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :description, :class => "control-label" %>
+    <div class="controls">
+      <%= f.text_field :description, :class => "input-xlarge" %>
+    </div>
+  </div>
+  <%= f.hidden_field :user_id %>
+  <div class="form-actions">
+    <% if @video.new_record?%>
+        <button class="btn" type="submit">
+          <%= image_tag("tick.png", :alt => "save") %> step 2
+        </button>
+        <%= link_to user_path(current_user), :class => "btn btn-danger" do %>
+            <i class="icon-remove-sign"></i> <%= t("user.cancel") %>
+        <% end %>
+    <%else%>
+        <button class="btn" type="submit">
+          <%= image_tag("tick.png", :alt => "save") %>
+        </button>
+    <%end%>
+
+  </div>
+ </fieldset>
+
+

@@ -1,0 +1,15 @@
+$('.small-loading').hide();
+var li = $("<%= j(render(@songs)) %>").hide();
+ $('#songs').append(li);
+li.slideDown('slow');
+<% if @songs.next_page %>
+  $('.pagination').prepend('<%= j(render "songs/pages_nav")%>');
+<% else %>
+  $('.pagination').hide();
+<% end %>
+$('#title-ajax').text("<%= @title %>");
+
+
+
+
+

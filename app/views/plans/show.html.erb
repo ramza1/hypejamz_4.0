@@ -1,0 +1,25 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Name:</b>
+  <%= @plan.name %>
+</p>
+
+<p>
+  <b>Dollar price:</b>
+  <%= @plan.dollar_price %>
+</p>
+
+<p>
+  <b>Naira price:</b>
+  <%= @plan.naira_price %>
+</p>
+
+<p>
+  <b>Hjc:</b>
+  <%= @plan.hjc %>
+</p>
+
+
+<%= link_to 'Edit', edit_plan_path(@plan) %> |
+<%= link_to 'Back', plans_path %>

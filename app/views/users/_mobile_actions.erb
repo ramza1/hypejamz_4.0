@@ -1,0 +1,59 @@
+<div class="btn-group dropup">
+  <button class="btn"><i class="icon-user"></i></button>
+  <button class="btn dropdown-toggle" data-toggle="dropdown">
+    <span class="caret"></span>
+  </button>
+  <ul class="dropdown-menu">
+    <% unless current_user == user %>
+        <li>
+          <%= link_to  toggle_subscription_path(:id => user.id) do %>
+              <% if current_user && current_user.is_friend?(user) %>
+                  <i class="icon-star"></i> Unfan
+              <% else %>
+                  <i class="icon-star-empty"></i> Become a fan
+              <% end %>
+          <% end %>
+        </li>
+        <% if current_user %>
+            <li><%= link_to new_message_path(:receiver_id => user.id) do %>
+                  <i class="icon-envelope"></i> Send message
+              <% end %>
+            </li>
+        <% else %>
+            <li><%= link_to new_message_path(:receiver_id => user.id) do %>
+                  <i class="icon-envelope"></i> Send message
+              <% end %>
+            </li>
+        <% end %>
+        <li class="divider"></li>
+    <% end %>
+    <li><%= link_to user_path(user), :class => "remote-event-link" do %>
+          <i class="icon-eye-open"></i> see my profile
+      <% end %>
+    </li>
+    <li><%= link_to user_songs_path(user), :class => "remote-event-link" do %>
+          <i class="icon-music"></i> listen to my songs
+      <% end %>
+    </li>
+    <li><%= link_to user_videos_path(user), :class => "remote-event-link" do %>
+          <i class="icon-film"></i> watch my videos
+      <% end %>
+    </li>
+    <li><%= link_to user_pictures_path(user),  :class => "remote-event-link" do %>
+          <i class="icon-camera"></i> view my photos
+      <% end %>
+    </li>
+    <li><%= link_to user_events_path(user) do %>
+          <i class="icon-calendar"></i> view my events
+      <% end %>
+    </li>
+    <li><%= link_to favorite_songs_path(:id => user.id) do %>
+          <i class="icon-star"></i> my favourite songs
+      <% end %>
+    </li>
+    <% if me? %>
+        <li class="divider"></li>
+        <%= render "profile_actions" %>
+    <% end %>
+  </ul>
+</div>

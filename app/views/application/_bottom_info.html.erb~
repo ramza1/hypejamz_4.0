@@ -1,0 +1,38 @@
+<div class="row double-margin-top">
+  <div class="span3">
+    <h5>Top Downloads</h5>
+    <ul class="normal-list">
+      <% Song.front_downloads.each do |song| %>
+      <li>
+        <%= image_tag song.art(:big) %>
+        <div class="details">
+          <h6><%= link_to song.title, song %></h6>
+          <div>By: <%= link_to song.user.name, song.user %> <br/>
+            <span class="songs-meta"><%= pluralize(song.download_count, "download") %> | added <%= time_ago_in_words(song.created_at) %></span>
+          </div>
+        </div>
+        <div class="clear"></div>
+      </li>
+          <div class="clear"></div>
+      <% end %>
+    </ul>
+  </div>
+  <div class="span3">
+    <h5>Trending</h5>
+    <ul class="normal-list">
+      <% Song.front_countdowns.each do |song| %>
+          <li>
+            <%= image_tag song.art(:big) %>
+            <div class="details">
+              <h6><%= song.title %></h6>
+              <div>By: <a href="#"><%= song.title %></a> <br/>
+                <span class="songs-meta"><%= pluralize(song.download_count, "download") %> | added <%= time_ago_in_words(song.created_at) %></span>
+              </div>
+            </div>
+            <div class="clear"></div>
+          </li>
+          <div class="clear"></div>
+      <% end %>
+    </ul>
+  </div>
+</div>

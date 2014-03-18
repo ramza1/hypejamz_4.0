@@ -1,0 +1,76 @@
+<%-
+    #locals
+    user ||= message.sender
+    name ||= message.sender.name
+-%>
+
+<div class="song read">
+  <div class="btn-group">
+    <a class="btn dropdown-toggle" data-toggle="dropdown" href="#">
+      <i class="icon-cog"></i>
+      <span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <li>
+        <%= link_to message do %>
+            <i class="icon-book"></i> <%= t("message.read_message") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user do %>
+            <i class="icon-eye-open"></i> <%= t("user.profile", :person => name.humanize) %>
+        <% end %>
+      </li>
+      <li class="divider"></li>
+      <% unless current_user == user %>
+          <li>
+            <%= link_to toggle_subscription_path(:id => user.id) do %>
+                <% if current_user && current_user.is_friend?(user) %>
+                    <i class="icon-star"></i>   <%= t("user.unfan") %>
+                <% else %>
+                    <i class="icon-star-empty"></i>  <%= t("user.become_fan")%>
+                <% end %>
+            <% end %>
+          </li>
+      <% end %>
+      <li>
+        <a href="<%= user_path(user) %>#comments">
+          <i class="icon-comment"></i> <%= t("user.wall")%>
+        </a>
+      </li>
+      <li>
+        <%= link_to user_songs_path(user) do %>
+            <i class="icon-music"></i> <%= t("view_songs") %>
+        <% end %>
+      </li>
+      <li>
+        <%= link_to user_videos_path(user) do %>
+            <i class="icon-film"></i> <%= t("watch_videos") %>
+        <% end %>
+      </li>
+      <% unless current_user && current_user == user %>
+          <li>
+            <%= link_to new_message_path(:receiver_id => user.id) do %>
+                <i class="icon-envelope"></i> <%= t("message.send_message") %>
+            <% end %>
+          </li>
+      <% end %>
+      <li>
+        <%= link_to fans_user_path(user) do %>
+            <i class="icon-user"></i> <%= t("view_fans") %>
+        <% end %>
+      </li>
+    </ul>
+  </div>
+  <div class="song-pic">
+    <%= image_tag user.icon(:thumb), :class => "profile-icon" %>
+  </div>
+  <div class="song-details user">
+    <div class="description">
+      <p class="info" <% if message.read? %>style="color:#9c9c9c;<% end %>"><b><%= link_to_unless_current user.name.humanize, user, :class => "user-link" %></b> &nbsp;
+        <%= truncate(message.body, :length => 250) %>
+      </p>
+    </div>
+  </div>
+  <div class="clear"></div>
+</div>

@@ -1,0 +1,63 @@
+<div class="page-header" style="margin-top: 55px;">
+  <h6><%= t("recent_videos")%> <span class="badge" style="float:right;"><i class="icon-film"></i></span></h6>
+</div>
+<% if completed_video.empty? %>
+      <p class="alert alert-info"><%= t("no_videos")%></p>
+<% else %>
+
+
+<div class="recent-videos">
+  <ul>
+    <%= render :partial => "recent_videos", :collection => completed_video, :as => :video %>
+
+       <li>
+      <a href="<%= url_for %>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag "demo/art7.jpg" %>
+        <span class="m_video transition_opacity" href="#" style="display: inline;"></span>
+      </a>
+      <div class="details">
+        <h6>The storm is near</h6>
+        <div>By: <a href="#">Flesh Fathers</a> <br/>
+          <span class="songs-meta">10k downloads | added 30 minutes ago</span>
+        </div>
+      </div>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <a href="<%= url_for %>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag "demo/art4.jpg" %>
+        <span class="m_video transition_opacity" href="#" style="display: inline;"></span>
+      </a>
+      <div class="details">
+        <h6>Going Down town</h6>
+        <div>By: <a href="#">Kaiser chives</a> <br/>
+          <span class="songs-meta">1k downloads | added 2 days ago</span>
+        </div>
+      </div>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <a href="<%= url_for %>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag "demo/art5.jpg" %>
+        <span class="m_video transition_opacity" href="#" style="display: inline;"></span>
+      </a>
+      <div class="details">
+        <h6>How I feel when old</h6>
+        <div>By: <a href="#">Jhonas brothers</a> <br/>
+          <span class="songs-meta">100 downloads | added 1hr ago</span>
+        </div>
+      </div>
+    </li>
+    <div class="clear"></div>
+    <li>
+      <a href="<%= url_for %>" title="play" class="albumcontainer transition_border play-me wes image-big"><%= image_tag "demo/art6.jpg" %>
+        <span class="m_video transition_opacity" href="#" style="display: inline;"></span>
+      </a>
+      <div class="details">
+        <h6>A loneny Road</h6>
+        <div>By: <a href="#">Green Day</a> <br/>
+          <span class="songs-meta">30k downloads | added 10 minutes ago</span>
+        </div>
+      </div>
+    </li>
+    <div class="clear"></div>
+  </ul>
+</div>
+<% end %>

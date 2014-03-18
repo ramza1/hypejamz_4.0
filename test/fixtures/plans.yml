@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  name: MyString
+  doller_price: 9.99
+  naira_price: 9.99
+  hjc: 1
+
+two:
+  name: MyString
+  doller_price: 9.99
+  naira_price: 9.99
+  hjc: 1

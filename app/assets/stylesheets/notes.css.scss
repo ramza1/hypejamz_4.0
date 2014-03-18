@@ -1,0 +1,199 @@
+// Place all the styles related to the notes controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+#text-count{
+    color: #CCCCCC;
+    float: right;
+    font-size: 23px;
+    font-weight: bold !important;
+    padding-right: 3px;
+    position: relative;
+    margin-bottom: 5px;
+}
+
+
+#Note-form{
+ margin-top: 10px;
+}
+
+.action-button{
+  margin-top: 5px;
+  float: right;
+}
+
+#note_body{
+ border: 1px solid #000;
+ font-size: 14px;
+ box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+ -moz-box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+ -webkit-box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+}
+
+.left-options{
+ float: left;
+    position: relative;
+    top: 6px;
+}
+
+.allow{
+    span{
+    bottom: 3px;
+    color: #FFFFFF;
+    font-size: 11px;
+    position: relative;
+    img{
+    height: 10px;
+    position: relative;
+    top: 1px;
+    }
+    }
+}
+
+.loading-box{
+    position: relative;
+    top: 5.5px;
+  img{
+   width: 20px;
+   height: 20px;
+  }
+}
+
+.dark_red {
+  color: maroon !important;
+}
+.red {
+  color: #D40D12 !important;
+}
+
+#notes{
+ margin-top: 20px;
+}
+
+.note{
+    color: #DADADA;
+    font-size: 12px;
+    overflow: hidden;
+    padding: 5px 0;
+    word-wrap: break-word;
+    position: relative;
+ img{
+  float: left;
+ }
+
+ .note-details{
+    border: 1px solid #090909;
+    color: #FFFFFF;
+	-moz-box-shadow:1px 1px 3px #111;
+	-webkit-box-shadow:1px 1px 3px #111;
+	box-shadow:1px 1px 3px #111;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    margin: 0 0 0 78px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    width:84%;
+    text-shadow: 1px 1px 1px #000000;
+    min-height: 60px;
+ }
+}
+
+.test{
+ .note-details{
+    border: 1px solid #090909;
+    color: #FFFFFF;
+
+	background:
+		-webkit-gradient(
+			linear,
+			left top,
+			left 50%,
+			from(hsla(0,0%,100%,0.7)),
+			to(hsla(0,0%,100%,0))
+		);
+	background:
+		-moz-linear-gradient(
+		    hsla(0,0%,100%,0.7),hsla(0,0%,100%,0) 50%
+		);
+    background-color:rgba(0,0,0,0.8);
+	-moz-box-shadow:1px 1px 3px #111;
+	-webkit-box-shadow:1px 1px 3px #111;
+	box-shadow:1px 1px 3px #000;
+	-moz-border-radius:5px;
+	-webkit-border-radius:5px;
+    margin: 0 0 0 78px;
+    overflow: hidden;
+    padding: 5px;
+    position: relative;
+    width:499px;
+    text-shadow: 1px 1px 1px #000000;
+ }
+}
+
+.gold{
+ color: #9c9c9c;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.text-count{
+ color: #ccc;
+}
+
+.time-ago{
+ font-size: 11px;
+ margin-top: 3px;
+ li{
+  float: left;
+  margin-right: 5px;
+  color: #9c9c9c;
+ }
+}
+
+.action-link{
+  color: #9c9c9c;
+}
+
+.comment-form-block{
+  margin-top: 3px;
+  textarea{
+    font-size: 10px;
+    height: 23px;
+    width: 350px;
+ border: 1px solid #000;
+ box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+ -moz-box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+ -webkit-box-shadow: 0 0 2px, 0 0 13px rgba(0, 0, 0, 0.6) inset;
+  }
+}
+
+.comment-avatar{
+  float: left;
+  padding: 2px;
+}
+
+.comment_area{
+  margin-left: 40px;
+}
+
+.comment-button{
+  margin-top: 2px;
+}
+
+.comments{
+  margin-top: 2px;
+  .comment-description{
+    margin-left: 40px;
+  }
+}
+
+.note-coment-link{
+ color: #9c9c9c;
+}
+
+.note-icon{
+  position: absolute;
+  left: 72px;
+  top: 33px;
+}

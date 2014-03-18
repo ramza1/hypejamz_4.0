@@ -1,0 +1,55 @@
+<% if request.xhr? %>
+   <%= link_to "back", user_events_path(@event.user) %>
+ <% end %>
+<div class="page_description">
+
+  <h2>
+      <%= @event.name %>
+  </h2>
+  <div class="ready-event">
+     <div class="event-description-container">
+       <%= @event.description %>
+     </div>
+    <% if can? [:update], @event %>
+     <ul>
+       <li><%= link_to "edit", edit_event_path(@event) %></li>
+       <li><%= link_to "Upload photo", new_event_picture_path(@event) %></li>
+     </ul>
+    <% end %>
+  </div>
+</div>
+
+<div class="page_description">
+  <h2>
+      Photos of this event
+  </h2>
+  <% if @event.pictures.empty? %>
+      <p class="empty">This event has no picture </p>
+  <% else %>
+  <%= render @event.pictures %>
+  <% end %>
+</div>
+  <% if @user.events.other_events(@event).any? %>
+<div class="page_description">
+  <h2>
+      Other Events
+  </h2>
+    <div class="event-block">
+     <%= render @user.events.other_events(@event) %>
+    </div>
+</div>
+  <% end %>
+
+  <script type="text/javascript">
+jQuery(function(){
+    jQuery("a[rel=photo_group]").fancybox({
+                    'transitionIn'		: 'none',
+                    'transitionOut'		: 'none',
+                    'titlePosition' 	: 'over',
+                    'titleFormat'		: function(title, currentArray, currentIndex, currentOpts) {
+                        return '<span id="fancybox-title-over">Image ' + (currentIndex + 1) + ' / ' + currentArray.length + (title.length ? ' &nbsp; ' + title : '') + '</span>';
+                    }
+                });
+
+})
+  </script>

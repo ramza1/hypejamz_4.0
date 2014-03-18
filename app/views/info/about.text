@@ -1,0 +1,82 @@
+<div class="terms-of-use">
+  <div class="page-header" style="margin-top: 0;">
+    <h3>
+      About Hypejamz Credit
+    </h3>
+  </div>
+
+  <p>Hypejamz credits enables you to buy any song placed for sale by artistes on hypejamz, send messages to artistes, watch music videos and lots more.
+    This credits has its naira equivalence and can be withdrawn from hypejamz at any time if and only if your account balance is above 5000 hypejamz credit.
+    In the withdrawal processing stage, hypejamz gets a 20% percentage  of any withdrawal based on maintenance and service charges. And we would issue you a check of your credits in your countries equivalence or transfer directly to your mobile money account. If you dont have a mobile money account, you can open a mobile money account with hypejamz today <%= link_to "here" %>.
+    With the new and improved music bank, members of hypejamz now have an initial hypejamz credit balance of 0.00 and can recharge their hypejamz via MTN mobile money or any mobile money service, through our short code service of which the money would  be deducted from your mobile credit balance or your popular credit card system if you would like to use that.
+
+
+  </p>
+  <p>Once again hypejamz credit enables you to buy songs placed for sale by the artist in which the value of the song is deducted from your hypejamz credit ballance and added to the artist account balance and vice versa. After purchase the song is made available for you to download. </p>
+
+  <div class="page-header">
+    <h3>
+      Prices
+    </h3>
+  </div>
+
+  <p>The price of any song placed for sale by artistes on hypejamz is not determined by us. So if you feel that a certain song or album is very expensive please feel free to lay your comments on the song.</p>
+  <p>Buy hypejamz credit with any of our services described above and purchase songs on hypejamz directly for you favorite artistes.
+  Basically hypejamz credits are sold based on the following volume. The more you buy the cheaper it is for you.
+  </p>
+
+  <ul>
+    <li>
+     300 hypejamz credit costs 100 naira, 0.70 USD
+    </li>
+    <li>
+      650 hypejamz credit costs 200 naira, 1.70 USD
+    </li>
+    <li>
+      1500 hypejamz credit costs 500 naira, 4.00 USD
+    </li>
+    <li>
+      6000 hypejamz credit costs 1500 naira, 10.00 USD
+    </li>
+  </ul>
+
+<p>You can buy hypejamz credit via MTN Mobile Money or any other Mobile Money Service, Credit Card or by the use of our short code service of which the money would be deducted from your credit.
+ To buy bypejamz credit wia mobile money follow the following steps. If you dont have a mobile money account you can get one with us by contacting our customer service at +23408100990852. and we would see you trough the necessary steps in getting a mobile money account with us.
+ <br/>
+  step1
+  <br/>
+  You have to <%= link_to "Login", new_user_session_path %> or <%= link_to "sign up", new_user_registration_path %> to the hypejamz network first (skip this step if you have done step 2)
+  <br/>
+  step2
+  <br/>
+  Update Your profile and add your mobile money account number(this is not displayed to the public).(skip this step if you have added your mobile money account number.)
+  <br/>
+  step3
+  <br/>
+  Transfer the amount you want to credit your account with and send it to (mobile money number)
+</p>
+
+<p>To buy hypejamz credit via Credit Card click <%= link_to "here" %></p>
+
+<p>To buy hypejamz credit via Credit via our short code service, send an sms to ..... with your username and the amount you want to transfer.
+<br/>
+  username: YourUserName(ex: hypejamz)
+ <br/>
+  amount: AMOUNT(ex: 1500)
+ <br/>
+  The amount would be deducted from you call credit.(currently this feature is unavailable at the moment.)
+</p>
+
+  <div class="page-header">
+    <h3>
+      Balance Checkout
+    </h3>
+  </div>
+
+   <p>It is very simple to Checkout your money from hypejamz. If you have a mobile money account, we can pay directly into your mobile money account with service charge of 5% of the amount you want to checkout. Note that check transactions can only be carried out with a minimum checkout of 5000 hypejamz cerdit. If you do not have a mobile money account you can simply open one with us by contacting our customer care service at +2348100990852
+   and we would see you trough the necessary steps involved in getting the account. So also you can link up your mobile money account to your bank account and transfer funds directly to your bank account with no service charge.
+   </p>
+  <p>For those who require check payment, were we send you checkout check to your verified address, a service charge of 7% would be deducted from your checkout.</p>
+  <p>For more enquiries, feel free to contact our customer service via +2348100990852. Thank you</p>
+</div>
+

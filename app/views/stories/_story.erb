@@ -1,0 +1,11 @@
+<a href="<%= url_for story %>" class="story-link"><%= div_for story do %>
+
+  <div>
+      <%= image_tag story.clip(:small) %>
+   </div>
+   <div class="story-overlay-title">
+     <%= truncate(story.title, :length => 52, :omission => "..Read More") %>
+   </div>
+
+<% end %></a>
+

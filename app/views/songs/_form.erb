@@ -1,0 +1,89 @@
+<%= form_for(@song, :html => {:class => "form-horizontal"}) do |f| %>
+  <% if @song.errors.any? %>
+        <div class="alert alert-error">
+          <h4 class="maroon"><%= pluralize(@song.errors.count, "error") %> prohibited this song from being saved:</h4>
+
+      <ul>
+      <% @song.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+    <div class="control-group">
+      <%= f.label :title, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :title, :placeholder => "Title", :class => "input-xlarge" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :album, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_field :album, :placeholder => "Album name", :class => "input-xlarge" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :description, :class => "control-label" %>
+      <div class="controls">
+        <%= f.text_area :description, :rows => 3, :placeholder => "Write a brief description about this song", :class => "input-xlarge" %>
+      </div>
+    </div>
+
+    <div class="control-group">
+      <%= f.label :genre_ids, "Genre", :class => "control-label" %>
+      <div class="controls">
+        <%= f.collection_select :genre_ids, Genre.order(:name), :id, :name, {}, {:multiple => true}  %>
+      </div>
+    </div>
+
+     <div class="control-group">
+       <% if can? :sell_songs, Song %>
+           <div class="field">
+             <p>Select the price of your song if you want people to pay before download else leave blank for free download. Note that all payments are done with the help of Hjc(<b>Hypejamz credit</b>). <b><%= link_to "Learn more about hjc", learn_more_path, :class => "btn" %></b></p> <br/>
+             <%= f.select :price, [['Price', nil], ['hjc 2 ', '2'], ['hjc 10', '10'], ['hjc 20', '20'], ['hjc 30', '30'], ['hjc 55', '55'], ['hjc 70', '70'], ['hjc 75', '75'], ['hjc 100', '100']], :placeholder => "Price" %>
+           </div>
+       <% else %>
+           <legend style="margin-bottom: 10px;"><%= t("sell_songs") %></legend>
+          <p class="alert alert-info"><%= t("song_sale_info") %></p>
+       <% end %>
+     </div>
+
+  <div class="control-group">
+    <%= f.label :art, "Upload Album art(Ex: jpeg, png, gif images only)", :class => "control-label" %>
+    <div class="controls">
+      <%= f.file_field :art %>
+    </div>
+  </div>
+<% if current_user.admin? %>
+<div>
+    <%= f.label :approved %>
+    <%= f.check_box :approved %>
+  </div>
+
+<% end %>
+ <% if @song.new_record? %>
+        <div class="control-group">
+          <%= f.label :mp3, "Upload your Song(mp3 only)", :class => "control-label" %>
+          <div class="controls">
+            <%= f.file_field :mp3 %>
+          </div>
+        </div>
+  <% end %>
+  <div class="form-actions">
+    <%= f.submit @song.new_record? ? "Upload Song" : "Update Song", :class => "btn btn-primary", :onclick => "$('.loader').show()" %>
+    <span class="loader" style="display: none; float: right; color: #fff"  >Uploading it might take a wile depending on your network please wait.......</span>
+    <%= link_to :back, :class => "btn" do %>
+         <i class="icon-chevron-left"></i> <%= t("back") %>
+    <% end %>
+  </div>
+<% end %>
+
+<%= content_for :javascript do %>
+    <%= javascript_include_tag "categories" %>
+<% end %>
+
+<%= content_for :bottom do %>
+     <div style="display: none;"></div>
+<% end %>

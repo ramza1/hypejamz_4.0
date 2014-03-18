@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>User:</b>
+  <%= @withdrawal_request.user %>
+</p>
+
+
+<%= link_to 'Edit', edit_withdrawal_request_path(@withdrawal_request) %> |
+<%= link_to 'Back', withdrawal_requests_path %>

@@ -1,0 +1,9 @@
+<% if current_user == song.user %>
+   <%= content_for :javascript do %>
+     <%= javascript_include_tag "songs" %>
+   <% end %>
+   <%= content_tag :div, "", id: "downloads_chart", data: {downloads: song_downloads_chat(song.downloads)} %>
+   <b class="badge badge-info" style="margin-bottom: 15px;">
+      <i class="icon-heart"></i> <%= t("song.amount_made", amount: song.downloads.sum(:hjc)) %>
+   </b>
+<% end %>

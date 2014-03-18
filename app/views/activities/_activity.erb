@@ -1,0 +1,12 @@
+<%# The activity shouldn't be nil, but we're wearing a belt and suspenders. %>
+<%- unless activity.item.nil? -%>
+<li>
+  <p class="activity_detail">
+    <%- recent ||= false -%>
+    <%= raw feed_message(activity, recent) %>
+  </p>
+  <p class="meta published clear">
+    <%= time_ago_in_words(activity.created_at).capitalize %> ago
+  </p>
+</li>
+<%- end -%>

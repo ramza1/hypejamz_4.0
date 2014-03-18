@@ -1,0 +1,84 @@
+<div data-role="page" class="user-page"  data-dom-cache="true" data-theme="b">
+        <header data-role="header" data-theme="a" class="heading">
+         <h1><%= @note.user.name %>'s yarn</h1>
+          <%= render "mobile_session" %>
+      <div data-role="navbar" data-iconpos="bottom">
+                <ul >
+                    <li>
+                      <%= link_to "Profile", user_path(@user), "data-theme" => "a", "data-icon" => "home"  %>
+                    </li>
+                    <li>
+                      <%= link_to "Yarn", user_profile_path(@user), "data-theme" => "a", "data-icon" => "yarn"  %>
+                    </li>
+                  <% if @user.pictures.any? %>
+                    <li>
+                      <%= link_to "Photos", user_pictures_path(@note.user), "data-theme" => "a", "data-icon" => "photo" %>
+                    </li>
+                  <% end %>
+
+                  <% if @user.songs.any? %>
+                    <li>
+                        <a href="<%= url_for user_songs_path(@user) %>" data-theme="a" data-icon="media">
+                            Songs
+                        </a>
+                    </li>
+                  <% end %>
+                  <% if @user.videos.any? %>
+                    <li>
+                        <a href="<%= url_for user_videos_path(@user) %>" class=""   data-theme="a">
+                            Videos
+                        </a>
+                    </li>
+                  <% end %>
+                </ul>
+      </div>
+        </header><!-- /header -->
+        <div data-role="content" data-theme="d">
+            <div class="note_info">
+              <div class="note-user-photo">
+                 <%= image_tag @note.user.icon(:thumb), :class => "avatar" %>
+              </div>
+              <div class="note-description">
+                 <p class="note-info"><%= @note.body %></p>
+              </div>
+             </div>
+  <div class="clear"></div>
+  <div class="double-margin-top"></div>
+    <ul data-role="listview" data-theme="a" data-split-theme="a" data-split-icon="user" data-split-theme="b">
+      <li  data-role="list-divider" ><%= pluralize(@note.comments_count, "Comment")%></li>
+       <% for comment in @note.comments %>
+        <li>
+          <a href="<%= url_for comment.user %>">
+            <%= image_tag comment.user.icon(:thumb), :class => "icon ul-li-icon ui-li-thumb avatar-user" %>
+            <h4>
+              <span class="left-user-name"><%= comment.user.name %></span>
+              <span class="left-time"><%= distance_of_time_in_words_to_now(comment.created_at)%> ago</span>
+            </h4>
+            <p><b><%= comment.comment %></b></p>
+          </a>
+        </li>
+       <% end %>
+    </ul>
+        </div><!-- /content -->
+  <div class="clear"></div>
+    <% if current_user %>
+              <% if me? or current_user.is_friend?(@note.user)%>
+             <%= form_for([@note, @note.comments.new], :remote => true, :html => {:id => "new_comment-#{@note.id}"}, "data-theme" => "b") do |f| %>
+                  <div data-role="fieldcontain" class="ui-hide-label">
+                     <%= text_area_tag "comment" %>
+                    <%= submit_tag "comment" %>
+                  </div>
+
+             <% end %>
+             <% else %>
+             <p class="comment">
+                <%= link_to "Subscribe", toggle_subscription_path(:id => @note.user.id), :class => "gold" %> to
+                <b><%= link_to @note.user.name, user_profile_path(@note.user) %></b> to comment on his post
+             </p>
+             <% end %>
+    <% else %>
+
+    <% end %>
+
+  <%= render "mobile_footer" %>
+    </div><!-- /page -->
